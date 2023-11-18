@@ -9,9 +9,37 @@ function display_last_modified (last_modified_document, display_document)
 
    Last_Modified = new Date(last_modified_document.lastModified);
 
+   Day    = Last_Modified.getDay();
    Hour   = Last_Modified.getHours();
    Minute = Last_Modified.getMinutes();
    Month  = Last_Modified.getMonth();
+
+   switch (Day)
+   {
+      case 0:
+         Day = "Sunday";
+         break;
+      case 1:
+         Day = "Monday";
+         break;
+      case 2:
+         Day = "Tuesday";
+         break;
+      case 3:
+         Day = "Wednesday";
+         break;
+      case 4:
+         Day = "Thursday";
+         break;
+      case 5:
+         Day = "Friday";
+         break;
+      case 6:
+         Day = "Saturday";
+         break;
+      default:
+         break;
+   }
 
    if (Hour > 12)
    {
@@ -28,46 +56,46 @@ function display_last_modified (last_modified_document, display_document)
    switch (Month)
    {
       case 0:
-         Month = "Jan";
+         Month = "January";
          break;
       case 1:
-         Month = "Feb";
+         Month = "February";
          break;
       case 2:
-         Month = "Mar";
+         Month = "March";
          break;
       case 3:
-         Month = "Apr";
+         Month = "April";
          break;
       case 4:
          Month = "May";
          break;
       case 5:
-         Month = "Jun";
+         Month = "June";
          break;
       case 6:
-         Month = "Jul";
+         Month = "July";
          break;
       case 7:
-         Month = "Aug";
+         Month = "August";
          break;
       case 8:
-         Month = "Sep";
+         Month = "September";
          break;
       case 9:
-         Month = "Oct";
+         Month = "October";
          break;
       case 10:
-         Month = "Nov";
+         Month = "November";
          break;
       case 11:
-         Month = "Dec";
+         Month = "December";
          break;
       default:
          break;
    }
 
-   display_document.write(Month," ",Last_Modified.getDate(),", ",Last_Modified.getFullYear()," at ",Hour,":",Minute," ",AM_PM);
+   display_document.write(Day," - ",Month," ",Last_Modified.getDate(),", ",Last_Modified.getFullYear()," - ",Hour,":",Minute," ",AM_PM);
 
    return true;
 }
