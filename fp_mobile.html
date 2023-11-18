@@ -35,7 +35,7 @@
       // Set these variables each week.
 
       var games_over         = f;
-      var current_input_week = 9;
+      var current_input_week = 12;
 
       // Set the post season teams each week during the playoffs.
 
@@ -486,7 +486,7 @@
       "Ravens",
       "Panthers",
       "Browns",
-      "Detriot Lions",
+      "Lions",
       "Packers",
       "Texans",
       "Jaguars",
@@ -855,15 +855,15 @@
 
          if (frame_name == "fp_main")
          {
-            document.getElementById("fp_frameset").cols="*,0,0";
+            fp_frameset.cols = "*,0,0";
 
-            frame_width = fp_main.document.body.scrollWidth+200;
+            frame_width = fp_main.document.body.scrollWidth;
 
             if (fp_main.document.getElementById("input_form_table") != null)
             {
                // Set frame_width equal to "Input Form" table width;
 
-               frame_width = fp_main.document.getElementById("input_form_table").offsetWidth;
+               frame_width = fp_main.document.getElementById("input_form_table").offsetWidth +100;
 
                // If the "Picks From Odds" button exists and is visible and if this isn't an iPad, adjust the font size of all buttons
                // and checkbox labels so that the total width of the buttons row is equal to the width of the "Input Form" table.
@@ -962,13 +962,13 @@
          }
          else if (frame_name == "fp_picks")
          {
-            document.getElementById("fp_frameset").cols="0,*,0";
+            fp_frameset.cols = "0,*,0";
          }
          else if (frame_name == "fp_loading_indicator")
          {
             frame_width = 0;
 
-            document.getElementById("fp_frameset").cols="0,0,*";
+            fp_frameset.cols = "0,0,*";
          }
 
          set_mobile_viewport_width(frame_width);
@@ -1030,23 +1030,17 @@
 
 </head>
 
-<frameset rows="60px,*" border="0">
+<frameset rows="65px,*" border="0">
 
-   <frame class="dark_blue_background" src="fp_header_mobile.html" name="fp_header" frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="no">
+   <frame class="background_color" src="fp_header_mobile.html" name="fp_header" frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="no">
 
    <frameset id="fp_frameset" cols="*,0,0" border="0">
 
-      <frame class="light_gray_background" src="fp_main_mobile.html"       name="fp_main"              frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="auto">
-      <frame class="light_gray_background" src="fp_empty.html"             name="fp_picks"             frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="auto">
-      <frame class="light_gray_background" src="fp_loading_indicator.html" name="fp_loading_indicator" frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="no">
+      <frame class="background_color" src="fp_main_mobile.html"       name="fp_main"              frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="auto">
+      <frame class="background_color" src="fp_empty.html"             name="fp_picks"             frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="auto">
+      <frame class="background_color" src="fp_loading_indicator.html" name="fp_loading_indicator" frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="no">
 
    </frameset>
-
-   <noframes>
-
-      <center><b>Your browser does not support HTML frames. Sorry.</b></center>
-
-   </noframes>
 
 </frameset>
 
