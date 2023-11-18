@@ -21,10 +21,10 @@
 <a href="http://www.nfl.com" target="_top"><img src="nfl_logo.png" height="40px" width="29.6px"></a>
 </td>
 
-<td class="dark_blue_cell" style="border-radius: 0px; text-align: center; border-left: 0px; border-right: 0px; padding: 5px; margin: 0px">
-<span style="font-size: 24px"><script>if (top.fp_year != null) document.write(top.fp_year + " "); document.write("XOOTBALL POOL");</script></span>
+<td id="header_mobile" class="dark_blue_cell" style="border-radius: 0px; text-align: center; border-left: 0px; border-right: 0px; padding: 5px; margin: 0px">
+<script>if (top.fp_year != null) document.write(top.fp_year + " "); document.write("ROOTBALL POOL");</script>
 </td>
-
+<script>document.getElementById("header_mobile").style.fontSize = "4px"; return true;</script>
 <td class="dark_blue_cell" style="border-radius: 0px 25px 25px 0px; height: 50px; width: 50px; text-align: center; border-left: 0px; padding: 5px; margin: 0px">
 <a href="fp_mobile.html" target="_top"><img src="home_icon.png" height="35px" width="35px"></a>
 </td>
@@ -32,6 +32,7 @@
 </tr>
 
 </table>
+<script>top.fp_frameset.fp_header.document.getElementById("header_mobile").style.color = "red"; return true;</script>
 
 
 </body>

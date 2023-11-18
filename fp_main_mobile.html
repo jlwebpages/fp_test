@@ -7,7 +7,8 @@
 </head>
 
 <body class="light_gray_background"
-      style="border: 0px; margin: 0">
+      style="border: 0px; margin: 0"
+      onload="top.display_frame('fp_main',0)">
 
 
 <center>
@@ -99,6 +100,21 @@
 
 </center>
 
+<script>
+function reset_display()
+{
+   if (top.reset_mobile_viewport_width != undefined)
+   {
+      top.reset_mobile_viewport_width();
+   }
+
+   if (top.mobile == false)
+   {
+      top.display_frame("fp_main",0);
+   }
+}
+
+</script>
 
 </body>
 
