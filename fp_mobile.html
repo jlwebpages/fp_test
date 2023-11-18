@@ -35,7 +35,7 @@
       // Set these variables each week.
 
       var games_over         = f;
-      var current_input_week = 11;
+      var current_input_week = 12;
 
       // Set the post season teams each week during the playoffs.
 
@@ -486,7 +486,7 @@
       "Ravens",
       "Panthers",
       "Browns",
-      "Detriot Lions",
+      "Lions",
       "Packers",
       "Texans",
       "Jaguars",
@@ -844,6 +844,8 @@
 
       function display_frame(frame_name, frame_width)
       {
+         alert("In display_frame");
+
          // Received frame_width is only used if frame_name equals "fp_picks".
 
          var iPad = false;
@@ -856,9 +858,6 @@
          if (frame_name == "fp_main")
          {
             fp_frameset.cols = "*,0,0";
-alert(fp_header.document.getElementById("header_mobile"));
-            fp_header.document.getElementById("header_mobile").style.color = "red";
-                        fp_header.document.getElementById("header_mobile").style.fontSize = "8px";
 
             frame_width = fp_main.document.body.scrollWidth;
 
@@ -1033,23 +1032,17 @@ alert(fp_header.document.getElementById("header_mobile"));
 
 </head>
 
-<frameset rows="60px,*" border="0">
+<frameset rows="65px,*" border="0">
 
-   <frame class="dark_blue_background" src="fp_header_mobile.html" name="fp_header" frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="no">
+   <frame class="background_color" src="fp_header_mobile.html" name="fp_header" frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="no">
 
    <frameset id="fp_frameset" cols="*,0,0" border="0">
 
-      <frame class="light_gray_background" src="fp_main_mobile.html"       name="fp_main"              frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="auto">
-      <frame class="light_gray_background" src="fp_empty.html"             name="fp_picks"             frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="auto">
-      <frame class="light_gray_background" src="fp_loading_indicator.html" name="fp_loading_indicator" frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="no">
+      <frame class="background_color" src="fp_main_mobile.html"       name="fp_main"              frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="auto">
+      <frame class="background_color" src="fp_empty.html"             name="fp_picks"             frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="auto">
+      <frame class="background_color" src="fp_loading_indicator.html" name="fp_loading_indicator" frameborder="0" marginwidth="0" marginheight="0" noresize="noresize" scrolling="no">
 
    </frameset>
-
-   <noframes>
-
-      <center><b>Your browser does not support HTML frames. Sorry.</b></center>
-
-   </noframes>
 
 </frameset>
 
