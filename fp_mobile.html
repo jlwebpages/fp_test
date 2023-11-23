@@ -34,8 +34,8 @@
 
       // Set these variables each week.
 
-      var games_over         = t;
-      var current_input_week = 12;
+      var games_over         = f;
+      var current_input_week = 13;
 
       // Set the post season teams each week during the playoffs.
 
@@ -899,11 +899,11 @@
 
                      if (input_form_buttons != null)
                      {
-                        if (input_form_buttons.offsetWidth > frame_width)
+                        if (input_form_buttons.offsetWidth+5 > frame_width)
                         {
                            // Decrease the font size of the "Input Form" buttons until the total width of the buttons row is equal to the width of the "Input Form" table.
 
-                           while ( (button_font_size > 0) && (input_form_buttons.offsetWidth > frame_width) )
+                           while ( (button_font_size > 0) && (input_form_buttons.offsetWidth+5 > frame_width) )
                            {
                               // Decrease button_font_size by 0.1pt.
 
@@ -918,11 +918,11 @@
                               if (reset_button != null)                        reset_button.style.fontSize                        = button_font_size + "pt";
                            }
                         }
-                        else if (frame_width > input_form_buttons.offsetWidth)
+                        else if (frame_width > input_form_buttons.offsetWidth+5)
                         {
                            // Increase the font size of the "Input Form" buttons until they are at least 11pt.
 
-                           while ( (button_font_size < 20) && (frame_width > input_form_buttons.offsetWidth) )
+                           while ( (button_font_size < 20) && (frame_width > input_form_buttons.offsetWidth+5) )
                            {
                               // Increase button_font_size by 0.1pt.
 
@@ -940,7 +940,7 @@
                            // If the previous while loop caused the total width of the buttons row to be slightly greater than
                            // the width of the "Input Form" table, then decrease the font size of the "Input Form" buttons by .1pt.
 
-                           if (input_form_buttons.offsetWidth > frame_width)
+                           if (input_form_buttons.offsetWidth+5 > frame_width)
                            {
                               // Decrease button_font_size by 0.1pt.
 
