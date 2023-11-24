@@ -618,9 +618,9 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('   if (button_2 == "Fix 2")');
    d.writeln('   {');
-   d.writeln('      wd.writeln("<input type=button style=\\"text-transform: none; font-size: 11pt; font-family: Calibri; border: 1px solid black\\" value=\\""+button_3+"\\" onClick=respond_to_button(\\"fix_1\\");>");');
+   d.writeln('      wd.writeln("<input type=button style=\\"color: black; font-size: 11pt; font-family: Calibri; border: 1px solid black\\" value=\\""+button_3+"\\" onClick=respond_to_button(\\"fix_1\\");>");');
    d.writeln('      wd.writeln("&nbsp&nbsp");');
-   d.writeln('      wd.writeln("<input type=button style=\\"text-transform: none; font-size: 11pt; font-family: Calibri; border: 1px solid black\\" value=\\""+button_2+"\\" onClick=respond_to_button(\\"fix_2\\");>");');
+   d.writeln('      wd.writeln("<input type=button style=\\"color: red; font-size: 11pt; font-family: Calibri; border: 1px solid black\\" value=\\""+button_2+"\\" onClick=respond_to_button(\\"fix_2\\");>");');
    d.writeln('      wd.writeln("&nbsp&nbsp");');
    d.writeln('   }');
    d.writeln('   else if (button_2 == "Submit via E-Mail")');
