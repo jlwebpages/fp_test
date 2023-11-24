@@ -1593,13 +1593,13 @@ function build_post_season_form()
       {
          for (var j = 1; j <= number_of_ps_games; j++)
          {
-            input_tag_style = "text-align:center; font-size: 10pt; font-family: Calibri; border: 1px solid lightgray; background-color:white; color: black";
+            input_tag_style = "text-align:center; font-size: 10pt; font-family: Calibri; border: 1px solid lightgray; background-color:white; color: black; border_radius: 0px";
 
             if ( (visiting_teams[gi-1] == victors[j-1]) || (home_teams[gi-1] == victors[j-1]) )
             {
                // Highlight the background of the scores to signify that the game has concluded.
 
-               input_tag_style = "text-align:center; font-size: 10pt; font-family: Calibri; border: 1px solid lightgray; background-color: #DCE6F1; color: black";
+               input_tag_style = "text-align:center; font-size: 10pt; font-family: Calibri; border: 1px solid lightgray; background-color: #DCE6F1; color: black; border_radius: 0px";
 
                break;
             }
@@ -2235,7 +2235,7 @@ function build_post_season_form()
       d.writeln('    onClick="clear_scores(document);return true;">');
       d.writeln('&nbsp;');
    }
-   d.writeln('<select class="black_color" style="font-size: 11pt; font-family: Calibri; border: 1px solid black" name="order_by_menu" size=1');
+   d.writeln('<select class="black_color square_border" style="font-size: 11pt; font-family: Calibri; border: 1px solid black" name="order_by_menu" size=1');
    d.writeln('        onChange="change_order(document);return true;">');
    if (order_by == "players")
    {
@@ -3810,7 +3810,7 @@ function build_regular_season_form()
    }
    else
    {
-      d.writeln('<select class="black_color" style="font-family: Calibri; font-size: 13pt; font-weight: bold; background-color: #C4D79B; border: 1px solid gray" name="selected_week_menu" size=1');
+      d.writeln('<select class="black_color square_border" style="font-family: Calibri; font-size: 13pt; font-weight: bold; background-color: #C4D79B; border: 1px solid gray" name="selected_week_menu" size=1');
       d.writeln('  onChange="change_week(document); return true;">');
       for (var i = 1; i <= unaltered_week; i++)
       {
@@ -3869,13 +3869,13 @@ function build_regular_season_form()
       {
          for (var j = 1; j <= number_of_rs_games; j++)
          {
-            input_tag_style = "font-size:11pt; font-family: Calibri; border: 1px solid lightgray; background-color:white; color: black";
+            input_tag_style = "font-size:11pt; font-family: Calibri; border: 1px solid lightgray; background-color:white; color: black; border_radius: 0px";
 
             if ( (visiting_teams[i-1] == victors[j-1]) || (home_teams[i-1] == victors[j-1]) )
             {
                // Highlight the background of the pick to signify that the game has concluded.
 
-               input_tag_style = "font-size:11pt; font-family: Calibri; border: 1px solid lightgray; background-color:#DCE6F1; color: black";
+               input_tag_style = "font-size:11pt; font-family: Calibri; border: 1px solid lightgray; background-color:#DCE6F1; color: black; border_radius: 0px";
 
                // Check for a game ending in a tie.
 
@@ -4408,7 +4408,7 @@ function build_regular_season_form()
       d.writeln('     onClick="respond_to_best_outcome_button(document);return true;" title="'+best_outcome_tooltip+'">');
       d.writeln('&nbsp;');
       d.writeln('<font style="font-size: 12pt">Player:</font>&nbsp;');
-      d.writeln('<select class="black_color" style="font-size: 11pt; font-family: Calibri; border: 1px solid black" name="player_name_menu" size=1');
+      d.writeln('<select class="black_color square_border" style="font-size: 11pt; font-family: Calibri; border: 1px solid black" name="player_name_menu" size=1');
       d.writeln('     onChange="get_selected_player(document);return true;">');
       for (var player_index = 0; player_index <= number_of_rs_players; player_index++)
       {
@@ -4431,7 +4431,7 @@ function build_regular_season_form()
       d.writeln('</select>');
       d.writeln('&nbsp;');
       d.writeln('<font style="font-size: 12pt">Opponent:</font>&nbsp;');
-      d.writeln('<select class="black_color" style="font-size: 11pt; font-family: Calibri; border: 1px solid black" name="opponent_name_menu" size=1');
+      d.writeln('<select class="black_color square_border" style="font-size: 11pt; font-family: Calibri; border: 1px solid black" name="opponent_name_menu" size=1');
       d.writeln('     onChange="get_selected_opponent(document);return true;">');
       for (var opponent_index = 0; opponent_index <= number_of_rs_players; opponent_index++)
       {
