@@ -2585,7 +2585,7 @@ function build_regular_season_form()
 
    d.writeln('<table border=0 cellspacing=0 cellpadding=0>');
    d.writeln('<tr align=center style="vertical-align: middle">');
-   d.writeln('<td id="input_form_week" nowrap class="no_border"><font style="font-size: 18pt">IInput Form - Week&nbsp;</font>');
+   d.writeln('<td id="input_form_week" nowrap class="no_border"><font style="font-size: 18pt">Input Form - Week&nbsp;</font>');
    d.writeln('   <select class="background_color black_color square_border" style="vertical-align: bottom; font-family: Calibri; font-size: 14pt; border: 1px solid gray" name="selected_week_menu" size=1 onChange="change_week(document); return true;">');
    for (var i = current_input_week; i <= number_of_rs_weeks; i++)
    {
@@ -2733,9 +2733,9 @@ function build_regular_season_form()
 
    d.writeln('<tr>');
    d.writeln('<td id="accept_reset_buttons" style="text-align: center; padding-top: 2px" nowrap class="no_border">');
-   d.writeln('<input id="submit" type=button style="font-size: 11pt; font-family: Calibri; border: 1px solid black" name="submit" value="Accept" onClick="accept_picks(document); return true;" title="'+accept_tooltip+'">');
+   d.writeln('<input id="submit" type=button class="default_button" name="submit" value="Accept" onClick="accept_picks(document); return true;" title="'+accept_tooltip+'">');
    d.writeln('&nbsp&nbsp;');
-   d.writeln('<input id="reset_button" type=button style="font-size: 11pt; font-family: Calibri; border: 1px solid black" name="reset_button" value="Reset" onClick="reset_input_form(document); return true;" title="'+reset_tooltip+'">');
+   d.writeln('<input id="reset_button" type=button class="default_button" name="reset_button" value="Reset" onClick="reset_input_form(document); return true;" title="'+reset_tooltip+'">');
    d.writeln('</td>');
    d.writeln('</tr>');
    d.writeln('');
