@@ -2615,7 +2615,7 @@ function build_regular_season_form()
    d.writeln('<tr bgcolor=#C4D79B>');
    d.writeln('<td align=right class="bb2_border" colspan=2><font style="font-size: 13pt"><b>Name:</b></font></td>');
    d.writeln('<td align=left class="bb2_border" colspan=4>');
-   d.writeln('<select style="font-size: 12pt; font-family: Calibri; background-color:#C4D79B; border: 1px solid gray" name="player_name_menu" size=1 onChange="get_player_index_from_form(document); return true;">');
+   d.writeln('<select class="black_color square_border" style="font-size: 12pt; font-family: Calibri; background-color:#C4D79B; border: 1px solid gray" name="player_name_menu" size=1 onChange="get_player_index_from_form(document); return true;">');
    for (var i = 0; i <= top.rs_players.length; i++)
    {
       switch (i)
