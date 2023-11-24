@@ -2585,8 +2585,8 @@ function build_regular_season_form()
 
    d.writeln('<table border=0 cellspacing=0 cellpadding=0>');
    d.writeln('<tr align=center style="vertical-align: middle">');
-   d.writeln('<td id="input_form_week" nowrap class="no_border"><font style="font-size: 18pt">Input Form - Week&nbsp;</font>');
-   d.writeln('   <select class="background_color black_color" style="vertical-align: bottom; font-family: Calibri; font-size: 14pt; border: 1px solid gray" name="selected_week_menu" size=1 onChange="change_week(document); return true;">');
+   d.writeln('<td id="input_form_week" nowrap class="no_border"><font style="font-size: 18pt">Jnput Form - Week&nbsp;</font>');
+   d.writeln('   <select class="background_color black_color" style="vertical-align: bottom; font-family: Calibri; font-size: 14pt; border: 1px solid gray; border-radius: 0px" name="selected_week_menu" size=1 onChange="change_week(document); return true;">');
    for (var i = current_input_week; i <= number_of_rs_weeks; i++)
    {
       if (i == week)
