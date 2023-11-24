@@ -198,12 +198,8 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('');
 
-
-
-
-   //d.writeln('<script>button {color: black} select {color: black}"<"+"/script>"');
-
    d.writeln('<script language="JavaScript" type="text/javascript">');
+   d.writeln('');
    d.writeln('');
    d.writeln('// Define home and visiting teams for display.');
    d.writeln('');
@@ -618,20 +614,20 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('   if (button_2 == "Fix 2")');
    d.writeln('   {');
-   d.writeln('      wd.writeln("<input type=button style=\\"color: black; font-size: 11pt; font-family: Calibri; border: 1px solid black\\" value=\\""+button_3+"\\" onClick=respond_to_button(\\"fix_1\\");>");');
+   d.writeln('      wd.writeln("<input type=button style=\\"font-size: 11pt; font-family: Calibri; border: 1px solid black\\" value=\\""+button_3+"\\" onClick=respond_to_button(\\"fix_1\\");>");');
    d.writeln('      wd.writeln("&nbsp&nbsp");');
-   d.writeln('      wd.writeln("<input type=button style=\\"color: red; font-size: 11pt; font-family: Calibri; border: 1px solid black\\" value=\\""+button_2+"\\" onClick=respond_to_button(\\"fix_2\\");>");');
+   d.writeln('      wd.writeln("<input type=button style=\\"font-size: 11pt; font-family: Calibri; border: 1px solid black\\" value=\\""+button_2+"\\" onClick=respond_to_button(\\"fix_2\\");>");');
    d.writeln('      wd.writeln("&nbsp&nbsp");');
    d.writeln('   }');
    d.writeln('   else if (button_2 == "Submit via E-Mail")');
    d.writeln('   {');
-   d.writeln('      wd.writeln("<input type=button style=\\"text-transform: none; font-size: 11pt; font-family: Calibri; border: 1px solid black\\" value=\\""+button_2+"\\" onClick=respond_to_button(\\"submit\\"); title=\\"'+submit_via_e_mail_tooltip+'\\">");');
+   d.writeln('      wd.writeln("<input type=button style=\\"font-size: 11pt; font-family: Calibri; border: 1px solid black\\" value=\\""+button_2+"\\" onClick=respond_to_button(\\"submit\\"); title=\\"'+submit_via_e_mail_tooltip+'\\">");');
    d.writeln('      wd.writeln("&nbsp&nbsp");');
-   d.writeln('      wd.writeln("<input type=button style=\\"text-transform: none; font-size: 11pt; font-family: Calibri; border: 1px solid black\\" value=\\""+button_3+"\\" onClick=respond_to_button(\\"copy\\");>");');
+   d.writeln('      wd.writeln("<input type=button style=\\"font-size: 11pt; font-family: Calibri; border: 1px solid black\\" value=\\""+button_3+"\\" onClick=respond_to_button(\\"copy\\");>");');
    d.writeln('      wd.writeln("&nbsp&nbsp");');
    d.writeln('   }');
    d.writeln('');
-   d.writeln('   wd.writeln("<input type=button style=\\"text-transform: none; font-size: 11pt; font-family: Calibri; border: 1px solid black\\" value=\\""+button_1+"\\" onClick=respond_to_button(\\"go_back\\");>");');
+   d.writeln('   wd.writeln("<input type=button style=\\"font-size: 11pt; font-family: Calibri; border: 1px solid black\\" value=\\""+button_1+"\\" onClick=respond_to_button(\\"go_back\\");>");');
    d.writeln('   wd.writeln("</td>");');
    d.writeln('   wd.writeln("");');
    d.writeln('   wd.writeln("</tr>");');
