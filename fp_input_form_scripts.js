@@ -2732,10 +2732,10 @@ function build_regular_season_form()
    d.writeln('');
 
    d.writeln('<tr>');
-   d.writeln('<td id="accept_reset_buttons">');
-   d.writeln('<input id="submit" type=button class="default_button" name="submit" value="Accept" onClick="accept_picks(document); return true;" title="'+accept_tooltip+'">');
+   d.writeln('<td id="accept_reset_buttons" style="text-align: center; padding-top: 2px" nowrap class="no_border">');
+   d.writeln('<input id="submit" type=button name="submit" value="Accept" onClick="accept_picks(document); return true;" title="'+accept_tooltip+'">');
    d.writeln('&nbsp&nbsp;');
-   d.writeln('<input id="reset_button" type=button class="default_button" name="reset_button" value="Reset" onClick="reset_input_form(document); return true;" title="'+reset_tooltip+'">');
+   d.writeln('<input id="reset_button" type=button name="reset_button" value="Reset" onClick="reset_input_form(document); return true;" title="'+reset_tooltip+'">');
    d.writeln('</td>');
    d.writeln('</tr>');
    d.writeln('');
