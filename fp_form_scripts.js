@@ -3869,13 +3869,13 @@ function build_regular_season_form()
       {
          for (var j = 1; j <= number_of_rs_games; j++)
          {
-            input_tag_style = "font-size:11pt; font-family: Calibri; border: 1px solid lightgray; background-color:white";
+            input_tag_style = "font-size:11pt; font-family: Calibri; border: 1px solid lightgray; background-color:white; color: red";
 
             if ( (visiting_teams[i-1] == victors[j-1]) || (home_teams[i-1] == victors[j-1]) )
             {
                // Highlight the background of the pick to signify that the game has concluded.
 
-               input_tag_style = "font-size:11pt; font-family: Calibri; border: 1px solid lightgray; background-color:#DCE6F1";
+               input_tag_style = "font-size:11pt; font-family: Calibri; border: 1px solid lightgray; background-color:#DCE6F1; color: red";
 
                // Check for a game ending in a tie.
 
