@@ -1593,13 +1593,13 @@ function build_post_season_form()
       {
          for (var j = 1; j <= number_of_ps_games; j++)
          {
-            input_tag_style = "text-align:center; font-size: 10pt; font-family: Calibri; border: 1px solid lightgray; background-color:white; color: black; border_radius: 0px";
+            input_tag_style = "text-align:center; font-size: 10pt; font-family: Calibri; border: 1px solid lightgray; background-color:white; color: black; border-radius: 0px";
 
             if ( (visiting_teams[gi-1] == victors[j-1]) || (home_teams[gi-1] == victors[j-1]) )
             {
                // Highlight the background of the scores to signify that the game has concluded.
 
-               input_tag_style = "text-align:center; font-size: 10pt; font-family: Calibri; border: 1px solid lightgray; background-color: #DCE6F1; color: black; border_radius: 0px";
+               input_tag_style = "text-align:center; font-size: 10pt; font-family: Calibri; border: 1px solid lightgray; background-color: #DCE6F1; color: black; border-radius: 0px";
 
                break;
             }
@@ -3869,13 +3869,13 @@ function build_regular_season_form()
       {
          for (var j = 1; j <= number_of_rs_games; j++)
          {
-            input_tag_style = "font-size:11pt; font-family: Calibri; border: 1px solid lightgray; background-color:white; color: black; border_radius: 0px";
+            input_tag_style = "font-size:11pt; font-family: Calibri; border: 1px solid lightgray; background-color:white; color: black; border-radius: 0px";
 
             if ( (visiting_teams[i-1] == victors[j-1]) || (home_teams[i-1] == victors[j-1]) )
             {
                // Highlight the background of the pick to signify that the game has concluded.
 
-               input_tag_style = "font-size:11pt; font-family: Calibri; border: 1px solid lightgray; background-color:#DCE6F1; color: black; border_radius: 0px";
+               input_tag_style = "font-size:11pt; font-family: Calibri; border: 1px solid lightgray; background-color:#DCE6F1; color: black; border-radius: 0px";
 
                // Check for a game ending in a tie.
 
