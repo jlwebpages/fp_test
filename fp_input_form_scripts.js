@@ -2705,8 +2705,8 @@ function build_regular_season_form()
    d.writeln('<table cols=1 align=center>');
    d.writeln('');
 
-   d.writeln('<tr>');
-   d.writeln('<td id="input_form_buttons" style="text-align: center; padding-top: 10px" nowrap class="no_border">');
+   d.writeln('<tr id="input_form_buttons">');
+   d.writeln('<td style="text-align: center; padding-top: 10px" nowrap class="no_border">');
    d.writeln('<span style="display: none" id="picks_from_odds_button">');
    d.writeln('<input id="picks_from_odds" type="button" class="default_button" name="picks_from_odds" value="Picks From Odds" onClick="generate_picks_from_odds(document); return true;" title="'+picks_from_odds_tooltip+'">');
    d.writeln('&nbsp&nbsp;');
