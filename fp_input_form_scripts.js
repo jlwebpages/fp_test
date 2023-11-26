@@ -2733,7 +2733,7 @@ function build_regular_season_form()
 
    d.writeln('<tr>');
    d.writeln('<td id="accept_reset_buttons" style="text-align: center; padding-top: 2px" nowrap class="no_border">');
-   d.writeln('<input id="submit" type="button" class="default_button" style="margin-right: 100px" name="submit" value="Accept" onClick="accept_picks(document); return true;" title="'+accept_tooltip+'">');
+   d.writeln('<input id="submit" type="button" class="default_button" style="margin-right: 20px" name="submit" value="Accept" onClick="accept_picks(document); return true;" title="'+accept_tooltip+'">');
    d.writeln('<input id="reset_button" type="button" class="default_button" name="reset_button" value="Reset" onClick="reset_input_form(document); return true;" title="'+reset_tooltip+'">');
    d.writeln('</td>');
    d.writeln('</tr>');
