@@ -2719,7 +2719,7 @@ function build_regular_season_form()
    d.writeln('<tr>');
    d.writeln('<td style="text-align: center; padding-top: 5px" nowrap class="no_border">');
    d.writeln('<span style="display: none" id="checkboxes">');
-   d.writeln('<input type=checkbox class="default_checkbox" style="accent-color:  white" id="display_odds_checkbox" onClick="update_input_form(document);">');
+   d.writeln('<input type=checkbox class="default_checkbox" id="display_odds_checkbox" onClick="update_input_form(document);">');
    d.writeln('<label for="display_odds_checkbox" style="font-size: 11pt; vertical-align: middle; margin-right: 12px" id="display_odds_checkbox_label">Display Odds</label>');
    d.writeln('<input type=checkbox class="default_checkbox" id="display_team_records_checkbox" onClick="update_input_form(document);">');
    d.writeln('<label for="display_team_records_checkbox" style="font-size: 11pt; vertical-align: middle" id="display_team_records_checkbox_label">Display Team Records</label>');
