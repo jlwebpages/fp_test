@@ -2235,7 +2235,7 @@ function build_post_season_form()
       d.writeln('    onClick="clear_scores(document);return true;">');
       d.writeln('&nbsp;');
    }
-   d.writeln('<select class="default_select border_radius" name="order_by_menu" size=1');
+   d.writeln('<select class="black_color border_radius" style="font-size: 11pt; font-family: Calibri; border: 1px solid black" name="order_by_menu" size=1');
    d.writeln('        onChange="change_order(document);return true;">');
    if (order_by == "players")
    {
@@ -4408,7 +4408,7 @@ function build_regular_season_form()
       d.writeln('     onClick="respond_to_best_outcome_button(document);return true;" title="'+best_outcome_tooltip+'">');
       d.writeln('&nbsp;');
       d.writeln('<font style="font-size: 12pt">Player:</font>&nbsp;');
-      d.writeln('<select class="default_select background_color border_radius" name="player_name_menu" size=1');
+      d.writeln('<select class="black_color border_radius" style="font-size: 11pt; font-family: Calibri; border: 1px solid black" name="player_name_menu" size=1');
       d.writeln('     onChange="get_selected_player(document);return true;">');
       for (var player_index = 0; player_index <= number_of_rs_players; player_index++)
       {
