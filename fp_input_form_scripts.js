@@ -2688,7 +2688,7 @@ function build_regular_season_form()
 
    d.writeln('<tr align=center>');
    d.writeln('<td class="bt2_border" align=right colspan="5"><font style="font-size: 12pt">Game '+number_of_rs_games+' Total Points:</font></td>');
-   d.writeln('<td class="bt2_border">');
+   d.writeln('<td class="bt2_border" align=left>&nbsp');
    d.writeln('<input type=text size="2" class="default_text border_radius" style="width: 30px" maxlength="2" name="mn_points">');
    d.writeln('</td>');
    d.writeln('</tr>');
