@@ -2687,8 +2687,11 @@ function build_regular_season_form()
    }
 
    d.writeln('<tr align=center>');
-   d.writeln('<td class="bt2_border" align=right colspan="4"><font style="font-size: 12pt">Game '+number_of_rs_games+' Total Points:</font></td>');
-   d.writeln('<td class="bt2_border" align=left  colspan="2">&nbsp<input type=text class="default_text border_radius" style="width: 30px" name="mn_points" size="2" maxlength="2"></td>');
+   d.writeln('<td class="bt2_border" align=center colspan="6">');
+   d.writeln('   <font style="font-size: 12pt">Game '+number_of_rs_games+' Total Points:</font>');
+   d.writeln('   &nbsp');
+   d.writeln('   <input type=text class="default_text border_radius" style="width: 30px" name="mn_points" size="2" maxlength="2">');
+   d.writeln('</td>');
    d.writeln('</tr>');
    d.writeln('');
 
