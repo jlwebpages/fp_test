@@ -413,7 +413,7 @@ function build_regular_season_form()
    d.writeln('   var min_width_style  = "";');
    d.writeln('');
    d.writeln('');
-   d.writeln('   if (top.mobile == true) min_width_style = "mid-width: " + top.fp_header_width + "px;";');
+   d.writeln('   if (top.mobile == true) min_width_style = "min-width: " + top.fp_header_width + "px;";');
    d.writeln('alert(style="border: 3px solid black; text-align: left; padding: 10px; "+ min_width_style +">")');
    d.writeln('   if (picks_message.indexOf(upset_style) == -1)');
    d.writeln('   {');
@@ -3169,7 +3169,7 @@ function build_post_season_form()
    d.writeln('   var min_width_style  = "";');
    d.writeln('');
    d.writeln('');
-   d.writeln('   if (top.mobile == true) min_width_style = "mid-width: " + top.fp_header_width + "px;";')
+   d.writeln('   if (top.mobile == true) min_width_style = "min-width: " + top.fp_header_width + "px;";')
    d.writeln('');
    d.writeln('   if (picks_message.indexOf(upset_style) == -1)');
    d.writeln('   {');
