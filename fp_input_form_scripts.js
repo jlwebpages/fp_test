@@ -2129,7 +2129,7 @@ function build_regular_season_form()
    d.writeln('   {');
    d.writeln('      if (display_error == true) alert("Select your name before accepting your picks.");');
    d.writeln('');
-   d.writeln('      if (top.mobile != true) document.fp_inputs.player_name_menu.focus();');
+   d.writeln('      document.fp_inputs.player_name_menu.focus();');
    d.writeln('');
    d.writeln('      return false;');
    d.writeln('   }');
@@ -2565,15 +2565,12 @@ function build_regular_season_form()
    d.writeln('<center>');
    d.writeln('');
 
-   d.writeln('<br>');
-   d.writeln('');
-
    d.writeln('<form name="fp_inputs">');
    d.writeln('');
 
    d.writeln('<table border=0 cellspacing=0 cellpadding=0>');
    d.writeln('<tr align=center style="vertical-align: middle">');
-   d.writeln('<td id="input_form_week" nowrap class="no_border"><font style="font-size: 18pt">Input Form - Week&nbsp;</font>');
+   d.writeln('<td id="input_form_week" class="no_border" style="font-size: 18pt; white-space: nowrap">Input Form - Week&nbsp');
    d.writeln('   <select class="default_select background_color border_radius" style="vertical-align: bottom; font-size: 14pt; border: 1px solid gray" name="selected_week_menu" size=1 onChange="change_week(document); return true;">');
    for (var i = current_input_week; i <= number_of_rs_weeks; i++)
    {
@@ -4627,12 +4624,9 @@ function build_post_season_form()
    d.writeln('<center>');
    d.writeln('');
 
-   d.writeln('<br>');
-   d.writeln('');
-
    d.writeln('<table border=0 cellspacing=0 cellpadding=0>');
    d.writeln('<tr align=center style="vertical-align: middle">');
-   d.writeln('<td id="input_form_week" nowrap class="no_border"><font style="font-size: 18pt">Input Form - Post Season Week '+ week +'</font>');
+   d.writeln('<td id="input_form_week" nowrap class="no_border" style="padding-top: 10px"><font style="font-size: 18pt">Input Form - Post Season Week '+ week +'</font>');
    d.writeln('</td>');
    d.writeln('</tr>');
    d.writeln('</table><p>');
@@ -4788,7 +4782,7 @@ function build_post_season_form()
 
    d.writeln('</html>');
 
-   d.getElementById("input_form_week").scrollIntoView({block: "start", inline: "start"});
+   //d.getElementById("input_form_week").scrollIntoView({block: "start", inline: "start"});
 
    d.close();
 
