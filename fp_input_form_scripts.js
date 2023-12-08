@@ -2082,7 +2082,7 @@ function build_regular_season_form()
    d.writeln('{');
    d.writeln('   document.fp_inputs.reset();');
    d.writeln('');
-   d.writeln('   if (top.mobile != true) document.fp_inputs.pick1.focus();');
+   d.writeln('   if document.fp_inputs.pick1.focus();');
    d.writeln('');
    d.writeln('   // Restore the previously selected player name because the reset caused the player name on the input form to be cleared.');
    d.writeln('');
@@ -2533,7 +2533,8 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('      if (display_error == true)');
    d.writeln('      {');
-   d.writeln('         if (top.mobile != true) mn_points.focus();');
+   d.writeln('         //if (top.mobile != true) mn_points.focus();');//JLJL
+   d.writeln('         mn_points.focus();');//JLJL
    d.writeln('');
    d.writeln('         if (picks['+number_of_rs_games+'-1] == "H")');
    d.writeln('         {');
@@ -2741,7 +2742,7 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('   get_nfl_odds(document,0,true);');
    d.writeln('');
-   d.writeln('   if (top.mobile != true) document.fp_inputs.pick1.focus();');
+   d.writeln('   document.fp_inputs.player_name_menu.focus();');//JLJL
    d.writeln('');
    d.writeln('<'+'/script>');
    d.writeln('');
@@ -2751,7 +2752,7 @@ function build_regular_season_form()
 
    d.writeln('</html>');
 
-   d.getElementById("input_form_week").scrollIntoView({block: "start", inline: "start"});
+   //d.getElementById("input_form_week").scrollIntoView({block: "start", inline: "start"});
 
    d.close();
 
@@ -4434,7 +4435,7 @@ function build_post_season_form()
    d.writeln('{');
    d.writeln('   document.fp_inputs.reset();');
    d.writeln('');
-   d.writeln('   if (top.mobile != true) document.fp_inputs.pick1.focus();');
+   d.writeln('   document.fp_inputs.pick1.focus();');
    d.writeln('');
    d.writeln('   // Restore the previously selected player name because the reset caused the player name on the input form to be cleared.');
    d.writeln('');
@@ -4481,7 +4482,7 @@ function build_post_season_form()
    d.writeln('   {');
    d.writeln('      if (display_error == true) alert("Select your name before accepting your picks.");');
    d.writeln('');
-   d.writeln('      if (top.mobile != true) document.fp_inputs.player_name_menu.focus();');
+   d.writeln('      document.fp_inputs.player_name_menu.focus();');
    d.writeln('');
    d.writeln('      return false;');
    d.writeln('   }');
@@ -4574,7 +4575,7 @@ function build_post_season_form()
    d.writeln('      {');
    d.writeln('         alert("Pick a winner (V or H) for " + visiting_teams[i] + " at " + home_teams[i] + " (Game " + (i+1) + ").");');
    d.writeln('');
-   d.writeln('         if (top.mobile != true) picks_select_array[i].focus();');
+   d.writeln('         picks_select_array[i].focus();');
    d.writeln('');
    d.writeln('         return false;');
    d.writeln('      }');
@@ -4772,7 +4773,8 @@ function build_post_season_form()
    d.writeln('');
    d.writeln('   get_nfl_odds(document,0,true);');
    d.writeln('');
-   d.writeln('   if (top.mobile != true) document.fp_inputs.pick1.focus();');
+   d.writeln('   document.fp_inputs.player_name_menu.focus();');
+   d.writeln('   //if (top.mobile != true) document.fp_inputs.pick1.focus();');
    d.writeln('');
    d.writeln('<'+'/script>');
    d.writeln('');
