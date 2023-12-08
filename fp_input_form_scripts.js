@@ -414,7 +414,7 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('');
    d.writeln('   if (top.mobile == true) min_width_style = "mid-width: " + top.fp_header_width + "px;";');
-   d.writeln('alert(":"+min_width_style+":")');
+   d.writeln('alert(style="border: 3px solid black; text-align: left; padding: 10px; "+ min_width_style +">")');
    d.writeln('   if (picks_message.indexOf(upset_style) == -1)');
    d.writeln('   {');
    d.writeln('      upset_note = "";');
@@ -591,7 +591,7 @@ function build_regular_season_form()
    d.writeln('   wd.writeln("");');
    d.writeln('   wd.writeln("<br>");');
    d.writeln('   wd.writeln("");');
-   d.writeln('   wd.writeln("<table id=\\"picks_table\\" class=\\""+background_class+"\\" style=\\"border: 3px solid black; text-align:left; padding: 10px; + min_width_style +\\">");');
+   d.writeln('   wd.writeln("<table id=\\"picks_table\\" class=\\""+background_class+"\\" style=\\"border: 3px solid black; text-align: left; padding: 10px; "+ min_width_style +"\\">");');
    d.writeln('   wd.writeln("");');
    d.writeln('   wd.writeln("<tr>");');
    d.writeln('   wd.writeln("");');
