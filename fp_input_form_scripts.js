@@ -2082,7 +2082,7 @@ function build_regular_season_form()
    d.writeln('{');
    d.writeln('   document.fp_inputs.reset();');
    d.writeln('');
-   d.writeln('   if document.fp_inputs.pick1.focus();');
+   d.writeln('   document.fp_inputs.pick1.focus();');
    d.writeln('');
    d.writeln('   // Restore the previously selected player name because the reset caused the player name on the input form to be cleared.');
    d.writeln('');
