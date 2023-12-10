@@ -3040,6 +3040,10 @@ function build_post_season_form()
    d.writeln('   var validate_name_error = "Select your name before accepting your picks.";');
    d.writeln('');
    d.writeln('');
+   d.writeln('   // Scroll to top of Input Form.');
+   d.writeln('');
+   d.writeln('   document.getElementById("input_form_week").scrollIntoView(true);');
+   d.writeln('');
    d.writeln('   // Remember the state of the picks_from_odds_button_pressed flag.');
    d.writeln('');
    d.writeln('   if (picks_from_odds_button_pressed == true) picks_from_odds = true;');
@@ -3283,6 +3287,10 @@ function build_post_season_form()
    d.writeln('   wd.writeln("");');
    d.writeln('   wd.writeln("function respond_to_button(action)");');
    d.writeln('   wd.writeln("{");');
+   d.writeln('   wd.writeln("   // Scroll to top of Input Form.");');
+   d.writeln('   wd.writeln("");');
+   d.writeln('   wd.writeln("   top.fp_main.document.getElementById(\\"input_form_week\\").scrollIntoView(true);");');
+   d.writeln('   wd.writeln("");');
    d.writeln('   wd.writeln("   if (action == \\"submit\\")");');
    d.writeln('   wd.writeln("   {");');
    d.writeln('   wd.writeln("      top.fp_main.e_mail_picks(top.fp_main.document);");');
@@ -4476,8 +4484,6 @@ function build_post_season_form()
    d.writeln('{');
    d.writeln('   document.fp_inputs.reset();');
    d.writeln('');
-   d.writeln('   if (top.mobile == false) document.fp_inputs.pick1.focus();');
-   d.writeln('');
    d.writeln('   // Restore the previously selected player name because the reset caused the player name on the input form to be cleared.');
    d.writeln('');
    d.writeln('   document.fp_inputs.player_name_menu.selectedIndex = top.player_index;');
@@ -4493,6 +4499,24 @@ function build_post_season_form()
    d.writeln('   // Get the NFL Odds from the internet.');
    d.writeln('');
    d.writeln('   get_nfl_odds(document,0,true);');
+   d.writeln('');
+   d.writeln('   // Set Input Form focus.');
+   d.writeln('');
+   d.writeln('   if (top.mobile == false)');
+   d.writeln('   {');
+   d.writeln('      if (top.player_index == 0)');
+   d.writeln('      {');
+   d.writeln('         document.fp_inputs.player_name_menu.focus({focusVisible: true, preventScroll: true});');
+   d.writeln('      }');
+   d.writeln('      else');
+   d.writeln('      {');
+   d.writeln('         document.fp_inputs.pick1.focus({focusVisible: true, preventScroll: true});');
+   d.writeln('      }');
+   d.writeln('   }');
+   d.writeln('');
+   d.writeln('   // Scroll to top of Input Form.');
+   d.writeln('');
+   d.writeln('   document.getElementById("input_form_week").scrollIntoView(true);');
    d.writeln('');
    d.writeln('   return true;');
    d.writeln('}');
@@ -4831,7 +4855,7 @@ function build_post_season_form()
    d.writeln('');
    d.writeln('   // Set Input Form focus.');
    d.writeln('');
-   d.writeln('   if (top.mobile == false) document.fp_inputs.player_name_menu.focus();');
+   d.writeln('   if (top.mobile == false) document.fp_inputs.player_name_menu.focus({focusVisible: true, preventScroll: true});');
    d.writeln('');
    d.writeln('   // Scroll to top of Input Form.');
    d.writeln('');
@@ -4913,7 +4937,7 @@ function validate_password()
    {
       alert("Invalid password.");
       password.value = "";
-      password.focus();
+      password.focus({focusVisible: true, preventScroll: true});
       return false;
    }
 }
