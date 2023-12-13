@@ -2592,7 +2592,7 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('         // Set Input Form focus.');
    d.writeln('');
-   d.writeln('         if (top.mobile == false) mn_points.focus({focusVisible: true, preventScroll: true});');
+   d.writeln('         mn_points.focus({focusVisible: true, preventScroll: true});');
    d.writeln('');
    d.writeln('         // Make sure the frame showing the Input Form is visible before returning.');
    d.writeln('');
