@@ -52,7 +52,7 @@ if (top.mobile == false)
    <form name="password_input" onSubmit="return validate_password()" action="javascript:build_input_form()">
 
    <tr>
-      <td class="light_color_cell" style="height: 90px"><input type="password" class="border_radius" name=password size=10 maxlength=10 style="font-size:14pt; height:25px; width:120px; border: 1px solid black"></td>
+      <td class="light_color_cell" style="height: 90px"><input id="pw" type="password" class="border_radius" name=password size=10 maxlength=10 style="font-size:14pt; height:25px; width:120px; border: 1px solid black"></td>
    </tr>
 
    <tr>
@@ -63,11 +63,7 @@ if (top.mobile == false)
 
 </table>
 
-<script language="JavaScript">
-   document.password_input.password.readOnly = true;
-   document.password_input.password.focus();
-   document.password_input.password.readOnly = false;
-</script>
+<script language="JavaScript">top.focus_element(this.document, "pw");</script>
 
 </body>
 

@@ -2592,7 +2592,7 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('         // Set Input Form focus.');
    d.writeln('');
-   d.writeln('         mn_points.focus({focusVisible: true, preventScroll: true});');
+   d.writeln('         top.focus_element(this.document, "mn_points");');
    d.writeln('');
    d.writeln('         // Make sure the frame showing the Input Form is visible before returning.');
    d.writeln('');
@@ -2724,7 +2724,7 @@ function build_regular_season_form()
 
    d.writeln('<tr>');
    d.writeln('<td class="bt2_border" style="text-align: right; padding-right: 5px" colspan="4"><font style="font-size: 12pt">Game '+number_of_rs_games+' Total Points:</font></td>');
-   d.writeln('<td class="bt2_border" style="text-align: left;  padding-left:  5px" colspan="1"><input type=text id="mn_points" class="default_text border_radius" readonly="readonly" onclick="this.readOnly=false;this.blur" style="width: 30px" name="mn_points" size="2" maxlength="2"></td>');
+   d.writeln('<td class="bt2_border" style="text-align: left;  padding-left:  5px" colspan="1"><input type=text id="mn_points" class="default_text border_radius" style="width: 30px" name="mn_points" size="2" maxlength="2"></td>');
    d.writeln('<td class="bt2_border" colspan="1"></td>');
    d.writeln('</tr>');
    d.writeln('');

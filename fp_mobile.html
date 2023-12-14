@@ -35,7 +35,7 @@
 
       // Set these variables each week.
 
-      var games_over         = f;
+      var games_over         = t;
       var current_input_week = 15;
 
       // Set the post season teams each week during the playoffs.
@@ -973,6 +973,13 @@
          if (frame_name == "fp_picks") fp_picks.document.getElementById("picks_table").scrollIntoView();
 
          return true;
+      }
+
+      function focus_element(document, element_id)
+      {
+         document.getElementById(element_id).readOnly = true;
+         document.getElementById(element_id).focus({focusVisible: true, preventScroll: true});
+         document.getElementById(element_id).readOnly = false;
       }
 
       function reset_mobile_viewport_width()
