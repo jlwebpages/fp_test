@@ -2590,13 +2590,13 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('         document.getElementById("mn_points").scrollIntoView(true);');
    d.writeln('');
+   d.writeln('         // Set Input Form focus.');
+   d.writeln('');
+   d.writeln('         top.focus_element(window.document, "mn_points");');
+   d.writeln('');
    d.writeln('         // Make sure the frame showing the Input Form is visible before returning.');
    d.writeln('');
    d.writeln('         top.display_frame("fp_main",0);');
-   d.writeln('');
-   d.writeln('         // Set Input Form focus.');
-   d.writeln('');
-   d.writeln('         top.focus_element(this.document, "mn_points");');
    d.writeln('      }');
    d.writeln('');
    d.writeln('      return false;');
