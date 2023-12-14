@@ -538,9 +538,9 @@ function build_regular_season_form()
    d.writeln('   wd.writeln("      {");');
    d.writeln('   wd.writeln("         top.display_frame(\\"fp_main\\",0);");');
    d.writeln('   wd.writeln("");');
-   d.writeln('   wd.writeln("         if ( (top.mobile == false) && (top.fp_main.input_form_focus_element != \\"\\") )");');
+   d.writeln('   wd.writeln("         if (top.fp_main.input_form_focus_element != \\"\\")");');
    d.writeln('   wd.writeln("         {");');
-   d.writeln('   wd.writeln("            eval (\\"top.fp_main.document.fp_inputs."+top.fp_main.input_form_focus_element+".focus({focusVisible: true, preventScroll: true});\\");");');
+   d.writeln('   wd.writeln("            eval (top.focus_element(top.fp_main.document.fp_inputs."+top.fp_main.input_form_focus_element+"));");');
    d.writeln('   wd.writeln("");');
    d.writeln('   wd.writeln("            top.fp_main.input_form_focus_element = \\"\\";");');
    d.writeln('   wd.writeln("         }");');
@@ -2592,7 +2592,8 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('         // Set Input Form focus.');
    d.writeln('');
-   d.writeln('         top.focus_element(window.document, "mn_points");');
+   d.writeln('         //a = document.getElementById("mn_points"); top.focus_element(a);');
+   d.writeln('         top.focus_element(top.fp_main.document.fp_inputs.mn_points);');
    d.writeln('');
    d.writeln('         // Make sure the frame showing the Input Form is visible before returning.');
    d.writeln('');

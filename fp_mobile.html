@@ -975,11 +975,11 @@
          return true;
       }
 
-      function focus_element(document, element_id)
+      function focus_element(element)
       {
-         document.getElementById(element_id).readOnly = true;
-         document.getElementById(element_id).focus({focusVisible: true, preventScroll: true});
-         document.getElementById(element_id).readOnly = false;
+         element.readOnly = true;
+         element.focus({focusVisible: true, preventScroll: true});
+         element.readOnly = false;
       }
 
       function reset_mobile_viewport_width()
