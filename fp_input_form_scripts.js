@@ -2105,17 +2105,16 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('   // Set Input Form focus.');
    d.writeln('');
-   d.writeln('   if (top.mobile == false)');
-   d.writeln('   {');
+
    d.writeln('      if (top.player_index == 0)');
    d.writeln('      {');
-   d.writeln('         document.fp_inputs.player_name_menu.focus({focusVisible: true, preventScroll: true});');
+   d.writeln('         top.focus_element(document.fp_inputs.player_name_menu);');
    d.writeln('      }');
    d.writeln('      else');
    d.writeln('      {');
-   d.writeln('         document.fp_inputs.pick1.focus({focusVisible: true, preventScroll: true});');
+   d.writeln('         top.focus_element(document.fp_inputs.pick1);');
    d.writeln('      }');
-   d.writeln('   }');
+
    d.writeln('');
    d.writeln('   // Scroll to top of Input Form.');
    d.writeln('');
