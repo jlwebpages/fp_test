@@ -30,8 +30,8 @@
 
       // Set these variables each week.
 
-      var games_over         = t;
-      var current_input_week = 15;
+      var games_over         = tf
+      var current_input_week = 16;
 
       // Set the post season teams each week during the playoffs.
 
@@ -854,6 +854,13 @@
          {
             fp_frameset.rows = "60px,0,0,*";
          }
+      }
+
+      function focus_element(element)
+      {
+         element.readOnly = true;
+         element.focus({focusVisible: true, preventScroll: true});
+         element.readOnly = false;
       }
 
    </script>
