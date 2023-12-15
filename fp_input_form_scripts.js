@@ -538,11 +538,11 @@ function build_regular_season_form()
    d.writeln('   wd.writeln("      {");');
    d.writeln('   wd.writeln("         top.display_frame(\\"fp_main\\",0);");');
    d.writeln('   wd.writeln("");');
-   d.writeln('   wd.writeln("         if (top.fp_main.input_form_focus_element != \\"\\")");');
+   d.writeln('   wd.writeln("         if (top.fp_main.document.input_form_focus_element != \\"\\")");');
    d.writeln('   wd.writeln("         {");');
-   d.writeln('   wd.writeln("            eval (top.focus_element(top.fp_main.document.fp_inputs."+top.input_form_focus_element+"));");');
+   d.writeln('   wd.writeln("            eval (top.focus_element(top.fp_main.document.fp_inputs."+top.fp_main.document.input_form_focus_element+"));");');
    d.writeln('   wd.writeln("");');
-   d.writeln('   wd.writeln("            top.fp_main.input_form_focus_element = \\"\\";");');
+   d.writeln('   wd.writeln("            top.fp_main.document.input_form_focus_element = \\"\\";");');
    d.writeln('   wd.writeln("         }");');
    d.writeln('   wd.writeln("      }");');
    d.writeln('   wd.writeln("   }");');
@@ -2186,7 +2186,7 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('   // Reset Input Form focus element.');
    d.writeln('');
-   d.writeln('   top.fp_main.input_form_focus_element = "";');
+   d.writeln('   top.fp_main.document.input_form_focus_element = "";');
    d.writeln('');
    d.writeln('   if (mode == "initial_pass")');
    d.writeln('   {');
@@ -2235,7 +2235,7 @@ function build_regular_season_form()
    d.writeln('            {');
    d.writeln('               if (picks[j] == "")');
    d.writeln('               {');
-   d.writeln('                  top.fp_main.input_form_focus_element = "pick" + (j+1);');
+   d.writeln('                  top.fp_main.document.input_form_focus_element = "pick" + (j+1);');
    d.writeln('');
    d.writeln('                  error_message += "\\n<center>";');
    d.writeln('                  error_message += "\\n<table>";');
@@ -2262,7 +2262,7 @@ function build_regular_season_form()
    d.writeln('         {');
    d.writeln('            if (picks[j] == "")');
    d.writeln('            {');
-   d.writeln('               top.fp_main.input_form_focus_element = "pick" + (j+1);');
+   d.writeln('               top.fp_main.document.input_form_focus_element = "pick" + (j+1);');
    d.writeln('');
    d.writeln('               error_message += "\\n<center>";');
    d.writeln('               error_message += "\\n<table>";');
@@ -2297,7 +2297,7 @@ function build_regular_season_form()
    d.writeln('               losing_team  = home_teams[i];');
    d.writeln('            }');
    d.writeln('');
-   d.writeln('            top.fp_main.input_form_focus_element = "weight" + (i+1);');
+   d.writeln('            top.fp_main.document.input_form_focus_element = "weight" + (i+1);');
    d.writeln('');
    d.writeln('            error_message += "\\n<center>";');
    d.writeln('            error_message += "\\n<table>";');
@@ -2583,17 +2583,13 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('         alert(error_message);');
    d.writeln('');
-   d.writeln('         // Scroll to Total Points input field.');
-   d.writeln('');
-   d.writeln('         document.getElementById("mn_points").scrollIntoView(true);');
-   d.writeln('');
-   d.writeln('         // Set Input Form focus.');
-   d.writeln('');
-   d.writeln('         if (top.mobile == false) mn_points.focus({focusVisible: true, preventScroll: true});');
-   d.writeln('');
    d.writeln('         // Make sure the frame showing the Input Form is visible before returning.');
    d.writeln('');
    d.writeln('         top.display_frame("fp_main",0);');
+   d.writeln('');
+   d.writeln('         // Set Input Form focus.');
+   d.writeln('');
+   d.writeln('         if (top.mobile == false) mn_points.focus({focusVisible: true, preventScroll: true});');//JLJL
    d.writeln('      }');
    d.writeln('');
    d.writeln('      return false;');
