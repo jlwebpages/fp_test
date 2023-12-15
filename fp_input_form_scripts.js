@@ -2589,7 +2589,7 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('         // Set Input Form focus.');
    d.writeln('');
-   d.writeln('         if (top.mobile == false) mn_points.focus({focusVisible: true, preventScroll: true});');//JLJL
+   d.writeln('         top.focus_element(top.fp_main.document.fp_inputs.mn_points);');//JLJL
    d.writeln('      }');
    d.writeln('');
    d.writeln('      return false;');
@@ -4955,7 +4955,7 @@ function validate_password()
    }
    else
    {
-      alert("Invalid passwordd.");
+      alert("Invalid password.");
       password.value = "";
       top.focus_element(password);
       return false;
