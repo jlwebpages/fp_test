@@ -4945,7 +4945,7 @@ function input_form_global_variables()
 function validate_password()
 {
    var  actual_password = String.fromCharCode(102,112) + window.top.fp_year;
-   var         password = document.password_input.password;
+   var         password = top.fp_main.document.password_input.password;
    var   valid_password = false;
 
 
@@ -4955,9 +4955,9 @@ function validate_password()
    }
    else
    {
-      alert("Invalid password.");
+      alert("Invalid passwordd.");
       password.value = "";
-      password.focus({focusVisible: true, preventScroll: true});
+      top.focus_element(password);
       return false;
    }
 }
