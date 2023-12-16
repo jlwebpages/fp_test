@@ -4658,7 +4658,7 @@ function build_post_season_form()
    d.writeln('      {');
    d.writeln('         alert("Pick a winner (V or H) for " + visiting_teams[i] + " at " + home_teams[i] + " (Game " + (i+1) + ").");');
    d.writeln('');
-   d.writeln('         if (top.mobile == false) picks_select_array[i].focus({focusVisible: true, preventScroll: true});');
+   d.writeln('         top.focus_element(picks_select_array[i]);');
    d.writeln('');
    d.writeln('         return false;');
    d.writeln('      }');
@@ -4686,7 +4686,7 @@ function build_post_season_form()
    d.writeln('      {');
    d.writeln('         alert(error_message);');
    d.writeln('         spread_elements[i].value = "";');
-   d.writeln('         if (top.mobile == false) spread_elements[i].focus({focusVisible: true, preventScroll: true});');
+   d.writeln('         top.focus_element(spread_elements[i]);');
    d.writeln('         return false;');
    d.writeln('      }');
    d.writeln('      else');
