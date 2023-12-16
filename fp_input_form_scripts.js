@@ -4791,7 +4791,7 @@ function build_post_season_form()
          d.writeln('<td><font style="font-size: 13pt">by</font></td>');
          d.writeln('<td><font style="font-size: 13pt">');
       }
-      d.writeln('    <input type=text class="default_text border_radius" style="font-size: 16px; width: 40px" name="spread'+i+'" size="2" maxlength="2">');
+      d.writeln('    <input type=text class="default_text border_radius" style="font-size: 12pt; width: 40px" name="spread'+i+'" size="2" maxlength="2">');
       d.writeln('</font></td>');
       d.writeln('</tr>');
       d.writeln('');
@@ -4799,7 +4799,7 @@ function build_post_season_form()
 
    d.writeln('<tr>');
    d.writeln('<td class="no_border" style="text-align: right; padding-right: 5px" colspan="4"><font style="font-size: 13pt">Game '+number_of_ps_games+' Total Points:</font></td>');
-   d.writeln('<td class="no_border" style="text-align: left;  padding-left:  5px" colspan="1"><input type=text id="total_points" class="default_text border_radius" style="font-size: 16px; width: 40px" name="points" size="2" maxlength="2"></td>');
+   d.writeln('<td class="no_border" style="text-align: left;  padding-left:  5px" colspan="1"><input type=text id="total_points" class="default_text border_radius" style="font-size: 12pt; width: 40px" name="points" size="2" maxlength="2"></td>');
    d.writeln('<td class="no_border" colspan="2"></td>');
    d.writeln('</tr>');
    d.writeln('');    
