@@ -2717,7 +2717,7 @@ function build_regular_season_form()
 
    d.writeln('<tr>');
    d.writeln('<td class="bt2_border" style="text-align: right; padding-right: 5px" colspan="4"><font style="font-size: 12pt">Game '+number_of_rs_games+' Total Points:</font></td>');
-   d.writeln('<td class="bt2_border" style="text-align: left;  padding-left:  5px" colspan="1"><input type=text touch-action="none" id="mn_points" class="default_text border_radius" style="width: 30px" name="mn_points" size="2" maxlength="2"></td>');
+   d.writeln('<td class="bt2_border" style="text-align: left;  padding-left:  5px" colspan="1"><input type=text id="mn_points" class="default_text border_radius" style="width: 30px" name="mn_points" size="2" maxlength="2"></td>');
    d.writeln('<td class="bt2_border" colspan="1"></td>');
    d.writeln('</tr>');
    d.writeln('');
@@ -4791,7 +4791,7 @@ function build_post_season_form()
          d.writeln('<td><font style="font-size: 13pt">by</font></td>');
          d.writeln('<td><font style="font-size: 13pt">');
       }
-      d.writeln('    <input type=text touch-action="none" class="default_text border_radius" style="font-size: 12pt" name="spread'+i+'" size="2" maxlength="2">');
+      d.writeln('    <input type=text class="default_text border_radius" style="font-size: 12pt" name="spread'+i+'" size="2" maxlength="2">');
       d.writeln('</font></td>');
       d.writeln('</tr>');
       d.writeln('');
@@ -4799,7 +4799,7 @@ function build_post_season_form()
 
    d.writeln('<tr>');
    d.writeln('<td class="no_border" style="text-align: right; padding-right: 5px" colspan="4"><font style="font-size: 13pt">Game '+number_of_ps_games+' Total Points:</font></td>');
-   d.writeln('<td class="no_border" style="text-align: left;  padding-left:  5px" colspan="1"><input type=text touch-action="none" id="total_points" class="default_text border_radius" style="font-size: 12pt; width: 35px" name="points" size="2" maxlength="2"></td>');
+   d.writeln('<td class="no_border" style="text-align: left;  padding-left:  5px" colspan="1"><input type=text id="total_points" class="default_text border_radius" style="font-size: 12pt; width: 35px" name="points" size="2" maxlength="2"></td>');
    d.writeln('<td class="no_border" colspan="2"></td>');
    d.writeln('</tr>');
    d.writeln('');    

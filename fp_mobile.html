@@ -977,13 +977,6 @@
 
       function focus_element(element)
       {
-         // If we're running on an iPad then return.
-
-         if ( (navigator.platform.toLowerCase().indexOf("ipad") != -1) || ((navigator.platform.toLowerCase().indexOf("macintel") != -1) && (navigator.maxTouchPoints > 1)) )
-         {
-            return;
-         }
-
          // If we're running in the Safari browser on an iOS mobile device then return.
 
          if ( (navigator.userAgent.match(/(iPod|iPhone|iPad)/) !== null) &&
@@ -993,22 +986,19 @@
             return;
          }
 
-         // If we're running in the Chrome browser on a mobile device and the element is "fp_inputs.mn_points" then return.
+         // If we're running on a newer iPad then return.
 
-         if ( (navigator.userAgent.toLowerCase().indexOf("mobile") != -1) &&
-              (navigator.userAgent.includes("Chrome"))                    &&
-              (fp_main.document.fp_inputs != undefined)                   &&
-              (element == fp_main.document.fp_inputs.mn_points)              )
+         if ( (navigator.platform.toLowerCase().indexOf("ipad") != -1) || ((navigator.platform.toLowerCase().indexOf("macintel") != -1) && (navigator.maxTouchPoints > 1)) )
          {
             return;
          }
 
-         // If we're running in the Chrome browser on a mobile device and the element is "fp_inputs.points" then return.
+         // If we're running in the Chrome browser on a mobile device and the element type is "text" then return.
 
          if ( (navigator.userAgent.toLowerCase().indexOf("mobile") != -1) &&
               (navigator.userAgent.includes("Chrome"))                    &&
               (fp_main.document.fp_inputs != undefined)                   &&
-              (element == fp_main.document.fp_inputs.points) )
+              (element.type == "text")                                       )
          {
             return;
          }
