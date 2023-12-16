@@ -135,5 +135,3 @@ a.white_link       {color: white              }
 a.white_link       {display: block            }
 a.white_link:link  {text-decoration: none     }
 a.white_link:hover {text-decoration: underline}
-
-input {touch-action: none}
