@@ -977,6 +977,8 @@
 
       function focus_element(element)
       {
+         if (navigator.userAgent.includes("Chrome")) alert("Chrome");
+
          // If we're running in the Safari browser on an iOS mobile device then return.
 
          if (navigator.userAgent.match(/(iPod|iPhone|iPad)/) !== null && navigator.userAgent.match(/AppleWebKit/) !== null && navigator.userAgent.search('CriOS') < 0)
