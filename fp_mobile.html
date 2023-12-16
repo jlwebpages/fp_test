@@ -977,9 +977,18 @@
 
       function focus_element(element)
       {
+         // If we're running on an iPad then return.
+
+         if ( (navigator.platform.toLowerCase().indexOf("ipad") != -1) || ((navigator.platform.toLowerCase().indexOf("macintel") != -1) && (navigator.maxTouchPoints > 1)) )
+         {
+            return;
+         }
+
          // If we're running in the Safari browser on an iOS mobile device then return.
 
-         if (navigator.userAgent.match(/(iPod|iPhone|iPad)/) !== null && navigator.userAgent.match(/AppleWebKit/) !== null && navigator.userAgent.search('CriOS') < 0)
+         if ( (navigator.userAgent.match(/(iPod|iPhone|iPad)/) !== null) &&
+              (navigator.userAgent.match(/AppleWebKit/) !== null)        &&
+              (navigator.userAgent.search('CriOS') < 0)                     )
          {
             return;
          }
