@@ -136,4 +136,5 @@ a.white_link       {display: block            }
 a.white_link:link  {text-decoration: none     }
 a.white_link:hover {text-decoration: underline}
 
+body  {touch-action: none}
 input {touch-action: none}
