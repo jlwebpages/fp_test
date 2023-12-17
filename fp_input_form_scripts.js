@@ -1852,7 +1852,7 @@ function build_regular_season_form()
    d.writeln('   // Remove all backslash escape characters from the nfl_odds string.');
    d.writeln('');
    d.writeln('   nfl_odds = nfl_odds.replaceAll(String.fromCharCode(92),"");');
-   d.writeln('');
+   d.writeln('alert("a");');
    d.writeln('   // Parse the nfl_odds string.');
    d.writeln('');
    d.writeln('   index_start = nfl_odds.indexOf("{\\"competitionOdds\\":[");');
@@ -1864,7 +1864,7 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('      return false;');
    d.writeln('   }');
-   d.writeln('');
+   d.writeln('alert("b");');
    d.writeln('   nfl_odds = nfl_odds.substring(index_start,index_end+1);');
    d.writeln('   nfl_odds = nfl_odds + "}";');
    d.writeln('');
@@ -1880,7 +1880,7 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('      return false;');
    d.writeln('   }');
-   d.writeln('');
+   d.writeln('alert("c");');
    d.writeln('   // Get the NFL Odds game list.');
    d.writeln('');
    d.writeln('   game_list = nfl_odds.competitionOdds;');
