@@ -977,9 +977,16 @@
 
       function focus_element(element)
       {
-         // If we're running on an iPhone or iPad then return.
-alert(navigator.platform);
-         if ( (navigator.platform.toLowerCase().indexOf("iphone") != -1) || (navigator.platform.toLowerCase().indexOf("ipad") != -1) )
+         // If we're running on an iPhone then return.
+
+         if (navigator.platform.toLowerCase().indexOf("iphone") != -1)
+         {
+            return;
+         }
+
+         // If we're running on an iPad then return.
+
+         if ( (navigator.platform.toLowerCase().indexOf("ipad") != -1) || ((navigator.platform.toLowerCase().indexOf("macintel") != -1) && (navigator.maxTouchPoints > 1)) )
          {
             return;
          }
