@@ -2293,14 +2293,17 @@ function build_post_season_form()
 
    if (mode == "prelim")
    {
-      for (var gi = 1; gi <= number_of_games_to_display; gi++)
+      if (window.top.gv.mobile != true)
       {
-         if ( (post_season_winners[gi-1] != "V") && (post_season_winners[gi-1] != "H") )
+         for (var gi = 1; gi <= number_of_games_to_display; gi++)
          {
-            d.writeln('<script>top.focus_element(document.fp_scores.visitor'+gi+'_score);</'+'script>');
-            break;
+            if ( (post_season_winners[gi-1] != "V") && (post_season_winners[gi-1] != "H") )
+            {
+               d.writeln('<script>document.fp_scores.visitor'+gi+'_score.focus();</'+'script>');
+               break;
+            }
+            d.writeln('<script>document.fp_scores.view_button.focus();</'+'script>');
          }
-         d.writeln('<script>top.focus_element(document.fp_scores.view_button);</'+'script>');
       }
 
       if (window.top.gv.get_scores_timer != null)
@@ -2315,7 +2318,7 @@ function build_post_season_form()
    }
    else
    {
-      alert("JL");if (window.top.gv.mobile != true) d.writeln('<script>document.fp_scores.selected_week_menu.focus();</'+'script>');
+      if (window.top.gv.mobile != true) d.writeln('<script>document.fp_scores.view_button.focus();</'+'script>');
    }
    d.writeln('');
 
@@ -4499,7 +4502,7 @@ function build_regular_season_form()
    }
    else
    {
-      d.writeln('<script>top.focus_element(document.fp_results.selected_week_menu);</'+'script>');
+      if (window.top.gv.mobile != true) d.writeln('<script>document.fp_results.view_button.focus();</'+'script>');
    }
    d.writeln('');
 
