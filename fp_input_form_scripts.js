@@ -1850,8 +1850,8 @@ function build_regular_season_form()
    d.writeln('   if (build_player_name(-1).indexOf("JL") != -1) suppress_alerts = false;');
    d.writeln('');
    d.writeln('   // Remove all backslash escape characters from the nfl_odds string.');
-   d.writeln('alert("before a");');
-   d.writeln('   //JLnfl_odds = nfl_odds.replaceAll(String.fromCharCode(92),"");');
+   d.writeln('alert("before");');
+   d.writeln('   nfl_odds = nfl_odds.replaceAll("\\\\","");');
    d.writeln('alert("a");');
    d.writeln('   // Parse the nfl_odds string.');
    d.writeln('');
