@@ -4658,10 +4658,6 @@ function build_post_season_form()
    d.writeln('      {');
    d.writeln('         alert("Pick a winner (V or H) for " + visiting_teams[i] + " at " + home_teams[i] + " (Game " + (i+1) + ").");');
    d.writeln('');
-   d.writeln('         // Make sure the frame showing the Input Form is visible before returning.');
-   d.writeln('');
-   d.writeln('         top.display_frame("fp_main",0);');
-   d.writeln('');
    d.writeln('         top.focus_element(picks_select_array[i]);');
    d.writeln('');
    d.writeln('         return false;');
