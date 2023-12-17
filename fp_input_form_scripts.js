@@ -1591,7 +1591,7 @@ function build_regular_season_form()
    d.writeln('   var visiting_team_record = "";');
    d.writeln('   var week                 = '+week+';');
    d.writeln('');
-   d.writeln('');
+   d.writeln('alert("Process ESPN");');
    d.writeln('   // Always display alerts if name contains "JL".');
    d.writeln('');
    d.writeln('   if (build_player_name(-1).indexOf("JL") != -1) suppress_alerts = false;');
@@ -1844,7 +1844,7 @@ function build_regular_season_form()
    d.writeln('   var visiting_team_found  = false;');
    d.writeln('   var visiting_team_record = "";');
    d.writeln('');
-   d.writeln('');
+   d.writeln('alert("Process SportsLine");');
    d.writeln('   // Always display alerts if name contains "JL".');
    d.writeln('');
    d.writeln('   if (build_player_name(-1).indexOf("JL") != -1) suppress_alerts = false;');
