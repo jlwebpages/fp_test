@@ -1851,7 +1851,7 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('   // Remove all backslash escape characters from the nfl_odds string.');
    d.writeln('alert("before a");');
-   d.writeln('   nfl_odds = nfl_odds.replaceAll(String.fromCharCode(92),"");');
+   d.writeln('   //JLnfl_odds = nfl_odds.replaceAll(String.fromCharCode(92),"");');
    d.writeln('alert("a");');
    d.writeln('   // Parse the nfl_odds string.');
    d.writeln('');
