@@ -4656,15 +4656,9 @@ function build_post_season_form()
    d.writeln('   {');
    d.writeln('      if (picks[i] == "")');
    d.writeln('      {');
-   d.writeln('         //alert("Pick a winner (V or H) for " + visiting_teams[i] + " at " + home_teams[i] + " (Game " + (i+1) + ").");');
-
-   d.writeln('//alert("top.focus_element(document.fp_inputs.pick"+(i+1)+")");');//jljl
-
-
-   d.writeln('          eval (       "   top.focus_element(document.fp_inputs.pick"+(i+1)+")     "   );');
-
-
-   d.writeln('         //top.focus_element(document.fp_inputs.picks_select_array[i]);');
+   d.writeln('         alert("Pick a winner (V or H) for " + visiting_teams[i] + " at " + home_teams[i] + " (Game " + (i+1) + ").");');
+   d.writeln('a=1;');
+   d.writeln('         top.focus_element(picks_select_array[i]);');
    d.writeln('');
    d.writeln('         return false;');
    d.writeln('      }');
