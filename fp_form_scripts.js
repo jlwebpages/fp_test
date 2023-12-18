@@ -1,7 +1,15 @@
 
 function adjust_mobile_viewport_height(document)
 {
-   if ( (top.gv.mobile == true) && (navigator.platform != "iPad") )
+   var iPad = false;
+
+
+   if ( (navigator.platform.toLowerCase().indexOf("ipad") != -1) || ((navigator.platform.toLowerCase().indexOf("macintel") != -1) && (navigator.maxTouchPoints > 1)) )
+   {
+      iPad = true;
+   }
+
+   if ( (top.gv.mobile == true) && (iPad == false) )
    {
       if ( (window.screen.height > window.screen.width) && (top.document.getElementById("viewport") != null) )
       {
@@ -1489,12 +1497,11 @@ function build_post_season_form()
    d.writeln('');
    d.writeln('<center>');
    d.writeln('');
-   if ( (top.gv.mobile == false) || (navigator.platform == "iPad") )
+   if ( (top.gv.mobile == false) || (navigator.platform.toLowerCase().indexOf("ipad") != -1) || ((navigator.platform.toLowerCase().indexOf("macintel") != -1) && (navigator.maxTouchPoints > 1)) )
    {
       d.writeln('<div style="margin: 10px 0px 10px 0px"><font style="font-family: Calibri; font-size: 16pt; font-weight: bold">'+document_heading+'</font></div>');
       d.writeln('');
    }
-
    d.writeln('<form name="fp_scores">');
    d.writeln('');
 
@@ -3783,12 +3790,11 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('<center>');
    d.writeln('');
-   alert("JL: "+navigator.platform);if ( (top.gv.mobile == false) || (navigator.platform == "iPad") )
+   if ( (top.gv.mobile == false) || (navigator.platform.toLowerCase().indexOf("ipad") != -1) || ((navigator.platform.toLowerCase().indexOf("macintel") != -1) && (navigator.maxTouchPoints > 1)) )
    {
       d.writeln('<div style="margin: 10px 0px 10px 0px"><font style="font-family: Calibri; font-size: 16pt; font-weight: bold">'+document_heading+'</font></div>');
       d.writeln('');
    }
-
    d.writeln('<form name="fp_results">');
    d.writeln('');
 
@@ -5106,12 +5112,11 @@ function build_season_summary()
    d.writeln('');
    d.writeln('<center>');
    d.writeln('');
-   if ( (top.gv.mobile == false) || (navigator.platform == "iPad") )
+   if ( (top.gv.mobile == false) || (navigator.platform.toLowerCase().indexOf("ipad") != -1) || ((navigator.platform.toLowerCase().indexOf("macintel") != -1) && (navigator.maxTouchPoints > 1)) )
    {
       d.writeln('<div style="margin: 10px 0px 10px 0px"><font style="font-family: Calibri; font-size: 16pt; font-weight: bold">'+document_heading+'</font></div>');
       d.writeln('');
    }
-
    d.writeln('<form name="fp_results">');
    d.writeln('');
 
