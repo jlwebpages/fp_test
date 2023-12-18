@@ -3097,7 +3097,8 @@ function build_regular_season_form()
    d.writeln('   {');
    d.writeln('      alert("\\"Best Outcome\\" cannot be performed if winners have already been specified for every game.");');
    d.writeln('');
-   d.writeln('      if (window.top.gv.mobile == false) document.fp_results.calculate_scores_button.focus();');
+   d.writeln('      //window.top.gv.focus_element(document.fp_results.player_name_menu);');
+   d.writeln('      window.top.gv.focus_element(document.fp_results.best_outcome);');
    d.writeln('');
    d.writeln('      abort = true;');
    d.writeln('   }');
@@ -4507,7 +4508,7 @@ function build_regular_season_form()
    }
    else
    {
-      if (window.top.gv.mobile == false) d.writeln('<script>document.fp_results.view_button.focus();</'+'script>');
+      d.writeln('<script>window.top.gv.focus_element(document.fp_results.selected_week_menu);</'+'script>');
    }
    d.writeln('');
 
