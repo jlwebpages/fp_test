@@ -3783,8 +3783,7 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('<center>');
    d.writeln('');
-
-   alert(top.gv.mobile); alert(navigator.platform);if ( (top.gv.mobile == false) || (navigator.platform == "iPad") )
+   if ( (top.gv.mobile == false) || (navigator.platform == "iPad") )
    {
       d.writeln('<div style="margin: 10px 0px 10px 0px"><font style="font-family: Calibri; font-size: 16pt; font-weight: bold">'+document_heading+'</font></div>');
       d.writeln('');
