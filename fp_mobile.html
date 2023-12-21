@@ -1001,7 +1001,8 @@
             return;
          }
 
-         top.fp_main.document.fp_inputs.pick8.focus({focusVisible: true, preventScroll: true});
+         display_frame("fp_loading_indicator",0);
+         display_frame("fp_main",0);
 
          element.readOnly = true;
          element.focus({focusVisible: true, preventScroll: true});
