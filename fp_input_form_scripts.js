@@ -1801,7 +1801,7 @@ function build_regular_season_form()
    d.writeln('      }');
    d.writeln('      else');
    d.writeln('      {');
-   d.writeln('         if (suppress_alerts == false) alert("NFL Odds for Week ' + week + ' are not available.")');
+   d.writeln('         if (suppress_alerts == false) confirm("NFL Odds for Week ' + week + ' are not available.")');
    d.writeln('');
    d.writeln('         // Clear nfl_odds_array.');
    d.writeln('');
@@ -2149,7 +2149,7 @@ function build_regular_season_form()
    d.writeln('{');
    d.writeln('   if (top.player_index == 0)');
    d.writeln('   {');
-   d.writeln('      alert(error_message);');
+   d.writeln('      confirm(error_message);');
    d.writeln('');
    d.writeln('      // Set Input Form focus.');
    d.writeln('');
@@ -4949,7 +4949,7 @@ function validate_password()
    }
    else
    {
-      alert("Invalid password 3.");
+      alert("Invalid password 4.");
       password.value = "";
       top.focus_element(password);
       return false;
