@@ -1001,6 +1001,8 @@
             return;
          }
 
+         element.blur();
+
          element.readOnly = true;
          element.focus({focusVisible: true, preventScroll: true});
          element.readOnly = false;
