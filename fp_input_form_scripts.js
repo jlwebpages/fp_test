@@ -2585,7 +2585,7 @@ function build_regular_season_form()
    d.writeln('');
    d.writeln('         error_message = "Enter your Total Points Prediction for \\"" + winning_team + " over " + losing_team + "\\" (Game '+number_of_rs_games+')."');
    d.writeln('');
-   d.writeln('         //alert(error_message);');
+   d.writeln('         alert(error_message);');
    d.writeln('');
    d.writeln('         // Make sure the frame showing the Input Form is visible before returning.');
    d.writeln('');
@@ -4948,7 +4948,7 @@ function validate_password()
    }
    else
    {
-      alert("Invalid password JL8.");
+      alert("Invalid password JL9.");
       password.value = "";
       top.focus_element(password);
       return false;
