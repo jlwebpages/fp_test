@@ -4949,7 +4949,7 @@ function validate_password()
    }
    else
    {
-      alert("Invalid password 1.");
+      alert("Invalid password 2.");
       password.value = "";
       top.focus_element(password);
       return false;
