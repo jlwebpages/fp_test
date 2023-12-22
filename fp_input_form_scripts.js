@@ -2721,7 +2721,7 @@ function build_regular_season_form()
 
    d.writeln('<tr>');
    d.writeln('<td class="bt2_border" style="text-align: right; padding-right: 5px" colspan="4"><font style="font-size: 12pt">Game '+number_of_rs_games+' Total Points:</font></td>');
-   d.writeln('<td class="bt2_border" style="text-align: left;  padding-left:  5px" colspan="1"><input type=email class="default_text border_radius" style="touch-action: none; width: 55px" name="mn_points"></td>');
+   d.writeln('<td class="bt2_border" style="text-align: left;  padding-left:  5px" colspan="1"><input type=password class="default_text border_radius" style="touch-action: none; width: 55px" name="mn_points"></td>');
    d.writeln('<td class="bt2_border" colspan="1"></td>');
    d.writeln('</tr>');
    d.writeln('');
@@ -4949,7 +4949,7 @@ function validate_password()
    }
    else
    {
-      alert("Invalid password JL6.");
+      alert("Invalid password JL7.");
       password.value = "";
       top.focus_element(password);
       return false;
