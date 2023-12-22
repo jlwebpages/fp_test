@@ -998,7 +998,9 @@
               (navigator.userAgent.toLowerCase().indexOf("samsung") == -1) &&
               (element.type == "text")                                        )
          {
-            element.blur();
+            element.readOnly = true;
+            element.focus({focusVisible: true, preventScroll: true});
+            element.readOnly = false;
          }
 
          element.readOnly = true;
