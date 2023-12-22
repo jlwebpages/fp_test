@@ -2675,11 +2675,7 @@ function build_regular_season_form()
    d.writeln('<td class="bb2_border">Weight</td>');
    d.writeln('</tr>');
    d.writeln('');
-   d.writeln('<tr>');
-   d.writeln('<td class="bt2_border" style="text-align: right; padding-right: 5px" colspan="6"><font style="font-size: 12pt">Game '+number_of_rs_games+' Total Points: </font><input type="text" class="default_text border_radius" style="width: 35px" name="mn_points"></td>');
-   //d.writeln('<td class="bt2_border" colspan="1"></td>');
-   d.writeln('</tr>');
-   d.writeln('');
+
    for (var i = 1; i <= number_of_rs_games; i++)
    {
       d.writeln('<tr align=center>');
@@ -2723,7 +2719,15 @@ function build_regular_season_form()
       d.writeln('');    
    }
 
-
+   d.writeln('<tr>');
+   d.writeln('<td class="bt2_border"></td>');
+   d.writeln('<td class="bt2_border"></td>');
+   d.writeln('<td class="bt2_border"></td>');
+   d.writeln('<td class="bt2_border"></td>');
+   d.writeln('<td class="bt2_border"></td>');
+   d.writeln('<td class="bt2_border" style="text-align: right; padding-right: 5px"><font style="font-size: 12pt">Game '+number_of_rs_games+' Total Points: </font><input type="text" class="default_text border_radius" style="width: 35px" name="mn_points"></td>');
+   d.writeln('</tr>');
+   d.writeln('');
 
    d.writeln('<tr class="header_two">');
    d.writeln('<td id="open_date" class="bt2_border" colspan="6"></td>');
@@ -4948,7 +4952,7 @@ function validate_password()
    }
    else
    {
-      alert("Invalid password JL10.");
+      alert("Invalid password JL11.");
       password.value = "";
       top.focus_element(password);
       return false;
