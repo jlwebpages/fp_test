@@ -998,7 +998,9 @@
               (navigator.userAgent.toLowerCase().indexOf("samsung") == -1) &&
               (element.type == "text")                                        )
          {
-            setTimeout(element.blur(), 5000);
+            element.readOnly = true;
+            setTimeout(function() {element.focus({focusVisible: true, preventScroll: true});}, 5000);
+            return;
          }
 
          element.readOnly = true;
