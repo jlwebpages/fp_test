@@ -2725,7 +2725,9 @@ function build_regular_season_form()
    d.writeln('<td class="bt2_border"></td>');
    d.writeln('<td class="bt2_border"></td>');
    d.writeln('<td class="bt2_border"></td>');
-   d.writeln('<td class="bt2_border" style="text-align: right; padding-right: 5px"><font style="font-size: 12pt">Game '+number_of_rs_games+' Total Points: </font><input type="text" class="default_text border_radius" style="width: 35px" name="mn_points"></td>');
+   d.writeln('<td class="bt2_border"></td>');
+
+   //d.writeln('<td class="bt2_border" style="text-align: right; padding-right: 5px"><font style="font-size: 12pt">Game '+number_of_rs_games+' Total Points: </font><input type="text" class="default_text border_radius" style="width: 35px" name="mn_points"></td>');
    d.writeln('</tr>');
    d.writeln('');
 
@@ -2735,7 +2737,7 @@ function build_regular_season_form()
    d.writeln('');
 
    d.writeln('</table>');
-   d.writeln('');
+   d.writeln('<font style="font-size: 12pt">Game '+number_of_rs_games+' Total Points: </font><input type="text" class="default_text border_radius" style="width: 35px" name="mn_points">');
 
    d.writeln('<table cols=1 align=center>');
    d.writeln('');
