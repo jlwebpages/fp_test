@@ -999,7 +999,7 @@
               (element.type == "text")                                        )
          {
             element.readOnly = true;
-            setTimeout(function() {element.focus({focusVisible: true, preventScroll: true});}, 5000);
+            element.focus({focusVisible: true, preventScroll: true});
             return;
          }
 
