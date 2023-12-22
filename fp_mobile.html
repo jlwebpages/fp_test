@@ -36,7 +36,7 @@
       // Set these variables each week.
 
       var games_over         = f;
-      var current_input_week = 16;
+      var current_input_week = 17;
 
       // Set the post season teams each week during the playoffs.
 
@@ -998,7 +998,7 @@
               (navigator.userAgent.toLowerCase().indexOf("samsung") == -1) &&
               (element.type == "text")                                        )
          {
-            return;
+            element.blur();
          }
 
          element.readOnly = true;
