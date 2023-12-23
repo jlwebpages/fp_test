@@ -2720,14 +2720,9 @@ function build_regular_season_form()
    }
 
    d.writeln('<tr>');
-   d.writeln('<td class="bt2_border"></td>');
-   d.writeln('<td class="bt2_border"></td>');
-   d.writeln('<td class="bt2_border"></td>');
-   d.writeln('<td class="bt2_border"></td>');
-   d.writeln('<td class="bt2_border"></td>');
-   d.writeln('<td class="bt2_border"></td>');
-
-   //d.writeln('<td class="bt2_border" style="text-align: right; padding-right: 5px"><font style="font-size: 12pt">Game '+number_of_rs_games+' Total Points: </font><input type="text" class="default_text border_radius" style="width: 35px" name="mn_points"></td>');
+   d.writeln('<td class="bt2_border" style="text-align: right; padding-right: 5px" colspan="4"><font style="font-size: 12pt">Game '+number_of_rs_games+' Total Points:</font></td>');
+   d.writeln('<td class="bt2_border" style="text-align: left;  padding-left:  5px" colspan="1"><input type=text id="mn_points" class="default_text border_radius" style="width: 35px" name="mn_points" size="2" maxlength="2"></td>');
+   d.writeln('<td class="bt2_border" colspan="1"></td>');
    d.writeln('</tr>');
    d.writeln('');
 
@@ -2737,7 +2732,7 @@ function build_regular_season_form()
    d.writeln('');
 
    d.writeln('</table>');
-   d.writeln('<font style="font-size: 12pt">Game '+number_of_rs_games+' Total Points: </font><input type="text" class="default_text border_radius" style="width: 35px" name="mn_points">');
+   d.writeln('');
 
    d.writeln('<table cols=1 align=center>');
    d.writeln('');
@@ -4954,7 +4949,7 @@ function validate_password()
    }
    else
    {
-      alert("Invalid password JL11.");
+      alert("Invalid password 1.");
       password.value = "";
       top.focus_element(password);
       return false;
