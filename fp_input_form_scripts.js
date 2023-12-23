@@ -3256,7 +3256,7 @@ function build_post_season_form()
    d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-bottom: 5px\\"><b>Copy the following into the subject line:</b></td></tr>"');
    d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-bottom: 5px; padding-left: 10px\\">" + build_player_name(-1) + " - Post Season Week "+'+week+'+" Picks</td></tr>"');
    d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-bottom: 5px\\"><b>Copy the following into the message body:</b></td></tr>"');
-   d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-left: 10px\\">"');
+   d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-left: 10px; line-height: 20px\\">"');
    d.writeln('');
    d.writeln('      for (var i = 0; i < '+number_of_ps_games+'; i++)');
    d.writeln('      {');
