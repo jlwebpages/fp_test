@@ -445,7 +445,7 @@ function build_regular_season_form()
    d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-bottom: 5px\\"><b>Copy the following into the subject line:</b></td></tr>"');
    d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-bottom: 5px; padding-left: 10px\\">" + build_player_name(-1) + " - Week "+'+week+'+" Picks</td></tr>"');
    d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-bottom: 5px\\"><b>Copy the following into the message body:</b></td></tr>"');
-   d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-left: 10px; line-height: 20px\\">"');
+   d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-left: 10px\\">"');
    d.writeln('');
    d.writeln('      for (var i = 0; i < '+number_of_rs_games+'; i++)');
    d.writeln('      {');
@@ -774,7 +774,7 @@ function build_regular_season_form()
    d.writeln('            {');
    d.writeln('               // Build the line in HTML Table Record (<tr>) format.');
    d.writeln('');
-   d.writeln('               formatted_picks += "\\n<tr" + upset_color + " style=\\"line-height: 1.1\\">";');
+   d.writeln('               formatted_picks += "\\n<tr" + upset_color + " style=\\"line-height: 100%\\">";');
    d.writeln('               formatted_picks += "<td nowrap style=\\"padding: 0px 30px 0px 0px\\">" + winning_team + "</td>";');
    d.writeln('               formatted_picks += "<td nowrap style=\\"padding: 0px\\">over</td>";');
    d.writeln('               formatted_picks += "<td nowrap style=\\"padding: 0px 30px 0px 30px\\">" + losing_team + "</td>";');
@@ -3202,7 +3202,7 @@ function build_post_season_form()
    d.writeln('');
    d.writeln('      // Build the line in HTML Table Record (<tr>) format.');
    d.writeln('');
-   d.writeln('      confirmation_message += "\\n<tr" + upset_color + " style=\\"line-height: 100%\\">";');
+   d.writeln('      confirmation_message += "\\n<tr" + upset_color + " style=\\"line-height: 1.2\\">";');
    d.writeln('      confirmation_message += "<td nowrap style=\\"padding: 0px 30px 0px 0px\\">" + winning_team + "</td>";');
    d.writeln('      confirmation_message += "<td nowrap style=\\"padding: 0px\\">over</td>";');
    d.writeln('      confirmation_message += "<td nowrap style=\\"padding: 0px 30px 0px 30px\\">" + losing_team + "</td>";');
@@ -3249,14 +3249,14 @@ function build_post_season_form()
    d.writeln('');
    d.writeln('      // Format picks for display.');
    d.writeln('');
-   d.writeln('      picks_message  = "\\n\\n<span style=\\"font-family: Calibri; font-size: 11pt\\">";');
+   d.writeln('      picks_message  = "\\n\\n<span style=\\"font-family: Calibri; font-size: 11pt; line-height: 1.5\\">";');
    d.writeln('      picks_message += "\\n<table style=\\"margin-right: auto; margin-left: auto\\">";');
    d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-bottom: 5px\\"><b>Create an e-mail message and send it to:</b></td></tr>"');
    d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-bottom: 5px; padding-left: 10px\\">fp@socal.rr.com</td></tr>"');
    d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-bottom: 5px\\"><b>Copy the following into the subject line:</b></td></tr>"');
    d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-bottom: 5px; padding-left: 10px\\">" + build_player_name(-1) + " - Post Season Week "+'+week+'+" Picks</td></tr>"');
    d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-bottom: 5px\\"><b>Copy the following into the message body:</b></td></tr>"');
-   d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-left: 10px; line-height: 20px\\">"');
+   d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-left: 10px\\">"');
    d.writeln('');
    d.writeln('      for (var i = 0; i < '+number_of_ps_games+'; i++)');
    d.writeln('      {');
@@ -4949,7 +4949,7 @@ function validate_password()
    }
    else
    {
-      alert("Invalid password C.");
+      alert("Invalid password X.");
       password.value = "";
       top.focus_element(password);
       return false;
