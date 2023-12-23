@@ -445,7 +445,7 @@ function build_regular_season_form()
    d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-bottom: 5px\\"><b>Copy the following into the subject line:</b></td></tr>"');
    d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-bottom: 5px; padding-left: 10px\\">" + build_player_name(-1) + " - Week "+'+week+'+" Picks</td></tr>"');
    d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-bottom: 5px\\"><b>Copy the following into the message body:</b></td></tr>"');
-   d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-left: 10px; line-height: 18px\\">"');
+   d.writeln('      picks_message += "\\n<tr><td nowrap style=\\"padding-left: 10px; line-height: 20px\\">"');
    d.writeln('');
    d.writeln('      for (var i = 0; i < '+number_of_rs_games+'; i++)');
    d.writeln('      {');
@@ -4949,7 +4949,7 @@ function validate_password()
    }
    else
    {
-      alert("Invalid password A.");
+      alert("Invalid password B.");
       password.value = "";
       top.focus_element(password);
       return false;
