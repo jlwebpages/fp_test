@@ -3546,11 +3546,16 @@ function build_post_season_form()
    d.writeln('               }');
    d.writeln('            }');
    d.writeln('');
-   d.writeln('            // If this is the last game scheduled and the NFL odds exist, get the total_points from the NFL odds to use as the Total Points Prediction.');
-   d.writeln('');
-   d.writeln('            if ( (i == '+number_of_ps_games+'-1) && (nfl_odds_array[0].length > 0) )');
+   d.writeln('            if (i == '+number_of_ps_games+'-1)');
    d.writeln('            {');
-   d.writeln('               total_points = nfl_odds_array[j][noa_total_points_index];');
+   d.writeln('               // This is the last game scheduled so use the total points for the Total Points Prediction.');
+   d.writeln('');
+   d.writeln('               if (nfl_odds_array[0].length > 0)');
+   d.writeln('               {');
+   d.writeln('                  // Use the total points from the NFL odds for the Total Points Prediction.');
+   d.writeln('');
+   d.writeln('                  total_points = nfl_odds_array[j][noa_total_points_index];');
+   d.writeln('               }');
    d.writeln('');
    d.writeln('               // If total_points is not a whole number, round it up or down randomly.');
    d.writeln('');
@@ -4949,7 +4954,7 @@ function validate_password()
    }
    else
    {
-      alert("Invalid password X.");
+      alert("Invalid password.");
       password.value = "";
       top.focus_element(password);
       return false;
