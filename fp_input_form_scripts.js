@@ -774,7 +774,7 @@ function build_regular_season_form()
    d.writeln('            {');
    d.writeln('               // Build the line in HTML Table Record (<tr>) format.');
    d.writeln('');
-   d.writeln('               formatted_picks += "\\n<tr" + upset_color + " style=\\"line-height: 100%\\">";');
+   d.writeln('               formatted_picks += "\\n<tr" + upset_color + " style=\\"line-height: 1.1\\">";');
    d.writeln('               formatted_picks += "<td nowrap style=\\"padding: 0px 30px 0px 0px\\">" + winning_team + "</td>";');
    d.writeln('               formatted_picks += "<td nowrap style=\\"padding: 0px\\">over</td>";');
    d.writeln('               formatted_picks += "<td nowrap style=\\"padding: 0px 30px 0px 30px\\">" + losing_team + "</td>";');
@@ -4949,7 +4949,7 @@ function validate_password()
    }
    else
    {
-      alert("Invalid password B.");
+      alert("Invalid password C.");
       password.value = "";
       top.focus_element(password);
       return false;
