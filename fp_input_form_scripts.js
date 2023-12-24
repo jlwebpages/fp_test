@@ -4954,7 +4954,7 @@ function validate_password()
    }
    else
    {
-      alert("Invalid password Z.");
+      alert("Invalid password G.");
       password.value = "";
       top.focus_element(password);
       return false;

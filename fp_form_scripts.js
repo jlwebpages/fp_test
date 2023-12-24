@@ -4310,7 +4310,7 @@ function build_regular_season_form()
             {
                if (mn_pts_value == 0) mn_pts_value = "";
 
-               d.writeln('<input type=text class="default_text border_radius" style="border: 1px solid black" name="mn_points" size="3" maxlength="3" value="'+mn_pts_value+'"');
+               d.writeln('<input type=text class="default_text border_radius" style="border: 1px solid black width: 50px" name="mn_points" size="3" maxlength="3" value="'+mn_pts_value+'"');
                d.writeln('              onChange="get_mn_points(document);return true;"');
                d.writeln('            onKeyPress="if (window.event.keyCode==13) {window.event.keyCode=0; get_mn_points(document); calculate_prelim_scores(document); return true;}">');
             }
