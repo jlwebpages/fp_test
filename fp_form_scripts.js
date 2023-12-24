@@ -1655,7 +1655,7 @@ function build_post_season_form()
             d.writeln('<td style="padding: 0px" class="gr1_border">');
          }
 
-         d.writeln('<input type=text'+input_tag_class+'style="font-size: 10pt" value='+visitor_scores[gi-1]+' size="'+input_field_size+'" maxlength="2" name="visitor'+gi+'_score">');
+         d.writeln('<input type=text'+input_tag_class+'style="font-size: 10pt; width: 30px" value='+visitor_scores[gi-1]+' size="'+input_field_size+'" maxlength="2" name="visitor'+gi+'_score">');
          d.writeln('</td>');
       }
       else
