@@ -36,12 +36,12 @@
       // Set these variables each week.
 
       var games_over         = f;
-      var current_input_week = 22;
+      var current_input_week = 17;
 
       // Set the post season teams each week during the playoffs.
 
-      var post_season_visiting_teams = ["Rams","Packers","Steelers","Ravens"];
-      var post_season_home_teams     = ["Panthers","Vikings","Browns","49ers"];
+      var post_season_visiting_teams = [];
+      var post_season_home_teams     = [];
 
       // These variables will be changed by the Java Scripts.
 
@@ -992,6 +992,14 @@
          }
 
          // If we're running in the Chrome browser on a mobile device and the element type is "text" then return.
+
+         if ( (navigator.userAgent.toLowerCase().indexOf("mobile")  != -1) &&
+              (navigator.userAgent.toLowerCase().indexOf("chrome")  != -1) &&
+              (navigator.userAgent.toLowerCase().indexOf("samsung") == -1) &&
+              (element.type == "text")                                        )
+         {
+            return;
+         }
 
          element.readOnly = true;
          element.focus({focusVisible: true, preventScroll: true});
