@@ -1655,7 +1655,7 @@ function build_post_season_form()
             d.writeln('<td style="padding: 0px" class="gr1_border">');
          }
 
-         d.writeln('<input type=text'+input_tag_class+'style="border-radius: 0px; font-size: 10pt; width: 20px" value='+visitor_scores[gi-1]+' size="'+input_field_size+'" maxlength="2" name="visitor'+gi+'_score">');
+         d.writeln('<input type=text'+input_tag_class+'style="border-radius: 0px; font-size: 10pt; width: 25px" value='+visitor_scores[gi-1]+' size="'+input_field_size+'" maxlength="2" name="visitor'+gi+'_score">');
          d.writeln('</td>');
       }
       else
@@ -1737,7 +1737,7 @@ function build_post_season_form()
          {
             d.writeln('<td style="padding: 0px" class="br2_border">');
          }
-         d.writeln('<input type=text'+input_tag_class+'style="border-radius: 0px; font-size: 10pt; width: 20px" value='+home_scores[gi-1]+' size="'+input_field_size+'" maxlength="2" name="home'+gi+'_score">');
+         d.writeln('<input type=text'+input_tag_class+'style="border-radius: 0px; font-size: 10pt; width: 25px" value='+home_scores[gi-1]+' size="'+input_field_size+'" maxlength="2" name="home'+gi+'_score">');
          d.writeln('</td>');
       }
       else
@@ -2300,15 +2300,6 @@ function build_post_season_form()
 
    if (mode == "prelim")
    {
-      for (var gi = 1; gi <= number_of_games_to_display; gi++)
-      {
-         if ( (post_season_winners[gi-1] != "V") && (post_season_winners[gi-1] != "H") )
-         {
-            d.writeln('<script>window.top.gv.focus_element(document.fp_scores.visitor'+gi+'_score);</'+'script>');
-            break;
-         }
-      }
-
       if (window.top.gv.get_scores_timer != null)
       {
          clearInterval(window.top.gv.get_scores_timer);
@@ -4468,17 +4459,6 @@ function build_regular_season_form()
       if ( (tie_breaker_needed == true) && (unable_to_break_tie == false) )
       {
          window.top.gv.focus_element(d.fp_results.mn_points);
-      }
-      else
-      {
-         for (var i = 1; i <= number_of_rs_games; i++)
-         {
-            if (winners[i-1] == "0")
-            {
-               d.writeln('<script>top.gv.focus_element(document.fp_results.winner'+i+');</'+'script>');
-               break;
-            }
-         }
       }
 
       if (window.top.gv.get_scores_timer != null)
