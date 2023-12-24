@@ -1655,7 +1655,7 @@ function build_post_season_form()
             d.writeln('<td style="padding: 0px" class="gr1_border">');
          }
 
-         d.writeln('<input type=text'+input_tag_class+'style="font-size: 10pt; width: 30px" value='+visitor_scores[gi-1]+' size="'+input_field_size+'" maxlength="2" name="visitor'+gi+'_score">');
+         d.writeln('<input type=text'+input_tag_class+'style="border-radius: 0px; font-size: 10pt; width: 20px" value='+visitor_scores[gi-1]+' size="'+input_field_size+'" maxlength="2" name="visitor'+gi+'_score">');
          d.writeln('</td>');
       }
       else
@@ -1737,7 +1737,7 @@ function build_post_season_form()
          {
             d.writeln('<td style="padding: 0px" class="br2_border">');
          }
-         d.writeln('<input type=text'+input_tag_class+'style="font-size: 10pt; width: 25px; border-radius: 0px" value='+home_scores[gi-1]+' size="'+input_field_size+'" maxlength="2" name="home'+gi+'_score">');
+         d.writeln('<input type=text'+input_tag_class+'style="border-radius: 0px; font-size: 10pt; width: 20px" value='+home_scores[gi-1]+' size="'+input_field_size+'" maxlength="2" name="home'+gi+'_score">');
          d.writeln('</td>');
       }
       else
