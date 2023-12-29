@@ -459,7 +459,7 @@ function build_forms_page()
          d.writeln('<table style="font-size: 16pt; font-weight: bold; line-height: 40px; white-space: nowrap; margin-left: auto; margin-right: auto">');
          d.writeln('');
          d.writeln('   <tr>');
-         d.writeln('      <td colspan="2" class="red_color" style="font-size: 18pt; text-decoration: underline; text-align: center; padding-bottom: 15px">Post Season</td>');
+         d.writeln('      <td colspan="2" class="red_color" style="font-size: 18pt; text-decoration: underline; text-align: center; padding-top: 20px; padding-bottom: 15px">Post Season</td>');
          d.writeln('   </tr>');
          d.writeln('');
          if (top.games_over == true && top.season_over == false)
@@ -490,8 +490,6 @@ function build_forms_page()
          }
          d.writeln('</table>');
          d.writeln('');
-         d.writeln('<p>');
-         d.writeln('');
       }
    }
 
@@ -500,7 +498,7 @@ function build_forms_page()
    d.writeln('<table style="font-size: 16pt; font-weight: bold; line-height: 40px; white-space: nowrap; margin-left: auto; margin-right: auto">');
    d.writeln('');
    d.writeln('   <tr>');
-   d.writeln('      <td colspan="2" class="red_color" style="font-size: 18pt; text-decoration: underline; text-align: center; padding-bottom: 15px">Regular Season</td>');
+   d.writeln('      <td colspan="2" class="red_color" style="font-size: 18pt; text-decoration: underline; text-align: center; padding-top: 20px; padding-bottom: 15px">Regular Season</td>');
    d.writeln('   </tr>');
    d.writeln('');
    if (current_input_week <= number_of_rs_weeks)
@@ -536,7 +534,7 @@ function build_forms_page()
       }
       else
       {
-         d.writeln('Weeks 1 through ' + regular_final_week);
+         d.writeln('Weeks 1 thru ' + regular_final_week);
       }
       d.writeln('      </a></td>');
       d.writeln('   </tr>');
