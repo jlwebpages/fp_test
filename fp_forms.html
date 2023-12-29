@@ -524,19 +524,9 @@ function build_forms_page()
       d.writeln('      <td style="text-align: left; width: 50%"><a class="blue_link" href=javascript:open_regular_season_form("final")>Final</a></td>');
       d.writeln('   </tr>');
       d.writeln('');
-
       d.writeln('   <tr>');
       d.writeln('      <td class="green_color" style="text-align: right; width: 50%; padding-right: 10px">Season Summary:</td>');
-      d.writeln('      <td style="text-align: left; width: 50%"><a class="blue_link" href=javascript:open_regular_season_form("summary")>');
-      if (regular_final_week == 1)
-      {
-         d.writeln('Through Week ' + regular_final_week);
-      }
-      else
-      {
-         d.writeln('Weeks 1 thru ' + regular_final_week);
-      }
-      d.writeln('      </a></td>');
+      d.writeln('      <td style="text-align: left; width: 50%"><a class="blue_link" href=javascript:open_regular_season_form("summary")>Through Week ' + regular_final_week + '</a></td>');
       d.writeln('   </tr>');
       d.writeln('');
    }
