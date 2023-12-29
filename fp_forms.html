@@ -535,14 +535,16 @@ function build_forms_page()
 
    d.writeln('<table style="font-size: 16pt; font-weight: bold; line-height: 40px; white-space: nowrap; margin-left: auto; margin-right: auto">');
    d.writeln('');
-   d.writeln('   <tr><td colspan="2" class="red_color" style="font-size: 18pt; font-weight: bold; text-decoration: underline; text-align: center; padding-bottom: 15px">Regular Season</td></tr>');
+   d.writeln('   <tr>');
+   d.writeln('      <td colspan="2" class="red_color" style="font-size: 18pt; text-decoration: underline; text-align: center; padding-bottom: 15px">Regular Season</td>');
+   d.writeln('   </tr>');
    d.writeln('');
 
    if (current_input_week <= number_of_rs_weeks)
    {
       d.writeln('   <tr>');
       d.writeln('      <td class="green_color" style="text-align: right; width: 50%; padding-right: 10px">Week ' + regular_input_week + ':</td>');
-      d.writeln('      <td align=left width="50%"><b><font class="black_color"><a class="blue_link" href="fp_input_form.html">Input Form</a></font></b></td>');
+      d.writeln('      <td style="text-align: left; width: 50%"><a class="blue_link" href="fp_input_form.html">Input Form</a></td>');
       d.writeln('   </tr>');
       d.writeln('');
    }
@@ -551,7 +553,7 @@ function build_forms_page()
    {
       d.writeln('   <tr>');
       d.writeln('      <td class="green_color" style="text-align: right; width: 50%; padding-right: 10px">Week ' + regular_prelim_week + ':</td>');
-      d.writeln('      <td align=left width="50%"><b><font class="black_color"><a class="blue_link" href=javascript:open_regular_season_form("prelim");>Preliminary</a></font></b></td>');
+      d.writeln('      <td style="text-align: left; width: 50%"><a class="blue_link" href=javascript:open_regular_season_form("prelim")>Preliminary</a></td>');
       d.writeln('   </tr>');
       d.writeln('');
    }
@@ -560,22 +562,22 @@ function build_forms_page()
    {
       d.writeln('   <tr>');
       d.writeln('      <td class="green_color" style="text-align: right; width: 50%; padding-right: 10px">Week ' + regular_final_week + ':</td>');
-      d.writeln('      <td align=left width="50%"><b><font class="black_color"><a class="blue_link" href=javascript:open_regular_season_form("final");>Final</a></font></b></td>');
+      d.writeln('      <td style="text-align: left; width: 50%"><a class="blue_link" href=javascript:open_regular_season_form("final")>Final</a></td>');
       d.writeln('   </tr>');
       d.writeln('');
 
       d.writeln('   <tr>');
       d.writeln('      <td class="green_color" style="text-align: right; width: 50%; padding-right: 10px">Season Summary:</td>');
-      d.writeln('      <td align=left width="50%"><b><font class="black_color"><a class="blue_link" href=javascript:open_regular_season_form("summary");>');
+      d.writeln('      <td style="text-align: left; width: 50%"><a class="blue_link" href=javascript:open_regular_season_form("summary")>');
       if (regular_final_week == 1)
       {
          d.writeln('Through Week ' + regular_final_week);
       }
       else
       {
-         d.writeln('Weeks 1 through ' + regular_final_week);
+         d.writeln('xWeeks 1 through ' + regular_final_week);
       }
-      d.writeln('      </a></font></b></td>');
+      d.writeln('      </a></td>');
       d.writeln('   </tr>');
       d.writeln('');
    }
