@@ -1,6 +1,58 @@
+function indexedDBSupport()
+{
+   return 'indexedDB' in window;
+}
+
+let db;
+
+function createDatabase() {
+
+   if (!indexedDBSupport())
+   {
+      alert("Your browser doesn't support IndexedBD");
+   }
+   else
+   {
+      alert("Browser supports IndexedBD!");
+   }
+      alert("1");
+      request = indexedDB.open("MyDatabase", 1);
+      //const request = window.indexedDB.open("MyDatabase", 1);
+      alert("2");
+// Event handling
+    request.onerror = (e) => {
+        alert("error");
+        console.error(`IndexedDB error: ${request.errorCode}`);
+    };
+
+    request.onsuccess = (e) => {
+        alert("success");
+        console.info('Successful database connection');
+        db = request.result;
+    };
+
+    request.onupgradeneeded = (e) => {
+        alert("onupgradeneeded");
+        console.info('Database created');
+        const db = request.result;
+        //...
+    };
+
+}
+
+
+
+
+
+
 
 function build_input_form()
 {
+   createDatabase();
+
+   return;
+
+
    if (top.post_season == false)
    {
       // Reset Input Form week number to the current week.
