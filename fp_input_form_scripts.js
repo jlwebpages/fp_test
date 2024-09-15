@@ -3,7 +3,7 @@ function indexedDBSupport()
    return 'indexedDB' in window;
 }
 
-let db;
+//let db;
 
 function createDatabase() {
 
@@ -15,34 +15,36 @@ function createDatabase() {
    {
       alert("Browser supports IndexedBD!");
    }
-      alert("1");
-      const request = window.indexedDB.open("toDoList", 1);
-      //const request = window.indexedDB.open("MyDatabase", 1);
-      alert("2");
-// Event handling
-    request.onerror = (e) => {
-        alert("error");
-        console.error(`IndexedDB error: ${request.errorCode}`);
-    };
 
-    request.onsuccess = (e) => {
-        alert("success");
-        console.info('Successful database connection');
-        db = request.result;
-    };
+   alert("1");
 
-    request.onupgradeneeded = (e) => {
-        alert("onupgradeneeded");
-        console.info('Database created');
-        const db = request.result;
-        //...
-    };
+   const request = window.indexedDB.open("toDoList", 1);
 
+   alert("2");
+
+   request.onerror = (event) =>
+   {
+      alert("error"+":"+event+":");
+   };
+
+   request.onsuccess = (event) =>
+   {
+      alert("success"+":"+event+":");
+      //db = request.result;
+   };
+
+   request.onblocked = (event) =>
+   {
+      alert("blocked"+":"+event+":");
+      //db = request.result;
+   };
+
+   request.onupgradeneeded = (event) =>
+   {
+      alert("onupgradeneeded"+":"+event+":");
+      //const db = request.result;
+   };
 }
-
-
-
-
 
 
 
