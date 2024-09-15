@@ -16,7 +16,7 @@ function createDatabase() {
       alert("Browser supports IndexedBD!");
    }
       alert("1");
-      request = indexedDB.open("MyDatabase", 1);
+      const request = window.indexedDB.open("toDoList", 1);
       //const request = window.indexedDB.open("MyDatabase", 1);
       alert("2");
 // Event handling
@@ -50,7 +50,7 @@ function build_input_form()
 {
    createDatabase();
 
-   return;
+   //return;
 
 
    if (top.post_season == false)
