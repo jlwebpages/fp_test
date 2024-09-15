@@ -25,24 +25,24 @@ function createDatabase() {
    alert(request.errorcode);
    alert(request.readyState);
 
-   request.onerror = (event) =>
+   request.onerror = function(event)
    {
       alert("error"+":"+request.errorcode+":");
    };
 
-   request.onsuccess = (event) =>
+   request.onsuccess = function(event)
    {
       alert("success"+":"+request.errorcode+":");
       //db = request.result;
    };
 
-   request.onblocked = (event) =>
+   request.onblocked = function(event)
    {
       alert("blocked"+":"+request.errorcode+":");
       //db = request.result;
    };
 
-   request.onupgradeneeded = (event) =>
+   request.onupgradeneeded = function(event)
    {
       alert("onupgradeneeded"+":"+request.errorcode+":");
       //const db = request.result;
