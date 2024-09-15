@@ -22,28 +22,33 @@ function createDatabase() {
 
    alert("2");
 
+   alert(request.errorcode);
+   alert(request.readyState);
+
    request.onerror = (event) =>
    {
-      alert("error"+":"+event+":");
+      alert("error"+":"+request.errorcode+":");
    };
 
    request.onsuccess = (event) =>
    {
-      alert("success"+":"+event+":");
+      alert("success"+":"+request.errorcode+":");
       //db = request.result;
    };
 
    request.onblocked = (event) =>
    {
-      alert("blocked"+":"+event+":");
+      alert("blocked"+":"+request.errorcode+":");
       //db = request.result;
    };
 
    request.onupgradeneeded = (event) =>
    {
-      alert("onupgradeneeded"+":"+event+":");
+      alert("onupgradeneeded"+":"+request.errorcode+":");
       //const db = request.result;
    };
+
+   window.indexedDB.deleteDatabase("toDoList")
 }
 
 
