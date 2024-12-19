@@ -1,65 +1,6 @@
-function indexedDBSupport()
-{
-   return 'indexedDB' in window;
-}
-
-//let db;
-
-function createDatabase() {
-
-   if (!indexedDBSupport())
-   {
-      alert("Your browser doesn't support IndexedBD");
-   }
-   else
-   {
-      alert("Browser supports IndexedBD!");
-   }
-
-   alert("1");
-
-   const request = window.indexedDB.open("toDoList", 1);
-
-   alert("2");
-
-   alert(request.errorcode);
-   alert(request.readyState);
-
-   request.onerror = function(event)
-   {
-      alert("error"+":"+request.errorcode+":");
-   };
-
-   request.onsuccess = function(event)
-   {
-      alert("success"+":"+request.errorcode+":");
-      //db = request.result;
-   };
-
-   request.onblocked = function(event)
-   {
-      alert("blocked"+":"+request.errorcode+":");
-      //db = request.result;
-   };
-
-   request.onupgradeneeded = function(event)
-   {
-      alert("onupgradeneeded"+":"+request.errorcode+":");
-      //const db = request.result;
-   };
-
-   window.indexedDB.deleteDatabase("toDoList")
-}
-
-
 
 function build_input_form()
 {
-   createDatabase();
-
-   //return;
-
-
    if (top.post_season == false)
    {
       // Reset Input Form week number to the current week.
@@ -2774,7 +2715,7 @@ function build_regular_season_form()
    d.writeln('');
 
    d.writeln('<tr class="header_two">');
-   d.writeln('<td id="open_date" class="bt2_border" colspan="6"></td>');
+   d.writeln('<td id="open_date" class="bt2_border" style="white-space: normal" colspan="6"></td>');
    d.writeln('</tr>');
    d.writeln('');
 

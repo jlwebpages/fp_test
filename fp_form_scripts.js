@@ -42,7 +42,7 @@ function build_post_season_form()
    var bullet_color                  = "";
    var color_black                   = "black";
    var color_red                     = "red";
-   var current_prelim_week           = false;
+   var current_picks_week            = false;
    var document_heading              = "";
    var home_team_possession_flag     = "";
    var input_field_size              = 1;
@@ -65,24 +65,24 @@ function build_post_season_form()
    var w4_start           = window.top.gv.w4_start;
    var w4_end             = window.top.gv.w4_end;
 
-   if (mode == "prelim")
+   if (mode == "picks")
    {
-      mode_string                  = "Preliminary";
+      mode_string                  = "Picks";
       post_season_possession_teams = window.top.gv.post_season_possession_teams;
       post_season_red_zone_flags   = window.top.gv.post_season_red_zone_flags;
       victors                      = window.top.gv.post_season_victors;
       week                         = week - 1;
    }
-   else if (mode == "final")
+   else if (mode == "results")
    {
-      mode_string = "Final";
+      mode_string = "Results";
       week        = week - 2;
 
       if (window.top.gv.games_over == true) week = week + 1;
    }
    else if (mode == "summary_archive")
    {
-      mode_string = "Final";
+      mode_string = "Results";
       week        = 4;
    }
 
@@ -103,14 +103,14 @@ function build_post_season_form()
       w4_end             = 11;
    }
  
-   // Force this week's visitor and home scores to be zero if the mode is preliminary.
+   // Force this week's visitor and home scores to be zero if the mode is picks.
 
    for (var gi = 1; gi <= number_of_ps_games; gi++)
    {
-      if ( ( (week == 1) && (mode == "prelim") && (gi >= w1_start && gi <= w1_end) ) ||
-           ( (week == 2) && (mode == "prelim") && (gi >= w2_start && gi <= w2_end) ) ||
-           ( (week == 3) && (mode == "prelim") && (gi >= w3_start && gi <= w3_end) ) ||
-           ( (week == 4) && (mode == "prelim") && (gi >= w4_start && gi <= w4_end) )    )
+      if ( ( (week == 1) && (mode == "picks") && (gi >= w1_start && gi <= w1_end) ) ||
+           ( (week == 2) && (mode == "picks") && (gi >= w2_start && gi <= w2_end) ) ||
+           ( (week == 3) && (mode == "picks") && (gi >= w3_start && gi <= w3_end) ) ||
+           ( (week == 4) && (mode == "picks") && (gi >= w4_start && gi <= w4_end) )    )
       {
          excel_visitor_scores[gi-1] = "";
          excel_home_scores[gi-1]    = "";
@@ -215,13 +215,13 @@ function build_post_season_form()
 
    // Build document heading.
 
-   if (mode == "prelim")
+   if (mode == "picks")
    {
-      document_heading = "Post Season - Week " + week + " Preliminary";
+      document_heading = "Post Season - Week " + week + " Picks";
    }
-   else if (mode == "final")
+   else if (mode == "results")
    {
-      document_heading = "Post Season - Week " + week + " Final";
+      document_heading = "Post Season - Week " + week + " Results";
    }
    else if (mode == "summary_archive")
    {
@@ -1143,7 +1143,7 @@ function build_post_season_form()
    d.writeln('         {');
    d.writeln('            alert(user_message);');
    d.writeln('');
-   d.writeln('            // Force Auto Refresh to be off and refresh the preliminary form.');
+   d.writeln('            // Force Auto Refresh to be off and refresh the picks form.');
    d.writeln('');
    d.writeln('            get_scores_auto_refresh(document,"stop");');
    d.writeln('');
@@ -1158,7 +1158,7 @@ function build_post_season_form()
    d.writeln('   {');
    d.writeln('      alert(user_message);');
    d.writeln('');
-   d.writeln('      // Force Auto Refresh to be off and refresh the preliminary form.');
+   d.writeln('      // Force Auto Refresh to be off and refresh the picks form.');
    d.writeln('');
    d.writeln('      get_scores_auto_refresh(document,"stop");');
    d.writeln('');
@@ -1249,12 +1249,12 @@ function build_post_season_form()
    d.writeln('   if (display_dialog == true)');
    d.writeln('   {');
    d.writeln('      user_message = "\\""+ command + "\\" will:\\n\\n";');
-   d.writeln('      user_message = user_message + "   - Clear the scores on the Preliminary Form\\n";');
-   d.writeln('      user_message = user_message + "   - Get all in-progress and final scores from the internet\\n";');
-   d.writeln('      user_message = user_message + "   - Populate the Preliminary Form using the scores from the internet";');
+   d.writeln('      user_message = user_message + "   - Clear the scores on the Picks Form\\n";');
+   d.writeln('      user_message = user_message + "   - Get all in progress and final scores from the internet\\n";');
+   d.writeln('      user_message = user_message + "   - Populate the Picks Form using the scores from the internet";');
    d.writeln('      if (command == "Start")');
    d.writeln('      {');
-   d.writeln('         user_message = user_message + "\\n   - Automatically update the Preliminary Form every 10 seconds\\n";');
+   d.writeln('         user_message = user_message + "\\n   - Automatically update the Picks Form every 10 seconds\\n";');
    d.writeln('      }');
    d.writeln('');
    d.writeln('      if (confirm(user_message) == false) return false;');
@@ -1485,7 +1485,7 @@ function build_post_season_form()
    d.writeln('      window.top.gv.get_scores_state = "off";');
    d.writeln('   }');
    d.writeln('');
-   d.writeln('   // Redisplay the preliminary form.');
+   d.writeln('   // Redisplay the picks form.');
    d.writeln('');
    d.writeln('   document.location.href = "fp_post_season_form.html";');
    d.writeln('');
@@ -1533,16 +1533,16 @@ function build_post_season_form()
 
    for (var gi = 1; gi <= number_of_games_to_display; gi++)
    {
-      // Determine if this game falls within the current preliminary week.
+      // Determine if this game falls within the current picks week.
 
-      current_prelim_week = false;
+      current_picks_week = false;
 
       if ( ( (week == 1) && (gi >= w1_start && gi <= w1_end) ) ||
            ( (week == 2) && (gi >= w2_start && gi <= w2_end) ) ||
            ( (week == 3) && (gi >= w3_start && gi <= w3_end) ) ||
            ( (week == 4) && (gi >= w4_start && gi <= w4_end) )    )
       {
-         if (mode == "prelim") current_prelim_week = true;
+         if (mode == "picks") current_picks_week = true;
       }
 
       if ( (gi == w1_start) || (gi == w2_start) || (gi == w3_start) || (gi == w4_start) )
@@ -1596,7 +1596,7 @@ function build_post_season_form()
 
       if (use_player_points == false) border_style = "gr1_bb1_border";
 
-      if (current_prelim_week == true)
+      if (current_picks_week == true)
       {
          for (var j = 1; j <= number_of_ps_games; j++)
          {
@@ -1676,13 +1676,13 @@ function build_post_season_form()
          }
       }
 
-      border_style = "gb1_border"; if (current_prelim_week == true) border_style = "gr1_gb1_border";
+      border_style = "gb1_border"; if (current_picks_week == true) border_style = "gr1_gb1_border";
 
-      if (use_player_points == false) {border_style = "bb1_border"; if (current_prelim_week == true) border_style = "gr1_bb1_border";}
+      if (use_player_points == false) {border_style = "bb1_border"; if (current_picks_week == true) border_style = "gr1_bb1_border";}
 
       if ( (gi != w1_end) && (gi != w2_end) && (gi != w3_end) && (gi != w4_end) )
       {
-         border_style = "no_border"; if (current_prelim_week == true) border_style = "gr1_border";
+         border_style = "no_border"; if (current_picks_week == true) border_style = "gr1_border";
       }
 
       if (post_season_winners[gi-1] == "V")
@@ -1727,7 +1727,7 @@ function build_post_season_form()
 
       if (use_player_points == false) border_style = "br2_bb1_border";
 
-      if (current_prelim_week == true)
+      if (current_picks_week == true)
       {
          if ( (gi == w1_end) || (gi == w2_end) || (gi == w3_end) || (gi == w4_end) )
          {
@@ -2209,7 +2209,7 @@ function build_post_season_form()
 
    d.writeln('<tr><td class="no_border" style="font-size: 2pt"><br></td></tr>');
    d.writeln('');
-   if (mode == "prelim")
+   if (mode == "picks")
    {
       d.writeln('<tr align=center>');
       d.writeln('<td nowrap valign=middle class="no_border">');
@@ -2233,7 +2233,7 @@ function build_post_season_form()
    }
    d.writeln('<tr align=center>');
    d.writeln('<td nowrap class="no_border">');
-   if (mode == "prelim")
+   if (mode == "picks")
    {
       d.writeln('<input type="button" class="default_button border_radius" name="calculate_scores_button" value="Calculate Player Scores"');
       d.writeln('    onClick="calculate_post_season_scores(document);return true;">');
@@ -2298,7 +2298,7 @@ function build_post_season_form()
    d.writeln('</center>');
    d.writeln('');
 
-   if (mode == "prelim")
+   if (mode == "picks")
    {
       if (window.top.gv.get_scores_timer != null)
       {
@@ -2338,7 +2338,7 @@ function build_regular_season_form()
    }
 
    var best_mn_points_delta          = 1000;
-   var best_outcome_tooltip          = "Look under &quot;Preliminary Scores&quot; on the &quot;Help&quot; page for more information on &quot;Best Outcome&quot;";
+   var best_outcome_tooltip          = "Look under &quot;Picks Form&quot; on the &quot;Help&quot; page for more information on &quot;Best Outcome&quot;";
    var bullet_color                  = "";
    var color_black                   = "black";
    var color_red                     = "red";
@@ -2359,7 +2359,6 @@ function build_regular_season_form()
    var number_of_rs_players          = rs_players.length;
    var number_of_rs_weeks            = window.top.gv.number_of_rs_weeks;
    var tie_breaker_needed            = false;
-   var unable_to_break_tie           = false;
    var unaltered_week                = 0;
    var victors                       = "";
    var visiting_team_possession_flag = "";
@@ -2372,18 +2371,18 @@ function build_regular_season_form()
       return true;
    }
 
-   if (mode == "prelim")
+   if (mode == "picks")
    {
-      mode_string             = "Preliminary";
+      mode_string             = "Picks";
       prelim_possession_teams = window.top.gv.prelim_possession_teams;
       prelim_red_zone_flags   = window.top.gv.prelim_red_zone_flags;
       victors                 = window.top.gv.prelim_victors;
       week                    = week - 1;
       winners                 = window.top.gv.prelim_winners;
    }
-   else if (mode == "final")
+   else if (mode == "results")
    {
-      mode_string = "Final";
+      mode_string = "Results";
       week        = week - 2;
 
       if (window.top.gv.games_over == true) week = week + 1;
@@ -2391,7 +2390,7 @@ function build_regular_season_form()
    else if (mode == "weekly_archive")
    {
       max_number_of_rs_games = 16;
-      mode_string            = "Final";
+      mode_string            = "Results";
       number_of_rs_weeks     = window.top.gv.all_home_teams.length;
       week                   = number_of_rs_weeks;
 
@@ -2402,7 +2401,7 @@ function build_regular_season_form()
    if (week <  1)                 week =  1;
    if (week > number_of_rs_weeks) week = number_of_rs_weeks;
 
-   // Over-ride "week" if user selected "week" from "Final On-Line Form" window.
+   // Override "week" if the user selected a "week" from the results form.
 
    unaltered_week = week;
 
@@ -2421,7 +2420,7 @@ function build_regular_season_form()
    var actual_mn_points      = all_actual_mn_points[week-1];
    var in_progress_mn_points = 0;
 
-   if ( (mode == "final") || (mode == "weekly_archive") )
+   if ( (mode == "results") || (mode == "weekly_archive") )
    {
       winners = all_winners[week-1];
    }
@@ -2442,7 +2441,7 @@ function build_regular_season_form()
 
    if (window.top.gv.mn_points_entered > 0)
    {
-      // Override actual_mn_points with points entered on preliminary form
+      // Override actual_mn_points with points entered on the picks form.
 
       actual_mn_points = window.top.gv.mn_points_entered;
    }
@@ -2453,7 +2452,7 @@ function build_regular_season_form()
 
    if (in_progress_mn_points > 0)
    {
-      // Override actual_mn_points with actual Total Points from get_nfl_scores
+      // Override actual_mn_points with actual Total Points from get_nfl_scores.
 
       actual_mn_points = in_progress_mn_points;
    }
@@ -2469,13 +2468,13 @@ function build_regular_season_form()
 
    // Build document heading.
 
-   if (mode == "prelim")
+   if (mode == "picks")
    {
-      document_heading = "Regular Season - Week " + week + " Preliminary";
+      document_heading = "Regular Season - Week " + week + " Picks";
    }
-   else if (mode == "final")
+   else if (mode == "results")
    {
-      document_heading = "Regular Season - Week " + week + " Final";
+      document_heading = "Regular Season - Week " + week + " Results";
    }
    else if (mode == "weekly_archive")
    {
@@ -2522,7 +2521,7 @@ function build_regular_season_form()
    sorted_scores.sort(function(sorted_scores,b){return sorted_scores-b;});
    sorted_scores.reverse();
 
-   // Determine if there's a tie.
+   // Determine how many players have the high score and calculate their Total Points delta.
  
    high_score       = sorted_scores[0];
    high_score_count = 0;
@@ -2537,13 +2536,13 @@ function build_regular_season_form()
       }
    }
 
-   // If there's a tie, try to break the tie using the Total Points predictions.
+   // If more than one player has the high score, try to break the tie using using their Total Points delta.
 
    if (high_score_count > 1)
    {
       tie_breaker_needed = true;
 
-      // If the winner of at least one game is not known, then there's no need for a tie breaker.
+      // If the winner of at least one game is not known, then there's no need to break the tie.
 
       for (var i = 0; i < number_of_rs_games; i++)
       {
@@ -2553,81 +2552,55 @@ function build_regular_season_form()
          }
       }
 
-      // Attempt to break the tie.
+      // If needed, attempt to break the tie if actual Total Points are known.
 
-      if (tie_breaker_needed == true)
+      if ( (tie_breaker_needed == true) && (actual_mn_points > 0) )
       {
-         // The tie can only be broken if the actual Total Points is known.
+         // Build the string for dislaying the actual Total Points on the webpage.
 
-         if (actual_mn_points > 0)
+         mn_points_string = actual_mn_points + "&nbsp;&nbsp";
+
+         // Determine the best Total Points delta (difference between best prediction and actual).
+
+         best_mn_points_delta = 1000;
+
+         for (var i = 1; i <= number_of_rs_players; i++)
          {
-            // Build the string for dislaying the actual Total Points on the webpage.
-
-            mn_points_string = actual_mn_points + "&nbsp;&nbsp";
-
-            // Determine the best Total Points delta (difference between best prediction and actual).
-
-            best_mn_points_delta = 1000;
-
-            for (var i = 1; i <= number_of_rs_players; i++)
+            if (mn_points_delta[i-1] != "N/A")
             {
-               if (mn_points_delta[i-1] != "N/A")
+               if ( Math.abs(mn_points_delta[i-1]) < Math.abs(best_mn_points_delta) )
                {
-                  if ( Math.abs(mn_points_delta[i-1]) < Math.abs(best_mn_points_delta) )
+                  best_mn_points_delta = mn_points_delta[i-1];
+               }
+               else if ( Math.abs(mn_points_delta[i-1]) == Math.abs(best_mn_points_delta) )
+               {
+                  if (mn_points_delta[i-1] < best_mn_points_delta)
                   {
                      best_mn_points_delta = mn_points_delta[i-1];
                   }
-                  else if ( Math.abs(mn_points_delta[i-1]) == Math.abs(best_mn_points_delta) )
-                  {
-                     if (mn_points_delta[i-1] < best_mn_points_delta)
-                     {
-                        best_mn_points_delta = mn_points_delta[i-1];
-                     }
-                  }
                }
             }
+         }
 
-            // Determine if the players that are tied have the same Total Points prediction.
+         // Determine how many players have the high score and the same Total Points delta.
 
-            high_score_count = 0;
+         high_score_count = 0;
 
-            for (var i = 1; i <= number_of_rs_players; i++)
+         for (var i = 1; i <= number_of_rs_players; i++)
+         {
+            if ( (mn_points_delta[i-1] != "N/A") && (mn_points_delta[i-1] == best_mn_points_delta) )
             {
-               if ( (mn_points_delta[i-1] != "N/A") && (mn_points_delta[i-1] == best_mn_points_delta) )
-               {
-                  high_score_count++;
-               }
+               high_score_count++;
             }
+         }
 
-            // If the players that are tied have the same Total Points prediction, then we can't break the tie.
+         // Adjust the ranks of the players who have the high score but don't have the best Total Points delta.
 
-            if (high_score_count > 1)
+         for (var i = 1; i <= number_of_rs_players; i++)
+         {
+            if ((scores[i-1] == high_score) && (mn_points_delta[i-1] != best_mn_points_delta))
             {
-               unable_to_break_tie = true;
-
-               for (var i = 1; i <= number_of_rs_players; i++)
-               {
-                  // Clear out the Total Points delta and adjust the rank of those players no longer involved in the tie.
-
-                  if ((scores[i-1] == high_score) && (mn_points_delta[i-1] != best_mn_points_delta))
-                  {
-                     mn_points_delta[i-1] = "N/A";
-                     ranks_adjust[i-1] = high_score_count; 
-                  }
-               }
-            }
-            else
-            {
-               // The tie can be broken, so adjust the ranks
-               // of the playes who lost the tie breaker.
-
-               for (var i = 1; i <= number_of_rs_players; i++)
-               {
-                  if ((mn_points_delta[i-1] != "N/A") && (mn_points_delta[i-1] != best_mn_points_delta))
-                  {
-                     ranks_adjust[i-1] = 1;
-                  }
-               }
+               ranks_adjust[i-1] = high_score_count; 
             }
          }
       }
@@ -3055,7 +3028,7 @@ function build_regular_season_form()
    d.writeln('   var selected_winners        = Array(number_of_rs_games).fill("");');
    d.writeln('   var winners_iteration       = Array(number_of_rs_games).fill("");');
    d.writeln('');
-   d.writeln('   // Get selected winners from preliminary form.');
+   d.writeln('   // Get selected winners from the picks form.');
    d.writeln('');
    d.writeln('   all_winners_specified = true;');
    d.writeln('');
@@ -3228,14 +3201,14 @@ function build_regular_season_form()
    d.writeln('      }');
    d.writeln('   }');
    d.writeln('');
-   d.writeln('   // Assign the preliminary winners to the best winners so when we re-display the preliminary form it will reflect the best outcome for the selected player.');
+   d.writeln('   // Assign the preliminary winners to the best winners so when we redisplay the picks form it will reflect the best outcome for the selected player.');
    d.writeln('');
    d.writeln('   for (var game_index = 0; game_index < number_of_rs_games; game_index++)');
    d.writeln('   {');
    d.writeln('      window.top.gv.prelim_winners[game_index] = best_winners[game_index];');
    d.writeln('   }');
    d.writeln('');
-   d.writeln('   // Re-display the preliminary form with the win/loss combination that reflects the best outcome for the selected player.');
+   d.writeln('   // Redisplay the picks form with the win/loss combination that reflects the best outcome for the selected player.');
    d.writeln('');
    d.writeln('   document.location.href = "fp_regular_season_form.html";');
    d.writeln('');
@@ -3322,7 +3295,7 @@ function build_regular_season_form()
    d.writeln('         {');
    d.writeln('            alert(user_message);');
    d.writeln('');
-   d.writeln('            // Force Auto Refresh to be off and refresh the preliminary form.');
+   d.writeln('            // Force Auto Refresh to be off and refresh the picks form.');
    d.writeln('');
    d.writeln('            get_scores_auto_refresh(document,"stop");');
    d.writeln('');
@@ -3337,7 +3310,7 @@ function build_regular_season_form()
    d.writeln('   {');
    d.writeln('      alert(user_message);');
    d.writeln('');
-   d.writeln('      // Force Auto Refresh to be off and refresh the preliminary form.');
+   d.writeln('      // Force Auto Refresh to be off and refresh the picks form.');
    d.writeln('');
    d.writeln('      get_scores_auto_refresh(document,"stop");');
    d.writeln('');
@@ -3482,12 +3455,12 @@ function build_regular_season_form()
    d.writeln('   if (display_dialog == true)');
    d.writeln('   {');
    d.writeln('      user_message = "\\""+ command + "\\" will:\\n\\n";');
-   d.writeln('      user_message = user_message + "   - Clear the winners on the Preliminary Form\\n";');
-   d.writeln('      user_message = user_message + "   - Get all in-progress and final scores from the internet\\n";');
-   d.writeln('      user_message = user_message + "   - Populate the Preliminary Form using the scores from the internet";');
+   d.writeln('      user_message = user_message + "   - Clear the winners on the Picks Form\\n";');
+   d.writeln('      user_message = user_message + "   - Get all in progress and final scores from the internet\\n";');
+   d.writeln('      user_message = user_message + "   - Populate the Picks Form using the scores from the internet";');
    d.writeln('      if (command == "Start")');
    d.writeln('      {');
-   d.writeln('         user_message = user_message + "\\n   - Automatically update the Preliminary Form every 10 seconds\\n";');
+   d.writeln('         user_message = user_message + "\\n   - Automatically update the Picks Form every 10 seconds\\n";');
    d.writeln('      }');
    d.writeln('');
    d.writeln('      if (confirm(user_message) == false) return false;');
@@ -3738,7 +3711,7 @@ function build_regular_season_form()
    d.writeln('      }');
    d.writeln('   }');
    d.writeln('');
-   d.writeln('   // Redisplay the preliminary form.');
+   d.writeln('   // Redisplay the picks form.');
    d.writeln('');
    d.writeln('   document.location.href = "fp_regular_season_form.html";');
    d.writeln('');
@@ -3783,7 +3756,7 @@ function build_regular_season_form()
 
    d.writeln('<tr class="header_one" style="line-height: 22px">');
    d.writeln('<td class="br2_bb2_border" colspan=4>');
-   if (mode == "prelim")
+   if (mode == "picks")
    {
       d.writeln('<font style="font-size: 13pt">Week&nbsp;&nbsp;'+week+'&nbsp;&nbsp;'+mode_string+'</font>');
    }
@@ -3795,11 +3768,11 @@ function build_regular_season_form()
       {
          if (i == week)
          {
-            d.writeln('   <option selected value="'+i+'">&nbsp;&nbsp;Week&nbsp;&nbsp;'+i+'&nbsp;&nbsp;Final&nbsp;&nbsp;');
+            d.writeln('   <option selected value="'+i+'">&nbsp;&nbsp;Week&nbsp;&nbsp;'+i+'&nbsp;&nbsp;Results&nbsp;&nbsp;');
          }
          else
          {
-            d.writeln('   <option          value="'+i+'">&nbsp;&nbsp;Week&nbsp;&nbsp;'+i+'&nbsp;&nbsp;Final&nbsp;&nbsp;');
+            d.writeln('   <option          value="'+i+'">&nbsp;&nbsp;Week&nbsp;&nbsp;'+i+'&nbsp;&nbsp;Results&nbsp;&nbsp;');
          }
       }
       d.writeln('</select>');
@@ -3844,7 +3817,7 @@ function build_regular_season_form()
 
    for (var i = 1; i <= number_of_rs_games; i++)
    {
-      if (mode == "prelim")
+      if (mode == "picks")
       {
          for (var j = 1; j <= number_of_rs_games; j++)
          {
@@ -3952,7 +3925,7 @@ function build_regular_season_form()
             d.writeln('<td nowrap><font style="font-size: 12pt">'+home_team_possession_flag+home_teams[i-1]+home_scores[i-1]+'</font></td>');
          }
       }
-      if (mode == "prelim")
+      if (mode == "picks")
       {
          if (i == number_of_rs_games)
          {
@@ -4130,9 +4103,7 @@ function build_regular_season_form()
    {
       if (mn_points[player_index[i-1]].length == 0) mn_points[player_index[i-1]] = "<br>";
 
-      if ( (tie_breaker_needed == true) &&
-           (actual_mn_points > 0)       &&
-           (mn_points_delta[player_index[i-1]] != "N/A") )
+      if ( (tie_breaker_needed == true) && (actual_mn_points > 0) && (mn_points_delta[player_index[i-1]] != "N/A") )
       {
          if (mn_points_delta[player_index[i-1]] > 0) 
          {
@@ -4240,74 +4211,22 @@ function build_regular_season_form()
    d.writeln('</table>');
    d.writeln('');
 
-   if (mode == "prelim")
+   if (mode == "picks")
    {
-      if (tie_breaker_needed == true)
+      if ( (tie_breaker_needed == true) && (in_progress_mn_points < 1) )
       {
          var mn_pts_value        = window.top.gv.mn_points_entered;
-         var temp_mn_points      = -1;
-         var tie_breaker_message = "";
+         var tie_breaker_message = "Enter \"" + visiting_teams[number_of_rs_games-1] + " at " + home_teams[number_of_rs_games-1] + "\" Total Points to break the tie:&nbsp;&nbsp;";
 
+         if (mn_pts_value < 1) mn_pts_value = "";
 
-         if (unable_to_break_tie == false)
-         {
-            // Determine if the players that are tied have the same Total Points prediction.
-
-            for (var i = 1; i <= number_of_rs_games; i++)
-            {
-               if (ranks[i-1] == 1)
-               {
-                  if (temp_mn_points == -1)
-                  {
-                     temp_mn_points = mn_points[i-1];
-                  }
-                  else if (temp_mn_points != mn_points[i-1])
-                  {
-                     // Not all players that are tied have the same Total Points prediction.
-
-                     unable_to_break_tie = false;
-
-                     break;
-                  }
-                  else
-                  {
-                     unable_to_break_tie = true;
-                  }
-               }
-            }
-         }
-
-         if (unable_to_break_tie == true)
-         {
-            // Clear out the Total Points entry field on the preliminary form.
-
-            window.top.gv.mn_points_entered = 0;
-            mn_pts_value                    = "";
-
-            tie_breaker_message  = "Unable to break the tie.&nbsp;&nbsp;Players tied have the same Total Points prediction.";
-         }
-         else
-         {
-            tie_breaker_message = "Enter \"" + visiting_teams[number_of_rs_games-1] + " at " + home_teams[number_of_rs_games-1] + "\" Total Points to break the tie:&nbsp;&nbsp;";
-         }
-
-         if ( (unable_to_break_tie == true) || (in_progress_mn_points < 1) )
-         {
-            d.writeln('<table align=center>');
-            d.writeln('<tr><td class="no_border" style="font-size: 2pt">&nbsp;</td></tr>');
-            d.writeln('<tr><td class="no_border" nowrap><font style="font-size: 13pt">'+tie_breaker_message+'</font>');
-
-            if (unable_to_break_tie == false)
-            {
-               if (mn_pts_value == 0) mn_pts_value = "";
-
-               d.writeln('<input type=text class="default_text border_radius" style="border: 1px solid black; width: 35px" name="mn_points" size="3" maxlength="3" value="'+mn_pts_value+'"');
-               d.writeln('              onChange="get_mn_points(document);return true;"');
-               d.writeln('            onKeyPress="if (window.event.keyCode==13) {window.event.keyCode=0; get_mn_points(document); calculate_prelim_scores(document); return true;}">');
-            }
-
-            d.writeln('</td></tr></table>');
-         }
+         d.writeln('<table align=center>');
+         d.writeln('<tr><td class="no_border" style="font-size: 2pt">&nbsp;</td></tr>');
+         d.writeln('<tr><td class="no_border" nowrap><font style="font-size: 13pt">'+tie_breaker_message+'</font>');
+         d.writeln('<input type=text class="default_text border_radius" style="border: 1px solid black; width: 35px" name="mn_points" size="3" maxlength="3" value="'+mn_pts_value+'"');
+         d.writeln('              onChange="get_mn_points(document);return true;"');
+         d.writeln('            onKeyPress="if (window.event.keyCode==13) {window.event.keyCode=0; get_mn_points(document); calculate_prelim_scores(document); return true;}">');
+         d.writeln('</td></tr></table>');
       }
       else
       {
@@ -4320,7 +4239,7 @@ function build_regular_season_form()
 
    d.writeln('<tr><td class="no_border" style="font-size: 2pt">&nbsp;</td></tr>');
    d.writeln('');
-   if (mode == "prelim")
+   if (mode == "picks")
    {
       d.writeln('<tr align=center>');
       d.writeln('<td nowrap valign=middle class="no_border">');
@@ -4344,7 +4263,7 @@ function build_regular_season_form()
    }
    d.writeln('<tr align=center>');
    d.writeln('<td nowrap valign=middle class="no_border">');
-   if (mode == "prelim")
+   if (mode == "picks")
    {
       d.writeln('<input type="button" class="default_button border_radius" name="calculate_scores_button" value="Calculate Player Scores"');
       d.writeln('    onClick="calculate_prelim_scores(document);return true;">');
@@ -4378,7 +4297,7 @@ function build_regular_season_form()
    d.writeln('</td>');
    d.writeln('</tr>');
    d.writeln('');
-   if (mode == "prelim")
+   if (mode == "picks")
    {
       d.writeln('<tr><td class="no_border" style="font-size: 2pt">&nbsp;</td></tr>');
       d.writeln('<tr align=center>');
@@ -4454,11 +4373,11 @@ function build_regular_season_form()
    d.writeln('</center>');
    d.writeln('');
 
-   if (mode == "prelim")
+   if (mode == "picks")
    {
-      if ( (tie_breaker_needed == true) && (unable_to_break_tie == false) )
+      if ( (tie_breaker_needed == true) && (in_progress_mn_points < 1) )
       {
-         window.top.gv.focus_element(d.fp_results.mn_points);
+         if (d.fp_results.mn_points != undefined) window.top.gv.focus_element(d.fp_results.mn_points);
       }
 
       if (window.top.gv.get_scores_timer != null)
@@ -4543,7 +4462,6 @@ function build_season_summary()
    var sorted_scores             = Array(number_of_rs_players).fill(1);
    var summary_title             = "";
    var table_data                = "";
-   var tie_breaker_needed        = false;
    var total_1st_places          = Array(number_of_rs_players).fill(0);
    var total_2nd_places          = Array(number_of_rs_players).fill(0);
    var total_3rd_places          = Array(number_of_rs_players).fill(0);
@@ -4569,7 +4487,7 @@ function build_season_summary()
    if (week > number_of_rs_weeks)               week = number_of_rs_weeks;
    if (window.top.gv.mode == "summary_archive") week = number_of_rs_weeks;
 
-   summary_title     = "Week&nbsp;&nbsp;"+week+"&nbsp;&nbsp;Final";
+   summary_title     = "Week&nbsp;&nbsp;"+week+"&nbsp;&nbsp;Results";
 
    // Build document header.
 
@@ -4660,91 +4578,51 @@ function build_season_summary()
          }
       }
 
-      // If there's a tie, try to break the tie using the Total Points predictions.
+      // If there's a tie, try to break the tie.
 
-      if (high_score_count > 1)
+      if ( (high_score_count > 1) && (actual_mn_points > 0) )
       {
-         tie_breaker_needed = true;
+         // Determine the best Total Points delta (difference between best prediction and actual).
 
-         // If the winner of at least one game is not known, then there's no need for a tie breaker.
+         best_mn_points_delta = 1000;
 
-         for (var game_index = 0; game_index < number_of_rs_games; game_index++)
+         for (var player_index = 0; player_index < number_of_rs_players; player_index++)
          {
-            if ((weekly_winners[game_index] != "H") && (weekly_winners[game_index] != "V") && (weekly_winners[game_index] != "Tie"))
+            if (mn_points_delta[player_index] != "N/A")
             {
-               tie_breaker_needed = false;
+               if ( Math.abs(mn_points_delta[player_index]) < Math.abs(best_mn_points_delta) )
+               {
+                  best_mn_points_delta = mn_points_delta[player_index];
+               }
+               else if ( Math.abs(mn_points_delta[player_index]) == Math.abs(best_mn_points_delta) )
+               {
+                  if (mn_points_delta[player_index] < best_mn_points_delta)
+                  {
+                     best_mn_points_delta = mn_points_delta[player_index];
+                  }
+               }
             }
          }
 
-         // Attempt to break the tie.
+         // Determine how many players have the high score and the same Total Points delta.
 
-         if (tie_breaker_needed == true)
+         high_score_count = 0;
+
+         for (var player_index = 0; player_index < number_of_rs_players; player_index++)
          {
-            // The tie can only be broken if the actual Total Points is known.
-
-            if (actual_mn_points > 0)
+            if ( (mn_points_delta[player_index] != "N/A") && (mn_points_delta[player_index] == best_mn_points_delta) )
             {
-               // Determine the best Total Points delta (difference between best prediction and actual).
+               high_score_count++;
+            }
+         }
 
-               best_mn_points_delta = 1000;
+         // Adjust the ranks of the players who have the high score but don't have the best Total Points delta.
 
-               for (var player_index = 0; player_index < number_of_rs_players; player_index++)
-               {
-                  if (mn_points_delta[player_index] != "N/A")
-                  {
-                     if ( Math.abs(mn_points_delta[player_index]) < Math.abs(best_mn_points_delta) )
-                     {
-                        best_mn_points_delta = mn_points_delta[player_index];
-                     }
-                     else if ( Math.abs(mn_points_delta[player_index]) == Math.abs(best_mn_points_delta) )
-                     {
-                        if (mn_points_delta[player_index] < best_mn_points_delta)
-                        {
-                           best_mn_points_delta = mn_points_delta[player_index];
-                        }
-                     }
-                  }
-               }
-
-               // Determine if the players that are tied have the same Total Points prediction.
-
-               high_score_count = 0;
-
-               for (var player_index = 0; player_index < number_of_rs_players; player_index++)
-               {
-                  if ( (mn_points_delta[player_index] != "N/A") && (mn_points_delta[player_index] == best_mn_points_delta) )
-                  {
-                     high_score_count++;
-                  }
-               }
-
-               // If the players that are tied have the same Total Points prediction, then we can't break the tie.
-
-               if (high_score_count > 1)
-               {
-                  for (var player_index = 0; player_index < number_of_rs_players; player_index++)
-                  {
-                     // Clear out the Total Points delta and adjust the rank of those players no longer involved in the tie.
-
-                     if ((all_scores[week_index][player_index] == high_score) && (mn_points_delta[player_index] != best_mn_points_delta))
-                     {
-                        mn_points_delta[player_index] = "N/A";
-                        ranks_adjust[player_index]    = high_score_count; 
-                     }
-                  }
-               }
-               else
-               {
-                  // The tie can be broken, so adjust the ranks of the players who lost the tie breaker.
-
-                  for (var player_index = 0; player_index < number_of_rs_players; player_index++)
-                  {
-                     if ((mn_points_delta[player_index] != "N/A") && (mn_points_delta[player_index] != best_mn_points_delta))
-                     {
-                        ranks_adjust[player_index] = 1;
-                     }
-                  }
-               }
+         for (var player_index = 0; player_index < number_of_rs_players; player_index++)
+         {
+            if ((all_scores[week_index][player_index] == high_score) && (mn_points_delta[player_index] != best_mn_points_delta))
+            {
+               ranks_adjust[player_index] = high_score_count; 
             }
          }
       }
@@ -5807,9 +5685,9 @@ function check_for_opener()
 
    if ( (!window.top.gv) || window.top.gv == null || window.top.gv == undefined)
    {
-      alert("This page will only work if it is opened from the Football Pool 'Forms' page.\n" +
-            "You will now be re-directed to the Football Pool home page.  Once you're\n" +
-            "there, click on 'Forms', and then click on the desired 'On-Line' form link.");
+      alert("This page will only work if it is opened from the Football Pool 'FORMS' page.\n" +
+            "You will now be redirected to the Football Pool home page.  Once you're\n" +
+            "there, click on 'FORMS', and then click on the desired link.");
 
       window.open("fp.html");
 
