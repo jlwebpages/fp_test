@@ -2338,7 +2338,7 @@ function build_regular_season_form()
    }
 
    var best_mn_points_delta          = 1000;
-   var best_outcome_tooltip          = "Look under &quot;Picks Form&quot; on the &quot;Help&quot; page for more information on &quot;Best Outcome&quot;";
+   var best_outcome_tooltip          = "&quot;Best Outcome&quot; will figure out the best possible outcome for the selected Player.  Look under &quot;FORMS:  Picks&quot; on the Help page for more information.";
    var bullet_color                  = "";
    var color_black                   = "black";
    var color_red                     = "red";
@@ -5133,13 +5133,7 @@ function build_season_summary()
                d.writeln('<td class="'+border_class_1+background_color_class+'"><font style="font-size: 11pt">'+bold_start+all_games_won[week_index][sort_index[player_index]]+bold_end+'</font></td>');
             }
 
-            if (all_scores[week_index][sort_index[player_index]] == weekly_max_score)
-            {
-               background_color_class = " header_two_background";
-               bold_end               = "";
-               bold_start             = "";
-            }
-            else if (all_scores[week_index][sort_index[player_index]] == player_low_scores[sort_index[player_index]])
+            if (all_scores[week_index][sort_index[player_index]] == player_low_scores[sort_index[player_index]])
             {
                background_color_class = " low_score_background";
                bold_end               = "";
@@ -5149,6 +5143,12 @@ function build_season_summary()
 
                player_low_scores[sort_index[player_index]] = 999;
             }
+            else if (all_scores[week_index][sort_index[player_index]] == weekly_max_score)
+            {
+               background_color_class = " header_two_background";
+               bold_end               = "";
+               bold_start             = "";
+            }
             else
             {
                background_color_class = "";
@@ -5156,7 +5156,7 @@ function build_season_summary()
                bold_start             = "";
             }
 
-            d.writeln('<td class="'+border_class_3+background_color_class+'"><font style="font-size: 11pt">'+bold_start+all_scores[week_index][sort_index[player_index]]+bold_end+'</font></td>');  
+            d.writeln('<td class="'+border_class_3+background_color_class+'"><font style="font-size: 11pt">'+bold_start+all_scores[week_index][sort_index[player_index]]+bold_end+'</font></td>');
          }
          else
          {
@@ -5700,6 +5700,177 @@ function check_for_opener()
 }
 
 
+function display_last_modified (last_modified_document, display_document)
+{
+   if (last_modified_document.lastModified == 0)
+   {
+      display_document.write("Unknown");
+      return false;
+   }
+
+   Last_Modified = new Date(last_modified_document.lastModified);
+
+   Hour   = Last_Modified.getHours();
+   Minute = Last_Modified.getMinutes();
+   Month  = Last_Modified.getMonth();
+
+   if (Hour > 12)
+   {
+      Hour = Hour-12;
+      AM_PM = "PM";
+   }
+   else
+   {
+      AM_PM = "AM";
+   }
+
+   if (Minute < 10) Minute = "0" + Minute;
+
+   switch (Month)
+   {
+      case 0:
+         Month = "Jan";
+         break;
+      case 1:
+         Month = "Feb";
+         break;
+      case 2:
+         Month = "Mar";
+         break;
+      case 3:
+         Month = "Apr";
+         break;
+      case 4:
+         Month = "May";
+         break;
+      case 5:
+         Month = "Jun";
+         break;
+      case 6:
+         Month = "Jul";
+         break;
+      case 7:
+         Month = "Aug";
+         break;
+      case 8:
+         Month = "Sep";
+         break;
+      case 9:
+         Month = "Oct";
+         break;
+      case 10:
+         Month = "Nov";
+         break;
+      case 11:
+         Month = "Dec";
+         break;
+      default:
+         break;
+   }
+
+   display_document.write(Month," ",Last_Modified.getDate(),", ",Last_Modified.getFullYear()," at ",Hour,":",Minute," ",AM_PM);
+
+   return true;
+}
+
+
+function get_nfl_playoff_teams(year,archive_flag)
+{
+   var nfl_connection        = null;
+   var nfl_playoff_teams     = "";
+   var nfl_playoff_teams_url = "";
+
+
+   // Set nfl_playoff_teams_url
+
+   if ( (year == top.fp_year) && (top.season_over == false) )
+   {
+      nfl_playoff_teams_url = "www.espn.com/nfl/standings/_/view/playoff";
+   }
+   else
+   {
+      nfl_playoff_teams_url = "www.espn.com/nfl/standings/_/season/"+year+"/view/playoff";
+   }
+
+   // Display loading indicator while call to XMLHttpRequest is working.
+
+   if (archive_flag == true)
+   {
+      top.fp_frameset.rows = "60px,0,0,*";
+   }
+   else
+   {
+      top.fp_frameset.rows = "0,0,0,*";
+   }
+
+   // Get the NFL playoff teams from the internet.
+
+   nfl_connection = new XMLHttpRequest();
+
+   nfl_connection.open("GET","https://www.scrappintwins.com/cors/"+nfl_playoff_teams_url+"?nocache="+(new Date()).getTime(),true); // scrappintwins.com provided by Dan M.
+
+   nfl_connection.onload = function(e)
+   {
+      if (nfl_connection.readyState === 4) // Is XMLHttpRequest complete?
+      {
+         if (nfl_connection.status === 200) // Was the XMLHttpRequest successful?
+         {
+            nfl_playoff_teams = nfl_connection.responseText;
+
+            if (process_nfl_playoff_teams(nfl_playoff_teams,year) == false)
+            {
+               if (archive_flag == true)
+               {
+                  alert("Unable to retrieve "+year+" NFL Playoff Teams.");
+
+                  window.open("fp_archive.html","fp_main","");
+               }
+            }
+         }
+         else // XMLHttpRequest was unsuccessful.
+         {
+            //JL alert("\"get_nfl_playoff_teams\" failed.");
+         }
+
+         // Remove loading indicator.
+
+         if (archive_flag == true)
+         {
+            top.fp_frameset.rows = "60px,*,0,0";
+         }
+         else
+         {
+            top.fp_frameset.rows = "0,*,0,0";
+         }
+      }
+
+      return;
+   }
+
+   nfl_connection.onerror = function(e)
+   {
+      //JL alert("\"get_nfl_playoff_teams\" failed.");
+
+      // Remove loading indicator.
+
+      if (archive_flag = true)
+      {
+         top.fp_frameset.rows = "60px,*,0,0";
+      }
+      else
+      {
+         top.fp_frameset.rows = "0,*,0,0";
+      }
+
+      return;
+   };
+
+   nfl_connection.send(null);
+
+   return;
+}
+
+
 function normalize_float_value(received_float_value)
 {
    var float_value         = received_float_value;
@@ -5768,4 +5939,240 @@ function normalize_float_value(received_float_value)
    }
 
    return float_value;
+}
+
+
+function process_nfl_playoff_teams(nfl_playoff_teams,year)
+{
+   var AFC_teams                    = null;
+   var index_end                    = -1;
+   var index_start                  = -1;
+   var NFC_teams                    = null;
+   var number_of_playoff_teams      = 7;
+   var number_of_rs_weeks_completed = top.current_input_week - 1;
+   var possible_team_record_indexes = [36,37,46,47,48,49,50];
+   var team_losses                  = 0;
+   var team_record                  = "";
+   var team_record_index            = null;
+   var team_ties                    = 0;
+   var team_wins                    = 0;
+   var tooltip                      = "";
+   var tooltip_index_high           = 60;
+   var tooltip_index_low            = 0;
+   var total_team_record_games      = 0;
+
+
+   // Adjust number_of_playoff_teams if needed.
+
+   if (year < 2020) number_of_playoff_teams = 6;
+
+   // Adjust number_of_rs_weeks_completed if needed.
+
+   if (top.games_over == false) number_of_rs_weeks_completed--;
+
+   if (number_of_rs_weeks_completed > top.all_home_teams.length) number_of_rs_weeks_completed = top.all_home_teams.length;
+
+   // Parse the nfl_playoff_teams string.
+
+   index_start = nfl_playoff_teams.indexOf("\"groups\":[");
+   index_end   = nfl_playoff_teams.indexOf(",\"notes\":[]}]}");
+
+   if ( (index_start == -1) || (index_end == -1) || (index_start > index_end) )
+   {
+      //JL alert("Error getting NFL playoff teams from nfl_playoff_teams string.");
+
+      return false;
+   }
+
+   nfl_playoff_teams = nfl_playoff_teams.substring(index_start,index_end);
+   nfl_playoff_teams = "{" + nfl_playoff_teams + "}]}";
+
+   // Convert the nfl_playoff_teams string to a JavaScript object.
+
+   try
+   {
+      nfl_playoff_teams = JSON.parse(nfl_playoff_teams);
+   }
+   catch(e)
+   {
+      //JL alert("Error converting nfl_playoff_teams string to a JavaScript object.");
+
+      return false;
+   }
+
+   if (nfl_playoff_teams.groups == undefined)
+   {
+      //JL alert("nfl_playoff_teams object (groups) is undefined.");
+
+      return false;
+   }
+   else
+   {
+      AFC_teams = nfl_playoff_teams.groups[0];
+      NFC_teams = nfl_playoff_teams.groups[1];
+   }
+
+   // Populate the src attribute of the webpage HTML img tags based on the top seven seeds from nfl_playoff_teams.
+
+   for (var i = 0; i < number_of_playoff_teams; i++)
+   {
+      if ( (AFC_teams.standings == undefined) || (NFC_teams.standings == undefined) )
+      {
+         //JL alert("nfl_playoff_teams object (standings) is undefined.");
+
+         return false;
+      }
+
+      if ( (AFC_teams.standings[i].team == undefined) || (NFC_teams.standings[i].team == undefined) )
+      {
+         //JL alert("nfl_playoff_teams object (team) is undefined.");
+
+         return false;
+      }
+
+      if ( (AFC_teams.standings[i].stats == undefined) || (NFC_teams.standings[i].stats == undefined) )
+      {
+         //JL alert("nfl_playoff_teams object (stats) is undefined.");
+
+         return false;
+      }
+
+      if ( (AFC_teams.standings[i].team.shortDisplayName == undefined) || (NFC_teams.standings[i].team.shortDisplayName == undefined) )
+      {
+         //JL alert("nfl_playoff_teams object (shortDisplayName) is undefined.");
+
+         return false;
+      }
+
+      if (NFC_teams.standings[i].team.shortDisplayName == "Washington") NFC_teams.standings[i].team.shortDisplayName = "Redskins";
+
+      if ( (validate_team_name(AFC_teams.standings[i].team.shortDisplayName) == false) || (validate_team_name(NFC_teams.standings[i].team.shortDisplayName) == false) )
+      {
+         //JL alert("Error validating team name");
+
+         return false;
+      }
+
+      // Identify which stats array element contains the team record.
+
+      for (var j = 0; j < possible_team_record_indexes.length; j++)
+      {
+         team_record_index = null;
+
+         // If the stats array element contains a "-" and is less than or equal to 6 characters, then it potentially contains the team record.
+
+         if ( (AFC_teams.standings[i].stats[possible_team_record_indexes[j]] != undefined)       &&
+              (AFC_teams.standings[i].stats[possible_team_record_indexes[j]].indexOf("-") != -1) &&
+              (AFC_teams.standings[i].stats[possible_team_record_indexes[j]].length <= 6)           )
+         {
+            team_wins   = 0;
+            team_losses = 0;
+            team_ties   = 0;
+
+            team_record = AFC_teams.standings[i].stats[possible_team_record_indexes[j]];
+
+            // Set team_wins equal to the number before the first "-" in team_record.
+
+            team_wins = team_record.substring(0,team_record.indexOf("-"));
+
+            // Check to see if there's a second "-" in team_record.
+
+            team_record = team_record.substring(team_record.indexOf("-")+1);
+
+            if (team_record.indexOf("-") != -1)
+            {
+               // Set team_losses equal to the number before the second "-" in team_record.
+
+               team_losses = team_record.substring(0,team_record.indexOf("-"));
+
+               // Set team_ties equal to the number after the second "-" in team_record.
+
+               team_ties = team_record.substring(team_record.indexOf("-")+1);
+            }
+            else
+            {
+               // Set team_losses equal to the number after the first "-" in team_record.
+
+               team_losses = team_record;
+            }
+
+            // If total team record games is within one of number_of_rs_weeks_completed, then save the stats array element index in team_record_index.
+
+            if ( (isNaN(team_wins) == false) && (isNaN(team_losses) == false) && (isNaN(team_ties) == false) )
+            {
+               total_team_record_games = parseInt(team_wins) + parseInt(team_losses) + parseInt(team_ties);
+
+               if ( total_team_record_games >= number_of_rs_weeks_completed - 1)
+               {
+                  team_record_index = possible_team_record_indexes[j];
+
+                  break;
+               }
+            }
+         }
+      }
+
+      if (team_record_index == null)
+      {
+         //JL alert("Unable to identify which stats array element has the team record");
+
+         return false;
+      }
+
+      // Update AFC and NFC HTML table cells with team logos and team records using team_record_index.
+
+      tooltip = AFC_teams.standings[i].team.displayName;
+
+      for (var j = tooltip_index_low; j <= tooltip_index_high; j++)
+      {
+         if ( (AFC_teams.standings[i].stats[j] != undefined) && (AFC_teams.standings[i].stats[j].toLowerCase().includes("wins tie break") == true) )
+         {
+            tooltip = tooltip + ":  " + AFC_teams.standings[i].stats[j];
+            break;
+         }
+      }
+
+      document.getElementById("AFC_"+(i+1)).innerHTML = "<img src=\"Team Logos/"+AFC_teams.standings[i].team.shortDisplayName+".png\" title=\""+tooltip+"\"><br><span style=\"text-align: center\">"+
+                                                        AFC_teams.standings[i].stats[team_record_index];
+
+      if (NFC_teams.standings[i].team.displayName == "Washington") NFC_teams.standings[i].team.displayName = "Washington Redskins";
+
+      tooltip = NFC_teams.standings[i].team.displayName;
+
+      for (var j = tooltip_index_low; j <= tooltip_index_high; j++)
+      {
+         if ( (NFC_teams.standings[i].stats[j] != undefined) && (NFC_teams.standings[i].stats[j].toLowerCase().includes("wins tie break") == true) )
+         {
+            tooltip = tooltip + ":  " + NFC_teams.standings[i].stats[j];
+            break;
+         }
+      }
+
+      document.getElementById("NFC_"+(i+1)).innerHTML = "<img src=\"Team Logos/"+NFC_teams.standings[i].team.shortDisplayName+".png\" title=\""+tooltip+"\"><br><span style=\"text-align: center\">"+
+                                                        NFC_teams.standings[i].stats[team_record_index];
+   }
+
+   // Make AFC Playoff Teams and NFC Playoff Teams visible.
+
+   document.getElementById("AFC_Playoff_Teams").style.visibility="visible";
+   document.getElementById("NFC_Playoff_Teams").style.visibility="visible";
+
+   return true;
+}
+
+
+function validate_team_name(team_name)
+{
+   var team_names = ["49ers","Bears","Bengals","Bills","Broncos","Browns","Buccaneers","Cardinals",
+                     "Chargers","Chiefs","Colts","Commanders","Cowboys","Dolphins","Eagles","Falcons",
+                     "Giants","Jaguars","Jets","Lions","Packers","Panthers","Patriots","Raiders",
+                     "Rams","Ravens","Redskins","Saints","Seahawks","Steelers","Texans","Titans","Vikings"];
+
+
+   for (var i = 0; i < team_names.length; i++)
+   {
+      if (team_name == team_names[i]) return true;
+   }
+
+   return false;
 }
