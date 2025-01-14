@@ -17,7 +17,7 @@ function adjust_mobile_viewport_height(document)
 
          var document_height = document.body.scrollHeight + pad;
 
-         if ( (document.title = "NFL Football Pool - Post Season") && (document_height < 600) ) document_height = 600;
+         if ( (document.title == "NFL Football Pool - Post Season") && (document_height < 600) ) document_height = 600;
 
          var viewport_scale   = window.screen.height/document_height;
          var viewport_content = "height=" + document_height + "px, initial-scale=" + viewport_scale;
