@@ -3,7 +3,7 @@ function adjust_mobile_viewport_height(document)
 {
    var iPad = false;
 
-alert("1:"+document.title+":");
+
    if ( (navigator.platform.toLowerCase().indexOf("ipad") != -1) || ((navigator.platform.toLowerCase().indexOf("macintel") != -1) && (navigator.maxTouchPoints > 1)) )
    {
       iPad = true;
@@ -16,8 +16,8 @@ alert("1:"+document.title+":");
          var pad = 10;
 
          var document_height = document.body.scrollHeight + pad;
-alert("2:"+document.title+":");
-         if ( (document.title == "NFL Football Pool - Post Season") && (document_height < 600) ) document_height = 600;
+
+         if ( (document.title.toLowerCase().indexOf("post") != -1) && (document_height < 600) ) document_height = 600;
 
          var viewport_scale   = window.screen.height/document_height;
          var viewport_content = "height=" + document_height + "px, initial-scale=" + viewport_scale;
