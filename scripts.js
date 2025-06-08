@@ -14,7 +14,7 @@ function write_header()
    d.writeln('');
    d.writeln('<table id="header_row_1_mobile" style="margin: 0px auto; width: 75%; display: none">');
    d.writeln('   <tr>');
-   d.writeln('      <td style="text-align: center; font-family: Tahoma; font-size: 30pt; letter-spacing: 4; padding-top: 50px; padding-bottom: 50px">DARLENE LAGUNA ART</td>');
+   d.writeln('      <td style="text-align: center; font-family: Tahoma; font-size: 25pt; letter-spacing: 4; padding-top: 50px; padding-bottom: 50px">DARLENE LAGUNA ART</td>');
    d.writeln('   </tr>');
    d.writeln('</table>');
    d.writeln('');
