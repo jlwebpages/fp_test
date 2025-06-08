@@ -6,19 +6,13 @@ function write_header()
    var d = document;
 
    d.writeln('');
-   d.writeln('<table id="header_row_1_desktop" style="margin: 0px auto; width: 75%">');
+   d.writeln('<table style="margin: 0px auto">');
    d.writeln('   <tr>');
    d.writeln('      <td style="text-align: center; font-family: Tahoma; font-size: 30pt; letter-spacing: 4; padding-top: 50px; padding-bottom: 50px">DARLENE LAGUNA ART</td>');
    d.writeln('   </tr>');
    d.writeln('</table>');
    d.writeln('');
-   d.writeln('<table id="header_row_1_mobile" style="margin: 0px auto; width: 75%; display: none">');
-   d.writeln('   <tr>');
-   d.writeln('      <td style="text-align: center; font-family: Tahoma; font-size: 25pt; letter-spacing: 4; padding-top: 50px; padding-bottom: 50px">DARLENE LAGUNA ART</td>');
-   d.writeln('   </tr>');
-   d.writeln('</table>');
-   d.writeln('');
-   d.writeln('<table id="header_row_2" style="padding-bottom: 50px; margin: 0px auto; width: 85%">');
+   d.writeln('<table id="header_row_2" style="padding-bottom: 50px; margin: 0px auto; width: 95%">');
    d.writeln('   <tr style="vertical-align: top; text-align: center; font-family: lato; color: darkslategray; font-size: 12pt; letter-spacing: 3">');
    d.writeln('      <td style="padding-left: 10px; padding-right: 10px">HOME</td>');
    d.writeln('      <td style="padding-left: 10px; padding-right: 10px">NEW WORK</td>');
