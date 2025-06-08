@@ -1,20 +1,39 @@
 <html>
 
-<script>
+<head>
+   <title>Darlene Laguna Art</title>
+   <script language="JavaScript" src=scripts.js></script>
+   <style>
+      @media only screen and (max-width: 1024px)
+      {
+         body
+         {
+            #header_table_2 {display: none}
+         }
+      }
+   </style>
+</head>
 
-if (navigator.userAgent.toLowerCase().indexOf("mobile") != -1)  // This is a mobile device.
-{
-   document.writeln('<meta http-equiv="Refresh" content="0; URL=https://jlwebpages.github.io/fp/fp_mobile.html">');
-}
-else if ( (navigator.platform.toLowerCase().indexOf("ipad") != -1) || ((navigator.platform.toLowerCase().indexOf("macintel") != -1) && (navigator.maxTouchPoints > 1)) )  // This is an iPad.
-{
-   document.writeln('<meta http-equiv="Refresh" content="0; URL=https://jlwebpages.github.io/fp/fp_mobile.html">');
-}
-else
-{
-   document.writeln('<meta http-equiv="Refresh" content="0; URL=https://jlwebpages.github.io/fp/fp.html">');
-}
+<body style="background: white;
+                 border: 0px;
+                 color: black;
+           font-family: Tahoma;
+                margin: 0">
 
-</script>
+
+<script>write_header();</script>
+
+<table style="margin: 0px auto; width: 95%">
+
+   <tr>
+      <td style="background: black; height: 400px;"></td>
+   </tr>
+
+
+</table>
+
+
+
+</body>
 
 </html>
