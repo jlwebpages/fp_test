@@ -18,7 +18,7 @@ function write_header()
    d.writeln('');
    d.writeln('');
    d.writeln('<div id="menu_list" class="menu">');
-   d.writeln('   <a href="javascript:void(0)" class="close_button" onclick="close_menu()" onPress="display_menu()">&times;</a>');
+   d.writeln('   <a href="javascript:void(0)" class="close_button" onclick="close_menu()" onPress="close_menu()">&times;</a>');
    d.writeln('   <a href="#">HOME</a>');
    d.writeln('   <a href="#">NEW WORK</a>');
    d.writeln('   <a href="#">FEATURED WORK</a>');
@@ -27,6 +27,7 @@ function write_header()
    d.writeln('   <a href="#">HOW TO PURCHASE</a>');
    d.writeln('   <a href="#">CONTACT</a>');
    d.writeln('</div>');
+   d.writeln('');
    d.writeln('<span id="menu" style="font-size: 30px; cursor: pointer; visibility: hidden" onclick="display_menu()" onPress="display_menu()">&#9776;</span>');
    d.writeln('');
    d.writeln('<table style="margin: 0px auto">');
@@ -35,7 +36,7 @@ function write_header()
    d.writeln('   </tr>');
    d.writeln('</table>');
    d.writeln('');
-   d.writeln('<table id="header_row_2" style="padding-bottom: 50px; margin: 0px auto; width: 85%">');
+   d.writeln('<table id="header_row_2" style="padding-bottom: 50px; margin: 0px auto; width: 90%">');
    d.writeln('   <tr style="vertical-align: top; text-align: center; font-family: Lato; color: darkslategray; font-size: 12pt; letter-spacing: 3px">');
    d.writeln('      <td style="padding-left: 10px; padding-right: 10px">HOME</td>');
    d.writeln('      <td style="padding-left: 10px; padding-right: 10px">NEW WORK</td>');
