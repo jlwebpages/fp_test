@@ -1,9 +1,17 @@
+<!DOCTYPE html>
+
 <html>
 
 <head>
+
    <title>Darlene Laguna Art</title>
-   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <link href="styles.css" rel="stylesheet" type="text/css">
+
    <script language="JavaScript" src=scripts.js></script>
+
    <style>
       @media only screen and (max-width: 1024px)
       {
@@ -13,15 +21,34 @@
             #dklaguna_home_mobile  {display: block!important}
             #dklaguna_home_desktop {display: none}
          }
+      @media screen and (max-height: 450px)
+      {
+         .menu   {padding-top: 15px;}
+         .menu a {font-size:   18px;}
       }
    </style>
 </head>
 
-<body style="background: white;
-                  color: black;
-                 border: 0px;
-                 margin: 0">
+<body class="background_color"
+       tyle="color: black;
+            border: 0px;
+            margin: 0">
 
+
+
+
+<div id="menu" class="menu">
+  <a href="javascript:void(0)" class="close_button" onclick="close_menu()">&times;</a>
+  <a class="menu_list" href="#">HOME</a>
+  <a href="#">NEW WORK</a>
+  <a href="#">FEATURED WORK</a>
+  <a href="#">PHOTO ART</a>
+  <a href="#">WORKS ON PAPER</a>
+  <a href="#">HOW TO PURCHASE</a>
+  <a href="#">CONTACT</a>
+</div>
+
+<span style="font-size:30px;cursor:pointer" onclick="display_menu()">&#9776;</span>
 
 <script>write_header();</script>
 
