@@ -1,12 +1,12 @@
 
 function close_menu()
 {
-   document.getElementById("menu").style.width = "0";
+   document.getElementById("menu_list").style.width = "0";
 }
 
 function display_menu()
 {
-   document.getElementById("menu").style.width = "250px";
+   document.getElementById("menu_list").style.width = "250px";
 }
 
 function write_header()
@@ -15,25 +15,23 @@ function write_header()
 
    var d = document;
 
-   d.writeln('<div id="menu" class="menu">');
-   d.writeln('  <a href="javascript:void(0)" class="close_button" onclick="close_menu()">&times;</a>');
-   d.writeln('  <a href="#">HOME</a>');
-   d.writeln('  <a href="#">NEW WORK</a>');
-   d.writeln('  <a href="#">FEATURED WORK</a>');
-   d.writeln('  <a href="#">PHOTO ART</a>');
-   d.writeln('  <a href="#">WORKS ON PAPER</a>');
-   d.writeln('  <a href="#">HOW TO PURCHASE</a>');
-   d.writeln('  <a href="#">CONTACT</a>');
-   d.writeln('  <span style="font-size:30px;cursor:pointer" onclick="display_menu()">&#9776;</span>');
+   d.writeln('');
+   d.writeln('');
+   d.writeln('<div id="menu_list" class="menu">');
+   d.writeln('   <a href="javascript:void(0)" class="close_button" onclick="close_menu()" onPress="display_menu()">&times;</a>');
+   d.writeln('   <a href="#">HOME</a>');
+   d.writeln('   <a href="#">NEW WORK</a>');
+   d.writeln('   <a href="#">FEATURED WORK</a>');
+   d.writeln('   <a href="#">PHOTO ART</a>');
+   d.writeln('   <a href="#">WORKS ON PAPER</a>');
+   d.writeln('   <a href="#">HOW TO PURCHASE</a>');
+   d.writeln('   <a href="#">CONTACT</a>');
    d.writeln('</div>');
+   d.writeln('<span id="menu" style="font-size: 30px; cursor: pointer; visibility: hidden" onclick="display_menu()" onPress="display_menu()">&#9776;</span>');
    d.writeln('');
    d.writeln('<table style="margin: 0px auto">');
    d.writeln('   <tr>');
-   d.writeln('      <td>');
-
-   d.writeln('      </td>');
    d.writeln('      <td style="text-align: center; font-family: Tahoma; font-size: 30pt; letter-spacing: 4px; padding-top: 0px; padding-bottom: 50px">DARLENE LAGUNA ART</td>');
-   d.writeln('      <td></td>');
    d.writeln('   </tr>');
    d.writeln('</table>');
    d.writeln('');
@@ -48,6 +46,7 @@ function write_header()
    d.writeln('      <td style="padding-left: 10px; padding-right: 10px">CONTACT</td>');
    d.writeln('   </tr>');
    d.writeln('</table>');
+   d.writeln('');
    d.writeln('');
 
    d.close();
