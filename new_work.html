@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+   <title>Darlene Laguna Art</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="styles.css" rel="stylesheet" type="text/css">
+   <script language="JavaScript" src=scripts.js></script>
+</head>
+
+<body class="body">
+
+
+<script>write_header();</script>
+
+
+<table class="black_table">
+   <tr>
+      <td id="mobile" style="padding: 25px 25px 0px 25px; display: none">
+         <img src="new_work.jpeg" width=100% style="border-radius: 50%">
+      </td>
+   </tr>
+   <tr>
+      <td id="text" class="text" style="padding: 50px">
+         <span id="sub_title" class="sub_title">NEW WORK</span>
+         My new work reflects my ongoing immersion in my current place and time.<br>
+         <br>
+         All pieces are acrylic and mixed media.<br>
+         To inquire about pricing or for more information, please use the contact form or email me at <a class="e-mail" href="mailto:dkclaguna@gmail.com?subject=Darlene Laguna Art">dkclaguna@gmail.com</a>.
+      </td>
+      <td id="desktop" style="vertical-align: top; padding: 50px">
+         <img src="new_work.jpeg" width="300px" style="border-radius: 50%">
+      </td>
+   </tr>
+
+</table>
+
+<style>
+
+@media only screen and (max-width: 1024px)
+{
+   #art_gallery {column-count: 1}
+}
+
+.art_gallery
+{
+   column-count: 3; /* Adjust column count for desired layout */
+   column-gap: 10px; /* Adjust gap between columns */
+   text-align: center;
+}
+
+.art_image
+{
+   display: inline-block; /* Important for masonry layout */
+   margin-bottom: 10px; /* Adjust spacing between items */
+}
+
+.art_image img
+{
+   width: 100%; /* Ensure images fill their column width */
+   height: auto; /* Maintain aspect ratio */
+   max-width: 600px;
+}
+
+.art_caption
+{
+   text-align: center;
+   margin-top: 5px; /* Adjust spacing between image and caption */
+}
+
+</style>
+
+
+<div id = "art_gallery" class="art_gallery" style="width: 95%; margin: 0 auto; margin-top: 25px">
+
+   <div class="art_image">
+      <img src="new_work_1.jpeg" alt="Description of Image 1">
+      <p class="art_caption">Caption for Image 1</p>
+   </div>
+
+   <div class="art_image">
+      <img src="new_work_2.jpeg" alt="Description of Image 2">
+      <p class="art_caption">Caption for Image 2</p>
+   </div>
+
+   <div class="art_image">
+      <img src="new_work_3.jpeg" alt="Description of Image 3">
+      <p class="art_caption">Caption for Image 3</p>
+   </div>
+
+   <div class="art_image">
+      <img src="new_work_4.jpeg" alt="Description of Image 4">
+      <p class="art_caption">Caption for Image 4</p>
+   </div>
+
+   <div class="art_image">
+      <img src="new_work_5.jpeg" alt="Description of Image 5">
+      <p class="art_caption">Caption for Image 5</p>
+   </div>
+
+   <div class="art_image">
+      <img src="new_work_6.jpeg" alt="Description of Image 6">
+      <p class="art_caption">Caption for Image 6</p>
+   </div>
+
+</div>
+
+
+<div class="copyright">Copyright © 2024 Darlene Laguna Art<br>All Rights Reserved.</div>
+
+
+</body>
+
+</html>

@@ -1,40 +1,136 @@
-      .background_color {background-color: white}
+@media only screen and (max-width: 1024px)
+{
+   body
+   {
+      #menu      {visibility:     visible!important}
+      #title     {font-size:      28pt!important   }
+      #title     {letter-spacing: 2px!important    }
+      #links     {display:        none!important   }
+      #sub_title {font-size:      22pt!important   }
+      #sub_title {padding-bottom: 15px!important   }
+      #text      {padding:        25px!important   }
+      #desktop   {display:        none!important   }
+      #mobile    {display:        block!important  }
+   }
+}
 
-      .menu
-      {
-         height: 100%;
-         width: 0%;
-         position: fixed;
-         top: 0;
-         left: 0;
-         background-color: white;
-         overflow-x: hidden;
-         transition: 0.5s;
-         padding-top: 60px;
-      }
+.body
+{
+   background-color: white;
+   color: black;
+   margin: 0px;
+}
 
-      .menu a
-      {
-         padding: 8px 8px 8px 32px;
-         text-decoration: none;
-         font-family: Lato;
-         font-size: 16px;
-         letter-spacing: 3px;
-         color: darkslategray;
-         display: block;
-         transition: 0.3s;
-      }
+.title
+{
+   font-family: Arial;
+   font-weight: bold;
+   color: black;
+   font-size: 38pt;
+   letter-spacing: 4px;
+}
 
-      .menu a:hover
-      {
-         color: #f1f1f1;
-      }
+.sub_title
+{
+   font-family: Arial;
+   color: white;
+   font-size: 30pt;
+   text-align: left;
+   padding-bottom: 40px;
+   display:block; 
+}
 
-      .menu .close_button
-      {
-         position: absolute;
-         top: 0;
-         right: 25px;
-         font-size: 36px;
-         margin-left: 50px;
-      }  
+.text
+{
+   font-family: Arial;
+   font-size: 14pt; 
+   color: silver;
+   vertical-align: top;
+   text-align: left;
+   line-height: 30px;
+}
+
+.link
+{
+   font-family: Arial;
+   font-size: 12pt;
+   color: darkslategray;
+   letter-spacing: 2px;
+   text-decoration: none;
+   padding-left: 10px;
+   padding-right: 10px;
+}
+
+a.link:hover {font-weight: bold}
+
+.e-mail
+{
+   text-decoration: none;
+   color: red;
+}
+
+.copyright
+{
+   font-family: Arial;
+   font-size: 11pt;
+   color: darkslategray;
+   text-align: center;
+   padding-top: 75px;
+   padding-bottom: 50px;
+}
+
+.black_table
+{
+   background-color: #0D0D0D;
+   color: white;
+   text-align: left;
+   border-spacing: 0px;
+   padding: 0px;
+   margin: 0 auto;
+   width: 95%;
+}
+
+.white_table
+{
+   background-color: white;
+   color: black;
+   text-align: center;
+   border-spacing: 0px;
+   padding: 0px;
+   margin: 0 auto;
+   width: 95%;
+}
+
+.menu
+{
+   height: 50%;
+   width: 0%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   background-color: white;
+   overflow-x: hidden;
+   padding-top: 60px;
+}
+
+.menu a
+{
+   padding: 8px 8px 8px 32px;
+   text-decoration: none;
+   font-family: Arial;
+   font-size: 16px;
+   letter-spacing: 2px;
+   color: darkslategray;
+   display: block;
+}
+
+.menu a:hover {font-weight: bold}
+
+.menu .close_button
+{
+   position: absolute;
+   top: 0;
+   right: 25px;
+   font-size: 36px;
+   margin-left: 50px;
+}  
