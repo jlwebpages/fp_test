@@ -177,6 +177,6 @@ a.link:hover {font-weight: bold}
 
 .art_description
 {
-   text-align: justify;
+   text-align: left;
    display: block;
 }
