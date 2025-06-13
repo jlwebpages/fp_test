@@ -1,15 +1,15 @@
 @media only screen and (max-width: 1024px)
 {
-   #menu        {visibility:     visible!important}
-   #title       {font-size:      28pt!important   }
-   #title       {letter-spacing: 2px!important    }
-   #links       {display:        none!important   }
-   #sub_title   {font-size:      22pt!important   }
-   #sub_title   {padding-bottom: 15px!important   }
-   #text        {padding:        25px!important   }
-   #desktop     {display:        none!important   }
-   #mobile      {display:        block!important  }
-   #art_gallery {column-count:   1                }
+   #menu        {visibility:     visible !important}
+   #title       {font-size:      28pt    !important}
+   #title       {letter-spacing: 2px     !important}
+   #links       {display:        none    !important}
+   #sub_title   {font-size:      22pt    !important}
+   #sub_title   {padding-bottom: 15px    !important}
+   #text        {padding:        25px    !important}
+   #desktop     {display:        none    !important}
+   #mobile      {display:        block   !important}
+   #art_gallery {column-count:   1       !important}
 }
 
 .body
@@ -135,16 +135,19 @@ a.link:hover {font-weight: bold}
 
 .art_gallery
 {
-   column-count: 3;
+   column-count: 2;
    column-gap: 50px;
    text-align: center;
+   margin-top: 25px;
+   margin: 0 auto;
+   width: 95%;
 }
 
 .art_image
 {
-   display: inline-block;
    margin-top: 25px;
    margin-bottom: 25px;
+   display: inline-block;
 }
 
 .art_image img
@@ -159,27 +162,27 @@ a.link:hover {font-weight: bold}
    font-size: 12pt;
    color: darkslategray;
    text-align: left;
-   margin-top: 5px;
+   margin: 0px;
 }
 
 .art_title
 {
-   font-family: Arial;
    font-weight: bold;
    text-decoration: underline;
    font-size: 14pt;
-   color: darkslategray;
+   padding-top: 5px;
+   display: inline-block;
 }
 
 .art_dimensions
 {
    font-style: italic;
+   padding-top: 10px;
    display: inline-block;
-   padding: 10px 0px 10px 0px;
 }
 
-.art_description
+.art_paragraph
 {
-   text-align: left;
-   display: block;
+   padding-top: 10px;
+   display: inline-block;
 }
