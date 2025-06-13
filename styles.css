@@ -2,15 +2,16 @@
 {
    body
    {
-      #menu      {visibility:     visible!important}
-      #title     {font-size:      28pt!important   }
-      #title     {letter-spacing: 2px!important    }
-      #links     {display:        none!important   }
-      #sub_title {font-size:      22pt!important   }
-      #sub_title {padding-bottom: 15px!important   }
-      #text      {padding:        25px!important   }
-      #desktop   {display:        none!important   }
-      #mobile    {display:        block!important  }
+      #menu        {visibility:     visible!important}
+      #title       {font-size:      28pt!important   }
+      #title       {letter-spacing: 2px!important    }
+      #links       {display:        none!important   }
+      #sub_title   {font-size:      22pt!important   }
+      #sub_title   {padding-bottom: 15px!important   }
+      #text        {padding:        25px!important   }
+      #desktop     {display:        none!important   }
+      #mobile      {display:        block!important  }
+      #art_gallery {column-count:   1                }
    }
 }
 
@@ -133,4 +134,49 @@ a.link:hover {font-weight: bold}
    right: 25px;
    font-size: 36px;
    margin-left: 50px;
-}  
+}
+
+.art_gallery
+{
+   column-count: 3;
+   column-gap: 50px;
+   text-align: center;
+}
+
+.art_image
+{
+   display: inline-block;
+   margin-top: 25px;
+   margin-bottom: 0px;
+}
+
+.art_image img
+{
+   width: 100%;
+   height: auto;
+}
+
+.art_caption
+{
+   font-family: Arial;
+   font-size: 12pt;
+   color: darkslategray;
+   text-align: center;
+   margin-top: 10px;
+}
+
+.art_title
+{
+   font-family: Arial;
+   font-weight: bold;
+   text-decoration: underline;
+   font-size: 14pt;
+   color: darkslategray;
+   text-align: center;
+}
+
+.art_description
+{
+   text-align: justify;
+   display: block;
+}
