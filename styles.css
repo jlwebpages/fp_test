@@ -158,7 +158,7 @@ a.link:hover {font-weight: bold}
    font-family: Arial;
    font-size: 12pt;
    color: darkslategray;
-   text-align: center;
+   text-align: left;
    margin-top: 5px;
 }
 
@@ -169,12 +169,13 @@ a.link:hover {font-weight: bold}
    text-decoration: underline;
    font-size: 14pt;
    color: darkslategray;
-   text-align: center;
+   text-align: left;
 }
 
 .art_dimensions
 {
    font-style: italic;
+   text-align: left;
 }
 
 .art_description
