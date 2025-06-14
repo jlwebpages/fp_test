@@ -55,8 +55,6 @@
    color: darkslategray;
    letter-spacing: 2px;
    text-decoration: none;
-   padding-left: 10px;
-   padding-right: 10px;
 }
 
 a.link:hover {font-weight: bold}
