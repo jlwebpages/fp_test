@@ -34,7 +34,23 @@
       image_height = this.height;
    }
 
-   image_style = "width: auto; height: calc(100vh)";
+   if (window.innerWidth >= window.innerHeight)
+   {
+      if (image_height >= image_width)
+      {
+         image_style = "width: auto; height: calc(100vh)";
+      }
+      else
+      {
+         image_style = "width: calc(100vw); height: auto";
+      }
+   }
+   //else
+   //{
+      //
+   //}
+
+   //image_style = "width: auto; height: calc(100vh)";
 
    document.open();
 
