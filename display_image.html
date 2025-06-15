@@ -45,10 +45,17 @@
          image_style = "width: calc(100vw); height: auto";
       }
    }
-   //else
-   //{
-      //
-   //}
+   else
+   {
+      if (image_width >= image_height)
+      {
+         image_style = "width: calc(100vw); height: auto";
+      }
+      else
+      {
+         image_style = "width: auto; height: calc(100vh)";
+      }
+   }
 
    //image_style = "width: auto; height: calc(100vh)";
 
