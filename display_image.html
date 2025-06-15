@@ -38,22 +38,22 @@
    {
       if (image_height >= image_width)
       {
-         image_style = "width: auto; height: calc(100vh)";
+         image_style = "width: auto; height: calc(100vh-6px)";
       }
       else
       {
-         image_style = "width: calc(100vw); height: auto";
+         image_style = "width: 100%; height: auto";
       }
    }
    else
    {
       if (image_width >= image_height)
       {
-         image_style = "width: calc(100vw); height: auto";
+         image_style = "width: 100%; height: auto";
       }
       else
       {
-         image_style = "width: auto; height: calc(100vh)";
+         image_style = "width: auto; height: calc(100vh-6px)";
       }
    }
 
