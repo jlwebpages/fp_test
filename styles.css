@@ -1,15 +1,18 @@
 @media only screen and (max-width: 1024px)
 {
-   #menu        {visibility:     visible !important}
-   #title       {font-size:      28pt    !important}
-   #title       {letter-spacing: 2px     !important}
-   #links       {display:        none    !important}
-   #sub_title   {font-size:      22pt    !important}
-   #sub_title   {padding-bottom: 15px    !important}
-   #text        {padding:        25px    !important}
-   #desktop     {display:        none    !important}
-   #mobile      {display:        block   !important}
-   #art_gallery {column-count:   1       !important}
+   #menu        {visibility:     visible  !important}
+   #title       {font-size:      28pt     !important}
+   #title       {letter-spacing: 2px      !important}
+   #links       {display:        none     !important}
+   #sub_title   {font-size:      22pt     !important}
+   #sub_title   {padding-bottom: 15px     !important}
+   #text        {padding:        25px     !important}
+   #desktop     {display:        none     !important}
+   #mobile      {display:        block    !important}
+   #art_gallery {column-count:   1        !important}
+   #back_button {font-size:      10pt     !important}
+   #back_button {padding: 0px 4px 0px 4px !important}
+
 }
 
 .body
@@ -196,6 +199,6 @@ a.link:hover {font-weight: bold}
    border-radius: 20%;
    padding: 0px 8px 0px 8px;
    position: absolute;
-   top: 10px;
-   right: 10px;
+   top: 5px;
+   right: 5px;
 }
