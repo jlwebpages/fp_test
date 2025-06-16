@@ -65,8 +65,8 @@ a.link:hover {font-weight: bold}
 
 .e-mail
 {
+   color: #D20000;
    text-decoration: none;
-   color: red;
 }
 
 .copyright
@@ -194,7 +194,7 @@ a.link:hover {font-weight: bold}
    background-color: black;
    font-family: Arial;
    font-size: 20pt;
-   color: white;
+   color: silver;
    border-width: 0px;
    border-radius: 20%;
    padding: 0px 8px 0px 8px;
