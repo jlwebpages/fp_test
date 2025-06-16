@@ -10,8 +10,8 @@
    #desktop     {display:        none     !important}
    #mobile      {display:        block    !important}
    #art_gallery {column-count:   1        !important}
-   #back_button {font-size:      10pt     !important}
-   #back_button {padding: 0px 4px 0px 4px !important}
+   #back_button {font-size:      15pt     !important}
+   #back_button {padding: 0px 5px 0px 5px !important}
 
 }
 
