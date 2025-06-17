@@ -38,12 +38,12 @@ function write_header()
    d.writeln('');
    d.writeln('<table id="links" class="white_table" style="padding-bottom: 50px; width: 80%; white-space: nowrap">');
    d.writeln('   <tr>');
-   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a class="link" href="home.html"           >HOME</a></td>');
-   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a class="link" href="new_work.html"       >NEW WORK</a></td>');
-   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a class="link" href="featured_work.html"  >FEATURED WORK</a></td>');
-   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a class="link" href="photo_art.html"      >PHOTO ART</a></td>');
-   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a class="link" href="works_on_paper.html" >WORKS ON PAPER</a></td>');
-   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a class="link" href="how_to_purchase.html">HOW TO PURCHASE</a></td>');
+   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="home"            class="link" href="home.html"           >HOME</a></td>');
+   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="new_work"        class="link" href="new_work.html"       >NEW WORK</a></td>');
+   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="featured_work"   class="link" href="featured_work.html"  >FEATURED WORK</a></td>');
+   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="photo_art"       class="link" href="photo_art.html"      >PHOTO ART</a></td>');
+   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="works_on_paper"  class="link" href="works_on_paper.html" >WORKS ON PAPER</a></td>');
+   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="how_to_purchase" class="link" href="how_to_purchase.html">HOW TO PURCHASE</a></td>');
    d.writeln('   </tr>');
    d.writeln('</table>');
    d.writeln('');

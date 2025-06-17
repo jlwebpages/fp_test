@@ -61,11 +61,25 @@
    text-decoration: none;
 }
 
-a.link:hover {font-weight: bold}
+a.link:hover
+{
+   font-weight: bold;
+   color: #BE0000;
+}
+
+.clicked_link
+{
+   font-family: Arial;
+   font-size: 12pt;
+   font-weight: bold;
+   color: #BE0000;
+   letter-spacing: 2px;
+   text-decoration: none;
+}
 
 .e-mail
 {
-   color: #D20000;
+   color: #BE0000;
    text-decoration: none;
 }
 
