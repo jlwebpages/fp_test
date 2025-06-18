@@ -139,7 +139,11 @@ a.link:hover
    display: block;
 }
 
-.menu a:hover {font-weight: bold}
+.menu a:hover
+{
+   font-weight: bold;
+   color: #BE0000;
+}
 
 .menu .close_button
 {
