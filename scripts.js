@@ -9,6 +9,11 @@ function display_menu()
    document.getElementById("menu_list").style.width = "250px";
 }
 
+function write_copyright()
+{
+   document.writeln('<div class="copyright">Copyright &copy 2024 Darlene Laguna Art<br>All Rights Reserved.</div>');
+}
+
 function write_header()
 {
    document.open();
