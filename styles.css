@@ -89,6 +89,7 @@ a.link:hover
    font-size: 11pt;
    color: darkslategray;
    text-align: center;
+   line-height: 20px;
    padding-top: 75px;
    padding-bottom: 50px;
 }
