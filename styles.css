@@ -18,7 +18,7 @@
 
 /* Additional rules iPads in portrait orientation */
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait)
 {
    #art_gallery {column-count: 3   !important}
    #text_table  {width:        80% !important}
@@ -27,7 +27,7 @@
 
 /* Additional rules mobile devices in landscape orientation */
 
-@media only screen and (max-width : 1024px) and (orientation : landscape)
+@media only screen and (max-width: 1024px) and (orientation: landscape)
 {
    #art_gallery {column-count: 3   !important}
    #text_table  {width:        80% !important}
