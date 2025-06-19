@@ -1,23 +1,37 @@
-@media only screen and (max-width: 1024px) and not (orientation: landscape)
+/* General rules for screen width less than or equal to 1024 */
+
+@media only screen and (max-width: 1024px)
 {
-   #menu        {visibility:     visible  !important}
-   #title       {font-size:      28pt     !important}
-   #title       {letter-spacing: 2px      !important}
-   #links       {display:        none     !important}
-   #sub_title   {font-size:      22pt     !important}
-   #sub_title   {padding-bottom: 15px     !important}
-   #text        {padding:        25px     !important}
-   #desktop     {display:        none     !important}
-   #mobile      {display:        block    !important}
-   #art_gallery {column-count:   1        !important}
-   #back_button {font-size:      15pt     !important}
-   #back_button {padding: 0px 6px 0px 6px !important}
+   #menu        {visibility:     visible         !important}
+   #title       {font-size:      28pt            !important}
+   #title       {letter-spacing: 2px             !important}
+   #links       {display:        none            !important}
+   #sub_title   {font-size:      22pt            !important}
+   #sub_title   {padding-bottom: 15px            !important}
+   #text        {padding:        25px            !important}
+   #desktop     {display:        none            !important}
+   #mobile      {display:        block           !important}
+   #art_gallery {column-count:   1               !important}
+   #back_button {font-size:      15pt            !important}
+   #back_button {padding:        0px 6px 0px 6px !important}
 }
+
+/* Additional rules iPads in portrait orientation */
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)
 {
-   #text_table  {width: 75% !important}
-   #art_gallery {width: 75% !important}
+   #art_gallery {column-count: 3   !important}
+   #text_table  {width:        80% !important}
+   #art_gallery {width:        80% !important}
+}
+
+/* Additional rules mobile devices in landscape orientation */
+
+@media only screen and (max-width : 1024px) and (orientation : landscape)
+{
+   #art_gallery {column-count: 3   !important}
+   #text_table  {width:        80% !important}
+   #art_gallery {width:        80% !important}
 }
 
 .body
