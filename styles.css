@@ -1,4 +1,4 @@
-/* General rules for screen width less than or equal to 1024 */
+/* General rules for non-desktop devices */
 
 @media only screen and (max-width: 1024px)
 {
@@ -16,22 +16,22 @@
    #back_button {padding:        0px 6px 0px 6px !important}
 }
 
-/* Additional rules iPads in portrait orientation */
+/* Additional rules for iPads in portrait orientation */
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait)
 {
    #mobile      {width:        50% !important}
-   #art_gallery {column-count: 3   !important}
+   #art_gallery {column-count: 2   !important}
    #text_table  {width:        80% !important}
    #art_gallery {width:        80% !important}
 }
 
-/* Additional rules mobile devices in landscape orientation */
+/* Additional rules for mobile devices in landscape orientation */
 
 @media only screen and (max-width: 1024px) and (orientation: landscape)
 {
    #mobile      {width:        50% !important}
-   #art_gallery {column-count: 3   !important}
+   #art_gallery {column-count: 2   !important}
    #text_table  {width:        80% !important}
    #art_gallery {width:        80% !important}
 }
