@@ -20,24 +20,22 @@
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait)
 {
-   #text_table  {width:        80% !important}
-   #mobile      {padding: 50px 50px 0px 50px!important}
-   #text        {padding:      50px!important}
-   #text_image  {width:    100% !important}
-   #art_gallery {width:        80% !important}
-   #art_gallery {column-count: 2   !important}
+   #text_table  {width:        80%                !important}
+   #mobile      {padding:      50px 50px 0px 50px !important}
+   #text        {padding:      50px               !important}
+   #art_gallery {width:        80%                !important}
+   #art_gallery {column-count: 2                  !important}
 }
 
 /* Additional rules for mobile devices in landscape orientation */
 
 @media only screen and (max-width: 1024px) and (orientation: landscape)
 {
-   #text_table  {width:        80% !important}
-   #mobile      {padding: 50px 50px 0px 50px!important}
-   #text        {padding:      50px!important}
-   #text_image  {width:    100% !important}
-   #art_gallery {width:        80% !important}
-   #art_gallery {column-count: 2   !important}
+   #text_table  {width:        80%                !important}
+   #mobile      {padding:      50px 50px 0px 50px !important}
+   #text        {padding:      50px               !important}
+   #art_gallery {width:        80%                !important}
+   #art_gallery {column-count: 2                  !important}
 }
 
 .body
