@@ -6,6 +6,7 @@
    <title>Darlene Laguna Art - Featured Work</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link href="styles.css" rel="stylesheet" type="text/css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
    <script language="JavaScript" src=scripts.js></script>
 </head>
 
@@ -13,218 +14,35 @@
 
 
 <script>
-
    write_header();
-
-   document.getElementById("featured_work").className = "clicked_link";
-
+   document.getElementById("featured_work_link").className = "clicked_link";
+   display_data_from_file("featured_work/featured_work.txt","text");
 </script>
 
 
 <table id="text_table" class="black_table">
+
    <tr>
       <td id="mobile" style="text-align: center; padding: 25px 25px 0px 25px; display: none">
-         <img src="Images/featured_work.jpg" style="width: 100%; border-radius: 50%">
+         <img src="featured_work/featured_work.jpg" style="width: 100%; border-radius: 50%">
       </td>
    </tr>
+
    <tr>
       <td id="text" class="text">
-         <span id="sub_title" class="sub_title">FEATURED WORK</span>
-         I am surrounded by rolling hills that lead into southern California mountain ranges. After years of drought, abundant rainfall produced lush green growth. Not far from these hills is the endless California coastline. I’ve created several series of paintings that represent my experiences this diverse and changing environment.
-         <p>
-         All pieces are acrylic and mixed media.
-         <p>
-         To inquire about pricing or for more information, please <a class="e-mail" href="mailto:dkclaguna@gmail.com?subject=Darlene Laguna Art">email</a> me.
+         <!-- Load text from file. -->
       </td>
       <td id="desktop" style="text-align: right; vertical-align: top; padding: 50px">
-         <img src="Images/featured_work.jpg" style="width: 300px; border-radius: 50%">
+         <img src="featured_work/featured_work.jpg" style="width: 300px; border-radius: 50%">
       </td>
    </tr>
+
 </table>
 
-<div id="art_gallery"  style="column-count: 3" class="art_gallery">
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/featured_work_1.jpg" target="_self"><img src="Images/featured_work_1.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">This Land Is Your Land</span><br>
-
-         <span class="art_dimensions">Each panel is 36 x 24 inches on 1.5-inch cradled wood panel</span><br>
-
-         <span class="art_paragraph">
-
-         After I finished this diptych, this song by Woodie Guthrie popped into my head. As I looked at the random drips, I thought about how our environment has been impacted by our presence and the difficult state our country is in. I hope we all think carefully about what we want to do with our land.
-
-         </span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/featured_work_2.jpg" target="_self"><img src="Images/featured_work_2.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Greenspiration</span><br>
-
-         <span class="art_dimensions">These three 8 x 8 inch pieces are on 3/4-inch cradled wood panels and set in maple floater frames</span><br>
-
-         <span class="art_paragraph">
-
-         I took a hike one damp morning in the spring and found myself in a misty wonderland of wild, saturated flora.
-
-         </span><br>
-
-         <span class="art_paragraph">
-
-         <b>Greenspiration 2</b> (left)
-
-         </span><br>
-
-         <span class="art_paragraph">
-
-         <b>Greenspiration 4</b> (center)
-
-         </span><br>
-
-         <span class="art_paragraph">
-
-         <b>Greenspiration 5</b> (right)
-
-         </span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/featured_work_3.jpg" target="_self"><img src="Images/featured_work_3.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">September</span><br>
-
-         <span class="art_dimensions">These two 24 x 20 inch pieces are on 3/4-inch stretched canvas and set in maple floater frames</span><br>
-
-         <span class="art_paragraph">
-
-         Every day I view the hills and the sky above. They are an ongoing source of joy and inspiration as they change in color throughout the year.
-
-         </span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/featured_work_4.jpg" target="_self"><img src="Images/featured_work_4.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Coastal Living</span><br>
-
-         <span class="art_dimensions">Each piece is 20 x 20 inches on 1.5-inch cradled wood panel</span><br>
-
-         <span class="art_paragraph">
-
-         On the coast, the bright sunlight desaturates and bleaches many of the surfaces it touches. At the beach, space and textures can feel amplified.
-
-         </span><br>
-
-         <span class="art_paragraph">
-
-         <b>Beach Day</b> (left)
-
-         </span><br>
-
-         <span class="art_paragraph">
-
-         <b>Dockside</b> (top right)
-
-         </span><br>
-
-         <span class="art_paragraph">
-
-         <b>Coastline</b> (bottom right)
-
-         </span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/featured_work_5.jpg" target="_self"><img src="Images/featured_work_5.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Walking Meditations</span><br>
-
-         <span class="art_dimensions"><b>The Big Picture</b>: 12 x 12 inch wood panel set in a maple floater frame</span><br>
-
-         <span class="art_dimensions"><b>On the Fence</b>: 8 x 8 inch cradled wood panel set in a maple footer frame.</span><br>
-
-         <span class="art_paragraph">
-
-         I often hike along the edge of an immense arroyo with a large open sky overhead. After rains, the arroyo fills and the water runs quickly. The ravens keep me company and remind me to keep my eye on the big picture.
-
-         <span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/featured_work_6.jpg" target="_self"><img src="Images/featured_work_6.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Lines</span><br>
-
-         <span class="art_dimensions"><b>Viewfinder</b> (top left): 12-inch cradled wood panel, hexagon</span><br>
-
-         <span class="art_dimensions">The three square pieces are 12 x 12 inch wood panels set in maple floater frames</span><br>
-
-         <span class="art_paragraph">
-
-         When I look out at the hills, I see areas meet and connect, reveal and hide. Colors, textures, spaces are juxtaposed -  sometimes in surprising ways.
-
-         </span><br>
-
-         <span class="art_paragraph">
-
-         <b>Another Rainy Monday</b> (top right)
-
-         </span><br>
-
-         <span class="art_paragraph">
-
-         <b>Moonlight</b> (bottom left)
-
-         </span><br>
-
-         <span class="art_paragraph">
-
-         <b>Saturated</b> (bottom right)
-
-         </span>
-
-      </p>
-
-   </div>
-
-</div>
-
-<script>write_copyright();</script>
+<script>
+   load_gallery("featured_work");
+   write_copyright();
+</script>
 
 
 </body>
