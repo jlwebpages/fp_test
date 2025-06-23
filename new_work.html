@@ -6,6 +6,7 @@
    <title>Darlene Laguna Art - New Work</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link href="styles.css" rel="stylesheet" type="text/css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
    <script language="JavaScript" src=scripts.js></script>
 </head>
 
@@ -13,191 +14,35 @@
 
 
 <script>
-
    write_header();
-
-   document.getElementById("new_work").className = "clicked_link";
-
+   document.getElementById("new_work_link").className = "clicked_link";
+   display_data_from_file("new_work/new_work.txt","text");
 </script>
 
 
 <table id="text_table" class="black_table">
+
    <tr>
       <td id="mobile" style="text-align: center; padding: 25px 25px 0px 25px; display: none">
-         <img src="Images/new_work.jpg" style="width: 100%; border-radius: 50%">
+         <img src="new_work/new_work.jpg" style="width: 100%; border-radius: 50%">
       </td>
    </tr>
+
    <tr>
       <td id="text" class="text">
-         <span id="sub_title" class="sub_title">NEW WORK</span>
-         My new work reflects my ongoing immersion in my current place and time.
-         <p>
-         All pieces are acrylic and mixed media.
-         <p>
-         To inquire about pricing or for more information, please <a class="e-mail" href="mailto:dkclaguna@gmail.com?subject=Darlene Laguna Art">email</a> me.
+         <!-- Load text from file. -->
       </td>
       <td id="desktop" style="text-align: right; vertical-align: top; padding: 50px">
-         <img src="Images/new_work.jpg" style="width: 300px; border-radius: 50%">
+         <img src="new_work/new_work.jpg" style="width: 300px; border-radius: 50%">
       </td>
    </tr>
 
 </table>
 
-<div id="art_gallery"  style="column-count: 3" class="art_gallery">
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/new_work_1.jpg" target="_self"><img src="Images/new_work_1.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Note to Self</span><br>
-
-         <span class="art_dimensions">48 x 36 inches on 1.5-inch stretched canvas</span><br>
-
-         <span class="art_paragraph">
-
-         With 2025 off to a rocky start, I let my freedom ring with my tools and paint on a large canvas I started in 2024. I turned it on its side and voiced my thoughts on current events.
-
-         </span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/new_work_2.jpg" target="_self"><img src="Images/new_work_2.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Reveries</span><br>
-
-         <span class="art_dimensions">8 x 8 inch cradled wood panels set in maple floater frames</span><br>
-
-         <span class="art_paragraph">
-
-         Autumn on the trail - images and thoughts melt together in the heat of the afternoon.
-
-         </span><br>
-
-         <span class="art_paragraph">
-
-         <b>Earthquake Weather</b> (left)
-
-         </span><br>
-
-         <span class="art_paragraph">
-
-         <b>Atmospheric River</b> (center)
-
-         </span><br>
-
-         <span class="art_paragraph">
-
-         <b>Reverie</b> (right)
-
-         </span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/new_work_3.jpg" target="_self"><img src="Images/new_work_3.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Malibu</span><br>
-
-         <span class="art_dimensions">12 x 12 inch wood panel set in a maple floater frame</span><br>
-
-         <span class="art_paragraph">
-
-         The hills of Malibu are known for their stunning views - but in December 2024 the Franklin Fire reminded us how precarious those views can be. Unfortunately, more devastating fires hit the same area less than a month later. The land is beginning to recover and the beauty has begun the long process of recovery.
-
-         </span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/new_work_4.jpg" target="_self"><img src="Images/new_work_4.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Canyon View</span><br>
-
-         <span class="art_dimensions">16 x 16 inches on 1-inch cradled wood panel</span><br>
-
-         <span class="art_paragraph">
-
-         I often take a 2-mile round trip hike up Canyon View Avenue and down to the corner at the base of the hill. It's a steep climb, a good cardio walk, and the view from the top is always the reward - whether it's clear or cloudy, early or late.
-
-         </span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/new_work_5.jpg" target="_self"><img src="Images/new_work_5.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Golden Hour</span><br>
-
-         <span class="art_dimensions">8 x 8 inch cradled wood panels set in maple floater frames</span><br>
-
-         <span class="art_paragraph">
-
-         There is something about autumn lighting that brings out the gold in the hills!
-
-         </span><br>
-
-         <span class="art_paragraph">
-
-         <b>Golden Hour 1</b> (left)
-
-         </span><br>
-
-         <span class="art_paragraph">
-
-         <b>Golden Hour 2</b> (right)
-
-         </span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/new_work_6.jpg" target="_self"><img src="Images/new_work_6.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Forecast</span><br>
-
-         <span class="art_dimensions">12.5 x 12.5 inch wood panel set in a maple floater frame</span><br>
-
-         <span class="art_paragraph">
-
-         The local foothills and the skies above are always full of surprises.
-
-         </span>
-
-      </p>
-
-   </div>
-
-</div>
-
-<script>write_copyright();</script>
+<script>
+   load_gallery("new_work");
+   write_copyright();
+</script>
 
 
 </body>

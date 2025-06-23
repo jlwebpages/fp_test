@@ -6,6 +6,7 @@
    <title>Darlene Laguna Art - Photo Art</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link href="styles.css" rel="stylesheet" type="text/css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
    <script language="JavaScript" src=scripts.js></script>
 </head>
 
@@ -13,229 +14,35 @@
 
 
 <script>
-
    write_header();
-
-   document.getElementById("photo_art").className = "clicked_link";
-
+   document.getElementById("photo_art_link").className = "clicked_link";
+   display_data_from_file("photo_art/photo_art.txt","text");
 </script>
 
 
 <table id="text_table" class="black_table">
+
    <tr>
       <td id="mobile" style="text-align: center; padding: 25px 25px 0px 25px; display: none">
-         <img src="Images/photo_art.jpg" style="width: 100%">
+         <img src="photo_art/photo_art.jpg" style="width: 100%">
       </td>
    </tr>
+
    <tr>
       <td id="text" class="text">
-         <span id="sub_title" class="sub_title">PHOTO ART</span>
-         I have taken thousands of photos while hiking. Often I am inspired to include these photos or pieces of them in my work - either with collage or photo transfer - and often I'm surprised by what I discover these images mean to me.
-         <p>
-         To inquire about pricing or for more information, please <a class="e-mail" href="mailto:dkclaguna@gmail.com?subject=Darlene Laguna Art">email</a> me.
+         <!-- Load text from file. -->
       </td>
       <td id="desktop" style="text-align: right; vertical-align: top; padding: 50px">
-         <img src="Images/photo_art.jpg" style="width: 300px">
+         <img src="photo_art/photo_art.jpg" style="width: 300px">
       </td>
    </tr>
+
 </table>
 
-<div id="art_gallery"  style="column-count: 3" class="art_gallery">
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/photo_art_1.jpg" target="_self"><img src="Images/photo_art_1.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Blue Skies and Golden Sunshine</span><br>
-
-         <span class="art_dimensions">Acrylic and mixed media photo collage on wood panel</span><br>
-
-         <span class="art_dimensions">20 x 20 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/photo_art_2.jpg" target="_self"><img src="Images/photo_art_2.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Treeline</span><br>
-
-         <span class="art_dimensions">Acrylic and mixed media photo collage on wood panel</span><br>
-
-         <span class="art_dimensions">12 x 12 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/photo_art_3.jpg" target="_self"><img src="Images/photo_art_3.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Road Trip</span><br>
-
-         <span class="art_dimensions">Acrylic and mixed media photo collage on wood panel</span><br>
-
-         <span class="art_dimensions">12 x 12 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/photo_art_4.jpg" target="_self"><img src="Images/photo_art_4.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Anticipation</span><br>
-
-         <span class="art_dimensions">Acrylic and mixed media photo collage on wood panel</span><br>
-
-         <span class="art_dimensions">12 x 12 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/photo_art_5.jpg" target="_self"><img src="Images/photo_art_5.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Cactus Point</span><br>
-
-         <span class="art_dimensions">Acrylic and mixed media photo collage on cradled wood panel</span><br>
-
-         <span class="art_dimensions">12 x 12 inches, hexagon</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/photo_art_6.jpg" target="_self"><img src="Images/photo_art_6.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Afterimage</span><br>
-
-         <span class="art_dimensions">Acrylic and mixed media photo collage on cradled wood panel</span><br>
-
-         <span class="art_dimensions">20 x 16 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/photo_art_7.jpg" target="_self"><img src="Images/photo_art_7.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Harvest</span><br>
-
-         <span class="art_dimensions">Acrylic and mixed media photo collage on wood panel</span><br>
-
-         <span class="art_dimensions">12 x 12 inches</span>
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/photo_art_8.jpg" target="_self"><img src="Images/photo_art_8.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Echoes</span><br>
-
-         <span class="art_dimensions">Acrylic and mixed media photo collage on wood panel</span><br>
-
-         <span class="art_dimensions">24 x 24 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/photo_art_9.jpg" target="_self"><img src="Images/photo_art_9.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Distracted</span><br>
-
-         <span class="art_dimensions">Acrylic and mixed media photo collage on wood panel</span><br>
-
-         <span class="art_dimensions">12 x 12 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/photo_art_10.jpg" target="_self"><img src="Images/photo_art_10.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Dusk</span><br>
-
-         <span class="art_dimensions">Acrylic and mixed media photo collage on wood panel</span><br>
-
-         <span class="art_dimensions">12 x 12 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/photo_art_11.jpg" target="_self"><img src="Images/photo_art_11.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Midnight Hike</span><br>
-
-         <span class="art_dimensions">Acrylic and mixed media photo collage on wood panel</span><br>
-
-         <span class="art_dimensions">12 x 12 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/photo_art_12.jpg" target="_self"><img src="Images/photo_art_12.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Dreamland</span><br>
-
-         <span class="art_dimensions">Acrylic and mixed media photo collage on wood panel</span><br>
-
-         <span class="art_dimensions">12 x 12 inches</span>
-
-      </p>
-
-   </div>
-
-</div>
-
-<script>write_copyright();</script>
+<script>
+   load_gallery("photo_art");
+   write_copyright();
+</script>
 
 
 </body>

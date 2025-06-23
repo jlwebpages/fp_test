@@ -6,6 +6,7 @@
    <title>Darlene Laguna Art - Works On Paper</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link href="styles.css" rel="stylesheet" type="text/css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
    <script language="JavaScript" src=scripts.js></script>
 </head>
 
@@ -13,183 +14,35 @@
 
 
 <script>
-
    write_header();
-
-   document.getElementById("works_on_paper").className = "clicked_link";
-
+   document.getElementById("works_on_paper_link").className = "clicked_link";
+   display_data_from_file("works_on_paper/works_on_paper.txt","text");
 </script>
 
 
 <table id="text_table" class="black_table">
+
    <tr>
       <td id="mobile" style="text-align: center; padding: 25px 25px 0px 25px; display: none">
-         <img src="Images/works_on_paper.jpg" style="width: 100%">
+         <img src="works_on_paper/works_on_paper.jpg" style="width: 100%">
       </td>
    </tr>
+
    <tr>
       <td id="text" class="text">
-         <span id="sub_title" class="sub_title">WORKS ON PAPER</span>
-         These works on paper spring from my contact with nature when I am hiking. I am often surrounded by wild, unkempt, and haphazard growth - although the trails are tended, much of the off-trail areas are left to grow freely. I see (and often hear and feel) natural texture, line, movement, design, and color.
-         <p>
-         All works on paper come matted in a white mat and ready to slip into a frame.
-         <p>
-         To inquire about pricing or for more information, please <a class="e-mail" href="mailto:dkclaguna@gmail.com?subject=Darlene Laguna Art">email</a> me.
+         <!-- Load text from file. -->
       </td>
       <td id="desktop" style="text-align: right; vertical-align: top; padding: 50px">
-         <img src="Images/works_on_paper.jpg" style="width: 300px">
+         <img src="works_on_paper/works_on_paper.jpg" style="width: 300px">
       </td>
    </tr>
+
 </table>
 
-<div id="art_gallery"  style="column-count: 3" class="art_gallery">
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/works_on_paper_1.jpg" target="_self"><img src="Images/works_on_paper_1.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Wildflower</span><br>
-
-         <span class="art_dimensions">Mixed media collage</span><br>
-
-         <span class="art_dimensions">10 x 8 inches, matted to 12 x 16 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/works_on_paper_2.jpg" target="_self"><img src="Images/works_on_paper_2.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Resting Place</span><br>
-
-         <span class="art_dimensions">Mixed media collage</span><br>
-
-         <span class="art_dimensions">8 x 8 inches, matted to 12 x 12 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/works_on_paper_3.jpg" target="_self"><img src="Images/works_on_paper_3.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Meadow</span><br>
-
-         <span class="art_dimensions">Mixed media collage</span><br>
-
-         <span class="art_dimensions">8 x 10 inches, matted to 11 x 14 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/works_on_paper_4.jpg" target="_self"><img src="Images/works_on_paper_4.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Autumn Winds</span><br>
-
-         <span class="art_dimensions">Mixed media collage</span><br>
-
-         <span class="art_dimensions">8 x 8 inches, matted to 12 x 12 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/works_on_paper_5.jpg" target="_self"><img src="Images/works_on_paper_5.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Portal</span><br>
-
-         <span class="art_dimensions">Mixed media collage</span><br>
-
-         <span class="art_dimensions">8 x 10 inches, matted to 11 x 14 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/works_on_paper_6.jpg" target="_self"><img src="Images/works_on_paper_6.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Wilderness</span><br>
-
-         <span class="art_dimensions">Mixed media collage</span><br>
-
-         <span class="art_dimensions">8 x 8 inches, matted to 12 x 12 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/works_on_paper_7.jpg" target="_self"><img src="Images/works_on_paper_7.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Tulips</span><br>
-
-         <span class="art_dimensions">Acrylic on heavy paper</span><br>
-
-         <span class="art_dimensions">8 x 8 inches, matted to 12 x 12 inches</span>
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/works_on_paper_8.jpg" target="_self"><img src="Images/works_on_paper_8.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Windy</span><br>
-
-         <span class="art_dimensions">Mixed media collage</span><br>
-
-         <span class="art_dimensions">8 x 10 inches, matted to 11 x 14 inches</span>
-
-      </p>
-
-   </div>
-
-   <div class="art_image">
-
-      <a href="display_image.html?image_file_name=Images/works_on_paper_9.jpg" target="_self"><img src="Images/works_on_paper_9.jpg"></a>
-
-      <p class="art_caption">
-
-         <span class="art_title">Emergent</span><br>
-
-         <span class="art_dimensions">Mixed media collage</span><br>
-
-         <span class="art_dimensions">8 x 8 inches, matted to 12 x 12 inches</span>
-
-      </p>
-
-   </div>
-
-</div>
-
-<script>write_copyright();</script>
+<script>
+   load_gallery("works_on_paper");
+   write_copyright();
+</script>
 
 
 </body>
