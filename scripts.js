@@ -98,7 +98,7 @@ function load_gallery(gallery_name)
          if (file_exists == true)
          {
             d.writeln('         <span id="'+file_name_prefix+'_title" class="art_title"></span><br>');
-            display_data_from_file(file_path_prefix+"_title.txt",file_name_prefix+"_title",false);
+            //display_data_from_file(file_path_prefix+"_title.txt",file_name_prefix+"_title",false);
          }
 
          check_if_file_exists(file_path_prefix+"_dimensions.txt");
@@ -106,7 +106,7 @@ function load_gallery(gallery_name)
          if (file_exists == true)
          {
             d.writeln('         <span id="'+file_name_prefix+'_dimensions" class="art_dimensions"></span><br>');
-            display_data_from_file(file_path_prefix+"_dimensions.txt",file_name_prefix+"_dimensions",false);
+            //display_data_from_file(file_path_prefix+"_dimensions.txt",file_name_prefix+"_dimensions",false);
          }
 
          check_if_file_exists(file_path_prefix+"_paragraph.txt");
@@ -114,7 +114,7 @@ function load_gallery(gallery_name)
          if (file_exists == true)
          {
             d.writeln('         <span id="'+file_name_prefix+'_paragraph" class="art_paragraph"></span>');
-            display_data_from_file(file_path_prefix+"_paragraph.txt",file_name_prefix+"_paragraph",false);
+            //display_data_from_file(file_path_prefix+"_paragraph.txt",file_name_prefix+"_paragraph",false);
          }
 
          d.writeln('      </p>');
