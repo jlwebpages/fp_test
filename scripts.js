@@ -89,15 +89,15 @@ function load_gallery(gallery_name)
          document.writeln('');
          document.writeln('      <p class="art_caption">');
 
-         check_if_file_exists(file_path_prefix+"_title.txt");
-
+         //check_if_file_exists(file_path_prefix+"_title.txt");
+         file_exists = true;   
          if (file_exists == true)
          {
             document.writeln('         <span id="'+file_name_prefix+'_title" class="art_title"></span><br>');
             display_data_from_file(file_path_prefix+"_title.txt",file_name_prefix+"_title",false);
          }
 
-         check_if_file_exists(file_path_prefix+"_dimensions.txt");
+         //check_if_file_exists(file_path_prefix+"_dimensions.txt");
 
          if (file_exists == true)
          {
@@ -105,7 +105,7 @@ function load_gallery(gallery_name)
             display_data_from_file(file_path_prefix+"_dimensions.txt",file_name_prefix+"_dimensions",false);
          }
 
-         check_if_file_exists(file_path_prefix+"_paragraph.txt");
+         //check_if_file_exists(file_path_prefix+"_paragraph.txt");
 
          if (file_exists == true)
          {
