@@ -88,15 +88,19 @@ function load_gallery(gallery_name)
       document.writeln('      <a href="display_image.html?image_file_name='+image_path+'" target="_self"><img src="'+image_path+'"></a>');
       document.writeln('');
       document.writeln('      <p class="art_caption">');
+
       document.writeln('         <span id="'+file_name_prefix+'_title" class="art_title"></span><br>');
       display_data_from_file(file_path_prefix+"_title.txt",file_name_prefix+"_title",false);
+
       document.writeln('         <span id="'+file_name_prefix+'_dimensions" class="art_dimensions"></span><br>');
       display_data_from_file(file_path_prefix+"_dimensions.txt",file_name_prefix+"_dimensions",false);
+
       if (check_if_file_exists(file_path_prefix+"_paragraph.txt") == true)
       {
          document.writeln('         <span id="'+file_name_prefix+'_paragraph" class="art_paragraph"></span>');
          display_data_from_file(file_path_prefix+"_paragraph.txt",file_name_prefix+"_paragraph",false);
       }
+
       document.writeln('      </p>');
       document.writeln('');
       document.writeln('   </div>');
