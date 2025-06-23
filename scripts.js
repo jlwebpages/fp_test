@@ -8,6 +8,7 @@ function check_if_file_exists(file_path)
    {
       url: file_path,
       type: "HEAD",
+      cache: false,
       async: false,
 
       success: function()
