@@ -4,7 +4,7 @@ var file_exists = false;
 
 function check_if_file_exists(file_path)
 {
-   file_exists = false;file_exists=true;return;
+   file_exists = false;
 
    $.ajax
    (
@@ -67,7 +67,7 @@ function load_gallery(gallery_name)
    var file_path_prefix = "";
    var file_name_prefix = "";
    var image_path       = "";
-   var max_image_count  = 25;
+   var max_image_count  = 12;
 
 
    document.writeln('<div id="art_gallery"  style="column-count: 3" class="art_gallery">');
@@ -89,7 +89,7 @@ function load_gallery(gallery_name)
          document.writeln('');
          document.writeln('      <p class="art_caption">');
 
-         check_if_file_exists(file_path_prefix+"_title.txt");
+         //check_if_file_exists(file_path_prefix+"_title.txt");
 
          if (file_exists == true)
          {
@@ -97,7 +97,7 @@ function load_gallery(gallery_name)
             display_data_from_file(file_path_prefix+"_title.txt",file_name_prefix+"_title",false);
          }
 
-         check_if_file_exists(file_path_prefix+"_dimensions.txt");
+         //check_if_file_exists(file_path_prefix+"_dimensions.txt");
 
          if (file_exists == true)
          {
@@ -105,7 +105,7 @@ function load_gallery(gallery_name)
             display_data_from_file(file_path_prefix+"_dimensions.txt",file_name_prefix+"_dimensions",false);
          }
 
-         check_if_file_exists(file_path_prefix+"_paragraph.txt");
+         //check_if_file_exists(file_path_prefix+"_paragraph.txt");
 
          if (file_exists == true)
          {
