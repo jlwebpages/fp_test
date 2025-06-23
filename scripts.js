@@ -95,7 +95,7 @@ function load_gallery(gallery_name)
       document.writeln('         <span id="'+file_name_prefix+'_dimensions" class="art_dimensions"></span><br>');
       display_data_from_file(file_path_prefix+"_dimensions.txt",file_name_prefix+"_dimensions",false);
 
-      if (check_if_file_exists(file_path_prefix+"_paragraph.txt") == true)
+      if ( (gallery_name == "new_work") || (gallery_name == "featured_work") )
       {
          document.writeln('         <span id="'+file_name_prefix+'_paragraph" class="art_paragraph"></span>');
          display_data_from_file(file_path_prefix+"_paragraph.txt",file_name_prefix+"_paragraph",false);
