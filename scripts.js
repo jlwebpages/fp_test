@@ -1,10 +1,7 @@
 
-var file_exists = false;
-
-
 function check_if_file_exists(file_path)
 {
-   file_exists = false;file_exists = true; return true;
+   var file_exists = false;
 
    $.ajax
    (
@@ -24,11 +21,15 @@ function check_if_file_exists(file_path)
       },
    }
    );
+
+   return file_exists;
 }
 
 function close_menu()
 {
    document.getElementById("menu_list").style.width = "0";
+
+   return true;
 }
 
 function display_data_from_file(file_name,element_id,display_error)
@@ -55,11 +56,15 @@ function display_data_from_file(file_name,element_id,display_error)
       );
    }
    );
+
+   return true;
 }
 
 function display_menu()
 {
    document.getElementById("menu_list").style.width = "250px";
+
+   return true;
 }
 
 function load_gallery(gallery_name)
@@ -82,9 +87,8 @@ function load_gallery(gallery_name)
       file_path_prefix = gallery_name + "/" + file_name_prefix;
       image_path       = file_path_prefix + ".jpg";
 
-      check_if_file_exists(image_path);
+      if (check_if_file_exists(image_path) == true)
 
-      if (file_exists == true)
       {
          d.writeln('');
          d.writeln('   <div class="art_image">');
@@ -93,28 +97,22 @@ function load_gallery(gallery_name)
          d.writeln('');
          d.writeln('      <p class="art_caption">');
 
-         check_if_file_exists(file_path_prefix+"_title.txt");
-
-         if (file_exists == true)
+         if (check_if_file_exists(file_path_prefix+"_title.txt") == true)
          {
             d.writeln('         <span id="'+file_name_prefix+'_title" class="art_title"></span><br>');
-            //display_data_from_file(file_path_prefix+"_title.txt",file_name_prefix+"_title",false);
+            display_data_from_file(file_path_prefix+"_title.txt",file_name_prefix+"_title",false);
          }
 
-         check_if_file_exists(file_path_prefix+"_dimensions.txt");
-
-         if (file_exists == true)
+         if (check_if_file_exists(file_path_prefix+"_dimensions.txt") == true)
          {
             d.writeln('         <span id="'+file_name_prefix+'_dimensions" class="art_dimensions"></span><br>');
-            //display_data_from_file(file_path_prefix+"_dimensions.txt",file_name_prefix+"_dimensions",false);
+            display_data_from_file(file_path_prefix+"_dimensions.txt",file_name_prefix+"_dimensions",false);
          }
 
-         check_if_file_exists(file_path_prefix+"_paragraph.txt");
-
-         if (file_exists == true)
+         if (check_if_file_exists(file_path_prefix+"_paragraph.txt") == true)
          {
             d.writeln('         <span id="'+file_name_prefix+'_paragraph" class="art_paragraph"></span>');
-            //display_data_from_file(file_path_prefix+"_paragraph.txt",file_name_prefix+"_paragraph",false);
+            display_data_from_file(file_path_prefix+"_paragraph.txt",file_name_prefix+"_paragraph",false);
          }
 
          d.writeln('      </p>');
@@ -127,6 +125,8 @@ function load_gallery(gallery_name)
    d.writeln('</div>');
 
    d.close();
+
+   return true;
 }
 
 
