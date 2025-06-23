@@ -1,128 +1,13 @@
 
-var file_exists = false;
-
-
-function check_if_file_exists(file_path)
-{
-   file_exists = false;
-
-   $.ajax
-   (
-   {
-      url: file_path,
-      type: "HEAD",
-      async: false,
-
-      success: function()
-      {
-         file_exists = true;
-      },
-
-      error: function()
-      {
-         file_exists = false;
-      },
-   }
-   );
-}
-
 function close_menu()
 {
    document.getElementById("menu_list").style.width = "0";
-}
-
-function display_data_from_file(file_name,element_id,display_error)
-{
-   $
-   (document).ready(function()
-   {
-      $.ajax
-      (
-      {
-         url: file_name,
-         dataType: "html",
-
-         success: function(data)
-         {
-            $("#"+element_id).html(data);
-         },
-
-         error: function()
-         {
-            if (display_error == true) alert("Failed to load data from file:  "+file_name);
-         },
-      }
-      );
-   }
-   );
 }
 
 function display_menu()
 {
    document.getElementById("menu_list").style.width = "250px";
 }
-
-function load_gallery(gallery_name)
-{
-   var file_path_prefix = "";
-   var file_name_prefix = "";
-   var image_path       = "";
-   var max_image_count  = 25;
-
-
-   document.writeln('<div id="art_gallery"  style="column-count: 3" class="art_gallery">');
-
-   for (i = 1; i <= 25; i++)
-   {
-      file_name_prefix = gallery_name + "_" + i;
-      file_path_prefix = gallery_name + "/" + file_name_prefix;
-      image_path       = file_path_prefix + ".jpg";
-
-      check_if_file_exists(image_path);
-
-      if (file_exists == true)
-      {
-         document.writeln('');
-         document.writeln('   <div class="art_image">');
-         document.writeln('');
-         document.writeln('      <a href="display_image.html?image_file_name='+image_path+'" target="_self"><img src="'+image_path+'"></a>');
-         document.writeln('');
-         document.writeln('      <p class="art_caption">');
-
-         check_if_file_exists(file_path_prefix+"_title.txt");
-
-         if (file_exists == true)
-         {
-            document.writeln('         <span id="'+file_name_prefix+'_title" class="art_title"></span><br>');
-            display_data_from_file(file_path_prefix+"_title.txt",file_name_prefix+"_title",false);
-         }
-
-         check_if_file_exists(file_path_prefix+"_dimensions.txt");
-
-         if (file_exists == true)
-         {
-            document.writeln('         <span id="'+file_name_prefix+'_dimensions" class="art_dimensions"></span><br>');
-            display_data_from_file(file_path_prefix+"_dimensions.txt",file_name_prefix+"_dimensions",false);
-         }
-
-         check_if_file_exists(file_path_prefix+"_paragraph.txt");
-
-         if (file_exists == true)
-         {
-            document.writeln('         <span id="'+file_name_prefix+'_paragraph" class="art_paragraph"></span>');
-            display_data_from_file(file_path_prefix+"_paragraph.txt",file_name_prefix+"_paragraph",false);
-         }
-
-         document.writeln('      </p>');
-         document.writeln('');
-         document.writeln('   </div>');
-      }
-   }
-
-   document.writeln('');
-   document.writeln('</div>');
-}
-
 
 function write_copyright()
 {
@@ -158,12 +43,12 @@ function write_header()
    d.writeln('');
    d.writeln('<table id="links" class="white_table" style="padding-bottom: 50px; width: 80%; white-space: nowrap">');
    d.writeln('   <tr>');
-   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="home_link"            class="link" href="home.html"           >HOME</a></td>');
-   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="new_work_link"        class="link" href="new_work.html"       >NEW WORK</a></td>');
-   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="featured_work_link"   class="link" href="featured_work.html"  >FEATURED WORK</a></td>');
-   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="photo_art_link"       class="link" href="photo_art.html"      >PHOTO ART</a></td>');
-   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="works_on_paper_link"  class="link" href="works_on_paper.html" >WORKS ON PAPER</a></td>');
-   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="how_to_purchase_link" class="link" href="how_to_purchase.html">HOW TO PURCHASE</a></td>');
+   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="home"            class="link" href="home.html"           >HOME</a></td>');
+   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="new_work"        class="link" href="new_work.html"       >NEW WORK</a></td>');
+   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="featured_work"   class="link" href="featured_work.html"  >FEATURED WORK</a></td>');
+   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="photo_art"       class="link" href="photo_art.html"      >PHOTO ART</a></td>');
+   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="works_on_paper"  class="link" href="works_on_paper.html" >WORKS ON PAPER</a></td>');
+   d.writeln('      <td style="padding-left: 10px; padding-right: 10px"><a id="how_to_purchase" class="link" href="how_to_purchase.html">HOW TO PURCHASE</a></td>');
    d.writeln('   </tr>');
    d.writeln('</table>');
    d.writeln('');
