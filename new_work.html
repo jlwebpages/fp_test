@@ -10,7 +10,7 @@
    <script language="JavaScript" src=scripts.js></script>
 </head>
 
-<body class="body" oncontextmenu="return false;">
+<body class="body" onLoad='load_gallery("new_work")'>
 
 
 <script>
@@ -39,10 +39,9 @@
 
 </table>
 
-<script>
-   load_gallery("new_work");
-   write_copyright();
-</script>
+<div id="art_gallery" style="column-count: 3" class="art_gallery"></div>
+
+<script>write_copyright();</script>
 
 
 </body>
