@@ -44,7 +44,7 @@ function load_image(gallery_name,image_number)
 
    art_gallery_div = document.getElementById("art_gallery");
 
-   art_gallery_div.insertAdjacentHTML("afterbegin",image_html);
+   art_gallery_div.insertAdjacentHTML("beforeend",image_html);
 
    display_data_from_file(file_path_prefix+"_title.txt",file_name_prefix+"_title",false);
    display_data_from_file(file_path_prefix+"_dimensions.txt",file_name_prefix+"_dimensions",false);
