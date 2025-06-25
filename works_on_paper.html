@@ -10,13 +10,12 @@
    <script language="JavaScript" src=scripts.js></script>
 </head>
 
-<body class="body" oncontextmenu="return false;">
+<body class="body" onLoad="load_data_from_file('works_on_paper/works_on_paper.txt','text',true); load_images_into_gallery('works_on_paper');" oncontextmenu="return false;">
 
 
 <script>
    write_header();
    document.getElementById("works_on_paper_link").className = "clicked_link";
-   display_data_from_file("works_on_paper/works_on_paper.txt","text");
 </script>
 
 
@@ -39,10 +38,11 @@
 
 </table>
 
-<script>
-   load_gallery("works_on_paper");
-   write_copyright();
-</script>
+<div id="art_gallery" style="column-count: 3" class="art_gallery">
+   <!-- Load images into gallery. -->
+</div>
+
+<script>write_copyright();</script>
 
 
 </body>

@@ -1,4 +1,4 @@
-function check_if_file_exists(gallery_name,image_number)
+function check_if_image_exists(gallery_name,image_number,max_number_of_images)
 {
    $.ajax
    (
@@ -9,29 +9,67 @@ function check_if_file_exists(gallery_name,image_number)
 
       success: function()
       {
-         load_image(gallery_name,image_number);
+         load_image(gallery_name,image_number,max_number_of_images);
       },
 
       error: function()
       {
-         if (image_number < 6) check_if_file_exists(gallery_name,image_number+1);
+         if (image_number < max_number_of_images) check_if_image_exists(gallery_name,image_number+1,max_number_of_images);
       },
    }
    );
+
+   return true;
 }
 
-
-function load_image(gallery_name,image_number)
+function close_menu()
 {
-   var file_path_prefix = "";
-   var file_name_prefix = "";
-   var image_path       = "";
-   var max_image_count  = 25;
+   document.getElementById("menu_list").style.width = "0";
 
+   return true;
+}
 
-   file_name_prefix = gallery_name + "_" + image_number;
-   file_path_prefix = gallery_name + "/" + file_name_prefix;
-   image_path       = file_path_prefix + ".jpg";
+function display_menu()
+{
+   document.getElementById("menu_list").style.width = "250px";
+
+   return true;
+}
+
+function load_data_from_file(file_name,element_id,display_error)
+{
+   $.ajax
+   (
+   {
+      url: file_name,
+
+      dataType: "html",
+
+      success: function(data)
+      {
+         $("#"+element_id).html(data);
+      },
+
+      error: function()
+      {
+         if (display_error == true) alert("Failed to load data from file:  "+file_name);
+
+         $("#"+element_id).hide();
+      },
+   }
+   );
+
+   return true;
+}
+
+function load_image(gallery_name,image_number,max_number_of_images)
+{
+   var art_gallery_div  = document.getElementById("art_gallery");
+   var file_name_prefix = gallery_name + "_" + image_number;
+   var file_path_prefix = gallery_name + "/" + file_name_prefix;
+   var image_html       = "";
+   var image_path       = file_path_prefix + ".jpg";
+
 
    image_html  = '<div class="art_image">';
    image_html += '   <a href="display_image.html?image_file_name='+image_path+'" target="_self"><img src="'+image_path+'"></a>';
@@ -42,62 +80,33 @@ function load_image(gallery_name,image_number)
    image_html += '   </p>';
    image_html += '</div>';
 
-   art_gallery_div = document.getElementById("art_gallery");
-
    art_gallery_div.insertAdjacentHTML("beforeend",image_html);
 
-   display_data_from_file(file_path_prefix+"_title.txt",file_name_prefix+"_title",false);
-   display_data_from_file(file_path_prefix+"_dimensions.txt",file_name_prefix+"_dimensions",false);
-   display_data_from_file(file_path_prefix+"_paragraph.txt",file_name_prefix+"_paragraph",false);
+   load_data_from_file(file_path_prefix+"_title.txt",file_name_prefix+"_title",false);
+   load_data_from_file(file_path_prefix+"_dimensions.txt",file_name_prefix+"_dimensions",false);
+   load_data_from_file(file_path_prefix+"_paragraph.txt",file_name_prefix+"_paragraph",false);
 
-   if (image_number < 25) check_if_file_exists(gallery_name,image_number+1)
+   if (image_number < max_number_of_images) check_if_image_exists(gallery_name,image_number+1,max_number_of_images)
+
+   return true;
 }
 
-function close_menu()
+function load_images_into_gallery(gallery_name)
 {
-   document.getElementById("menu_list").style.width = "0";
+   var image_number         = 1;
+   var max_number_of_images = 25;
+
+
+   check_if_image_exists(gallery_name,image_number,max_number_of_images);
+
+   return true;
 }
-
-function display_data_from_file(file_name,element_id,display_error)
-{
-   $
-   (document).ready(function()
-   {
-      $.ajax
-      (
-      {
-         url: file_name,
-         dataType: "html",
-
-         success: function(data)
-         {
-            $("#"+element_id).html(data);
-         },
-
-         error: function()
-         {
-            if (display_error == true) alert("Failed to load data from file:  "+file_name);
-         },
-      }
-      );
-   }
-   );
-}
-
-function display_menu()
-{
-   document.getElementById("menu_list").style.width = "250px";
-}
-
-function load_gallery(gallery_name)
-{
-   check_if_file_exists(gallery_name,1,document);
-}
-
 
 function write_copyright()
 {
    document.writeln('<div class="copyright">Copyright &copy 2024 Darlene Laguna Art<br>All Rights Reserved.</div>');
+
+   return true;
 }
 
 function write_header()

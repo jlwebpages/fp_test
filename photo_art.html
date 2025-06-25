@@ -10,13 +10,12 @@
    <script language="JavaScript" src=scripts.js></script>
 </head>
 
-<body class="body" oncontextmenu="return false;">
+<body class="body" onLoad="load_data_from_file('photo_art/photo_art.txt','text',true); load_images_into_gallery('photo_art');" oncontextmenu="return false;">
 
 
 <script>
    write_header();
    document.getElementById("photo_art_link").className = "clicked_link";
-   display_data_from_file("photo_art/photo_art.txt","text");
 </script>
 
 
@@ -30,7 +29,7 @@
 
    <tr>
       <td id="text" class="text">
-         <!-- Load text from file. -->
+         <!-- Load data from file. -->
       </td>
       <td id="desktop" style="text-align: right; vertical-align: top; padding: 50px">
          <img src="photo_art/photo_art.jpg" style="width: 300px">
@@ -39,10 +38,11 @@
 
 </table>
 
-<script>
-   load_gallery("photo_art");
-   write_copyright();
-</script>
+<div id="art_gallery" style="column-count: 3" class="art_gallery">
+   <!-- Load images into gallery. -->
+</div>
+
+<script>write_copyright();</script>
 
 
 </body>
