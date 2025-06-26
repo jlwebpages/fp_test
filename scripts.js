@@ -72,7 +72,7 @@ function load_image(gallery_name,image_number,max_number_of_images)
 
 
    image_html  = '<div class="art_image">';
-   image_html += '   <a href="display_image.html?image_file_name='+image_path+'" target="_self"><img src="'+image_path+'" onclick="window.onbeforeunload=null;";></a>';
+   image_html += '   <a href="display_image.html?image_file_name='+image_path+'" target="_self"><img src="'+image_path+'" onclick="window.onbeforeunload=null;"></a>';
    image_html += '   <p class="art_caption">';
    image_html += '      <span id="'+file_name_prefix+'_title" class="art_title"></span><br>';
    image_html += '      <span id="'+file_name_prefix+'_dimensions" class="art_dimensions"></span><br>';
@@ -117,7 +117,7 @@ function write_header()
 
    d.writeln('');
    d.writeln('');
-   d.writeln('<span id="menu" style="font-size: 30px; cursor: pointer; visibility: hidden; padding-left: 5px" onclick="display_menu();" onPress="display_menu();">&#9776;</span>');
+   d.writeln('<span id="menu" style="font-size: 30px; cursor: pointer; visibility: hidden; padding-left: 5px" onclick="display_menu();">&#9776;</span>');
    d.writeln('');
    d.writeln('<div id="menu_list" class="menu">');
    d.writeln('   <a href="javascript:void(0)" class="close_button" onclick="close_menu();" onPress="close_menu();">&times;</a>');
