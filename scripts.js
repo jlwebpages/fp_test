@@ -120,7 +120,7 @@ function write_header()
    d.writeln('<span id="menu" style="font-size: 30px; cursor: pointer; visibility: hidden; padding-left: 5px" onclick="display_menu();">&#9776;</span>');
    d.writeln('');
    d.writeln('<div id="menu_list" class="menu">');
-   d.writeln('   <a href="javascript:void(0)" class="close_button" onclick="close_menu();" onPress="close_menu();">&times;</a>');
+   d.writeln('   <a href="javascript:void(0)" class="close_button" onclick="close_menu();">&times;</a>');
    d.writeln('   <a href="home.html"           >HOME</a>');
    d.writeln('   <a href="new_work.html"       >NEW WORK</a>');
    d.writeln('   <a href="featured_work.html"  >FEATURED WORK</a>');
