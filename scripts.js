@@ -72,7 +72,7 @@ function load_image(gallery_name,image_number,max_number_of_images)
 
 
    image_html  = '<div class="art_image">';
-   image_html += '   <a href="display_image.html?image_file_name='+image_path+'" target="_self"><img src="'+image_path+'"></a>';
+   image_html += '   <a href="display_image.html?image_file_name='+image_path+'" target="_self"><img src="'+image_path+'" onclick="window.onbeforeunload=null;";></a>';
    image_html += '   <p class="art_caption">';
    image_html += '      <span id="'+file_name_prefix+'_title" class="art_title"></span><br>';
    image_html += '      <span id="'+file_name_prefix+'_dimensions" class="art_dimensions"></span><br>';
