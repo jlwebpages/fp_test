@@ -104,8 +104,16 @@ function load_images_into_gallery(gallery_name)
 
 function scroll_to_top()
 {
+$(document).ready(function() {
+    var filePath = "path/to/your/file.txt"; // Replace with the actual file path
    window.scroll({top: 0});
-   window.scroll({top: 0});
+  
+});
+
+
+
+
+
 
    return true;
 }
