@@ -14,7 +14,6 @@
    #art_gallery {column-count:   1               !important}
    #back_button {font-size:      15pt            !important}
    #back_button {padding:        0px 6px 0px 6px !important}
-   #copyright   {font-size:      10pt            !important}
 }
 
 /* Additional rules for iPads in portrait orientation */
@@ -43,7 +42,8 @@
 
 @media (max-width: 767px)
 {
-   #text {font-size: 14pt !important}
+   #text      {font-size: 14pt !important}
+   #copyright {font-size: 10pt !important}
 }
 
 .body
