@@ -115,7 +115,7 @@ function scroll_to_top()
 
 function write_copyright()
 {
-   document.writeln('<div class="copyright">Copyright &copy 2024 Darlene Laguna Art<br>All Rights Reserved.</div>');
+   document.writeln('<div id="copyright" class="copyright">Copyright &copy 2024 Darlene Laguna Art<br>All Rights Reserved.</div>');
 
    return true;
 }

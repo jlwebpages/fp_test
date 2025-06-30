@@ -8,12 +8,14 @@
    #links       {display:        none            !important}
    #sub_title   {font-size:      22pt            !important}
    #sub_title   {padding-bottom: 15px            !important}
+   #text        {font-size:      14pt            !important}
    #text        {padding:        25px            !important}
    #desktop     {display:        none            !important}
    #mobile      {display:        block           !important}
    #art_gallery {column-count:   1               !important}
    #back_button {font-size:      15pt            !important}
    #back_button {padding:        0px 6px 0px 6px !important}
+   #copyright   {font-size:      10pt            !important}
 }
 
 /* Additional rules for iPads in portrait orientation */
@@ -162,7 +164,7 @@ a.link:hover
    padding: 8px 8px 8px 32px;
    text-decoration: none;
    font-family: "Times New Roman", Times, serif;
-   font-size: 18px;
+   font-size: 16px;
    letter-spacing: 2px;
    color: darkslategray;
    display: block;
