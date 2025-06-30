@@ -8,7 +8,6 @@
    #links       {display:        none            !important}
    #sub_title   {font-size:      22pt            !important}
    #sub_title   {padding-bottom: 15px            !important}
-   #text        {font-size:      14pt            !important}
    #text        {padding:        25px            !important}
    #desktop     {display:        none            !important}
    #mobile      {display:        block           !important}
@@ -38,6 +37,13 @@
    #text        {padding:      50px               !important}
    #art_gallery {width:        80%                !important}
    #art_gallery {column-count: 2                  !important}
+}
+
+/* Additional rules for mobile devices */
+
+@media (max-width: 767px)
+{
+   #text {font-size: 14pt !important}
 }
 
 .body
