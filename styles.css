@@ -67,8 +67,8 @@
 
 .text
 {
-   font-family: Arial;
-   font-size: 14pt; 
+   font-family: "Times New Roman", Times, serif;
+   font-size: 16pt; 
    color: silver;
    vertical-align: top;
    text-align: left;
@@ -78,8 +78,8 @@
 
 .link
 {
-   font-family: Arial;
-   font-size: 12pt;
+   font-family: "Times New Roman", Times, serif;
+   font-size: 14pt;
    color: darkslategray;
    letter-spacing: 2px;
    text-decoration: none;
@@ -93,8 +93,8 @@ a.link:hover
 
 .clicked_link
 {
-   font-family: Arial;
-   font-size: 12pt;
+   font-family: "Times New Roman", Times, serif;
+   font-size: 14pt;
    font-weight: bold;
    color: #BE0000;
    letter-spacing: 2px;
@@ -114,8 +114,8 @@ a.link:hover
 
 .copyright
 {
-   font-family: Arial;
-   font-size: 11pt;
+   font-family: "Times New Roman", Times, serif;
+   font-size: 12pt;
    color: darkslategray;
    text-align: center;
    line-height: 20px;
@@ -161,8 +161,8 @@ a.link:hover
 {
    padding: 8px 8px 8px 32px;
    text-decoration: none;
-   font-family: Arial;
-   font-size: 16px;
+   font-family: "Times New Roman", Times, serif;
+   font-size: 18px;
    letter-spacing: 2px;
    color: darkslategray;
    display: block;
