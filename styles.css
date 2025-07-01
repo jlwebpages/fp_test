@@ -68,7 +68,7 @@
 .text
 {
    font-family: Arial;
-   font-size: 20px; 
+   font-size: 19px; 
    color: silver;
    vertical-align: top;
    text-align: left;
@@ -241,7 +241,7 @@ a.link:hover
 {
    background-color: black;
    font-family: Arial;
-   font-size: 26px;
+   font-size: 27px;
    color: silver;
    border-width: 0px;
    border-radius: 20%;
