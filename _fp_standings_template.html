@@ -1,0 +1,136 @@
+<html>
+
+<head>
+   <title>NFL Football Pool</title>
+   <link href="fp.css" rel="stylesheet" type="text/css">
+</head>
+
+<body style="margin: 0"
+     onLoad="if (top.display_frame != undefined) {top.display_frame('fp_main',0);}"
+   onunload="if (top.reset_mobile_viewport_width != undefined) {top.reset_mobile_viewport_width();} if (top.mobile == false) {top.display_frame('fp_main',0);}">
+
+<script>
+
+if (top.mobile == false)
+{
+   // Write to fp_main_header frame.
+
+   top.fp_main_header.document.open();
+   top.fp_main_header.document.write('<html>');
+   top.fp_main_header.document.write('');
+   top.fp_main_header.document.write('<head>');
+   top.fp_main_header.document.write('   <title>NFL Football Pool</title>');
+   top.fp_main_header.document.write('   <link href="fp.css" rel="stylesheet" type="text/css">');
+   top.fp_main_header.document.write('</head>');
+   top.fp_main_header.document.write('');
+   top.fp_main_header.document.write('<body class="background_color" style="margin: 0; margin-left: -3px">');
+   top.fp_main_header.document.write('');
+   top.fp_main_header.document.write('<table class="table" style="height: 40px; border-spacing: 10px 0px">');
+   top.fp_main_header.document.write('   <tr>');
+   top.fp_main_header.document.write('      <td class="fp_button_cell">STANDINGS</td>');
+   top.fp_main_header.document.write('      <td class="fp_button_cell"><a class="white_link" href="fp.html" target="_top">HOME</a></td>');
+   top.fp_main_header.document.write('   </tr>');
+   top.fp_main_header.document.write('</table>');
+   top.fp_main_header.document.write('');
+   top.fp_main_header.document.write('</body>');
+   top.fp_main_header.document.write('');
+   top.fp_main_header.document.write('</html>');
+   top.fp_main_header.document.close();
+}
+
+</script>
+
+<table class="table">
+
+<tr>
+
+<td style="color: maroon;
+       font-size: 16pt;
+     font-weight: bold;
+          height: 100%;
+         padding: 10px;
+  vertical-align: top">
+
+<center>
+
+
+<!--START POSTSEASON STANDINGS
+
+Postseason Standings
+
+<table><tr><td height=8px></td></tr></table>
+
+<div id="Postseason_Standings_1"></div>
+
+<table><tr><td height=12px></td></tr></table>
+
+<div id="Postseason_Standings_2"></div>
+
+<table><tr><td height=12px></td></tr></table>
+
+END POSTSEASON STANDINGS-->
+
+
+<!--START REGULAR SEASON STANDINGS
+
+Regular Season Standings
+
+<table><tr><td height=8px></td></tr></table>
+
+<div id="Regular_Season_Standings_1"></div>
+
+<table><tr><td height=12px></td></tr></table>
+
+<div id="Regular_Season_Standings_2"></div>
+
+END REGULAR SEASON STANDINGS-->
+
+
+<!--START FINAL FOOTBALL POOL STANDINGS
+
+XXXX Football Pool Standings
+
+<table><tr><td height=8px></td></tr></table>
+
+<div id="Final_Football_Pool_Standings"></div>
+
+<table><tr><td height=12px></td></tr></table>
+
+END FINAL FOOTBALL POOL STANDINGS-->
+
+
+<!--START FINAL REGULAR SEASON STANDINGS
+
+XXXX Regular Season Standings
+
+<table><tr><td height=8px></td></tr></table>
+
+<div id="Final_Regular_Season_Standings"></div>
+
+<table><tr><td height=12px></td></tr></table>
+
+END FINAL REGULAR SEASON STANDINGS-->
+
+
+<!--START FINAL POSTSEASON STANDINGS
+
+XXXX Postseason Standings
+
+<table><tr><td height=8px></td></tr></table>
+
+<div id="Final_Postseason_Standings"></div>
+
+END FINAL POSTSEASON STANDINGS-->
+
+
+</center>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+
+</html>
