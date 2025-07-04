@@ -6,7 +6,8 @@
    <link href="fp.css" rel="stylesheet" type="text/css">
 </head>
 
-<body class="background_color" style="margin: 0" onLoad="if (top.display_frame != undefined) {top.display_frame('fp_main',0);}">
+<body class="background_color" style="margin: 0" onLoad="if (top.display_frame != undefined) {top.display_frame('fp_main',0);}"
+                                               onunload="if (top.reset_mobile_viewport_width != undefined) {top.reset_mobile_viewport_width();} if (top.mobile == false) {top.display_frame('fp_main',0);}">
 
 <script>
 
