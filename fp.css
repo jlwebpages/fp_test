@@ -28,30 +28,6 @@
    font-style: italic;
 }
 
-@font-face
-{
-   font-family: Calibri;
-   src: url('fonts/calibril.ttf');
-   font-weight: light;
-   font-style: normal;
-}
-
-@font-face
-{
-   font-family: Calibri;
-   src: url('fonts/calibrili.ttf');
-   font-weight: light;
-   font-style: italic;
-}
-
-@font-face
-{
-   font-family: Calibri;
-   src: url('fonts/calibriz.ttf');
-   font-weight: bold;
-   font-style: italic;
-}
-
 .default_button
 {
    color: black;
