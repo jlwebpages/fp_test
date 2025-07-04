@@ -4,6 +4,53 @@
 /* file takes precedence.  The order of the class names on the object doesn't matter. */
 /* It's the order of the rules in this file that matters.                             */
 
+@font-face
+{
+   font-family: Calibri;
+   src: url('fonts/calibri.ttf');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face
+{
+   font-family: Calibri;
+   src: url('fonts/calibrib.ttf');
+   font-weight: bold;
+   font-style: normal;
+}
+
+@font-face
+{
+   font-family: Calibri;
+   src: url('fonts/calibrii.ttf');
+   font-weight: normal;
+   font-style: italic;
+}
+
+@font-face
+{
+   font-family: Calibri;
+   src: url('fonts/calibril.ttf');
+   font-weight: light;
+   font-style: normal;
+}
+
+@font-face
+{
+   font-family: Calibri;
+   src: url('fonts/calibrili.ttf');
+   font-weight: light;
+   font-style: italic;
+}
+
+@font-face
+{
+   font-family: Calibri;
+   src: url('fonts/calibriz.ttf');
+   font-weight: bold;
+   font-style: italic;
+}
 
 .default_button
 {
