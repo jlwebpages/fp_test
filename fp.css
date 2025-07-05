@@ -5,6 +5,22 @@
 /* It's the order of the rules in this file that matters.                             */
 
 
+@font-face
+{
+  font-family: "Segoe UI";
+  src: url("segoeui.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face
+{
+  font-family: "Segoe UI";
+  src: url("segoeuib.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
 .default_button
 {
    color: black;
