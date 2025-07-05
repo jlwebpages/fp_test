@@ -7,16 +7,16 @@
 
 @font-face
 {
-  font-family: "Segoe UI";
-  src: url("segoeui.ttf");
+  font-family: "Calibri";
+  src: url("calibri.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face
 {
-  font-family: "Segoe UI";
-  src: url("segoeuib.ttf");
+  font-family: "Calibri";
+  src: url("calibrib.ttf");
   font-weight: bold;
   font-style: normal;
 }
@@ -78,7 +78,7 @@
 .table
 {
    color: white;
-   font-family: "Segoe UI";
+   font-family: "Calibri";
    text-align: left;
    background-color: #B8C2D0;
    border-spacing: 0px;
