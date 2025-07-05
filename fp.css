@@ -33,7 +33,7 @@
 {
    color: black;
    font-size: 11pt;
-   font-family: Calibri;
+   font-family: "Segoe UI";
    text-align: center;
    background-color: white;
    border: 1px solid lightgray;
@@ -62,7 +62,7 @@
 .table
 {
    color: white;
-   font-family: Calibri;
+   font-family: "Segoe UI";
    text-align: left;
    background-color: #B8C2D0;
    border-spacing: 0px;
@@ -80,7 +80,7 @@
 
 .ext_button_cell
 {
-   font-size: 18pt;
+   font-size: 21.4px;
    text-align: center;
    background-color: #283E1A;
    border-radius: 25px;
@@ -91,7 +91,7 @@
 
 .fp_button_cell
 {
-   font-size: 18pt;
+   font-size: 21.4px;
    text-align: center;
    background-color: maroon;
    border-radius: 25px;
@@ -103,7 +103,7 @@
 .light_color_cell
 {
    color: maroon;
-   font-size: 18pt;
+   font-size: 21.4px;
    font-weight: bold;
    text-align: center;
    background-color: #B8C2D0;
